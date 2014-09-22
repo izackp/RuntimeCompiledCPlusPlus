@@ -102,7 +102,7 @@ bool ConsoleGame::Init()
 	m_pCompilerLogger = new StdioLogSystem();
 	if( !m_pRuntimeObjectSystem->Initialise(m_pCompilerLogger, 0) )
     {
-        m_pRuntimeObjectSystem = 0;
+        m_pRuntimeObjectSystem = NULL;
         return false;
     }
 	m_pRuntimeObjectSystem->GetObjectFactorySystem()->AddListener(this);
@@ -110,11 +110,11 @@ bool ConsoleGame::Init()
 
 	// construct first object
 	IObjectConstructor* pCtor = m_pRuntimeObjectSystem->GetObjectFactorySystem()->GetConstructor( "RuntimeObject01" );
-	if( pCtor )
+	if (pCtor)
 	{
-		IObject* pObj = pCtor->Construct();
-		pObj->GetInterface( &m_pUpdateable );
-		if( 0 == m_pUpdateable )
+		IObject* pObj = pCtor->Construct(); //Comes out as TActual<RuntimeObject01> *
+		m_pUpdateable = pObj->GetInterface<IUpdateable>();//Also Comes out as TActual<RuntimeObject01> *
+		if (m_pUpdateable == 0)
 		{
 			delete pObj;
 			m_pCompilerLogger->LogError("Error - no updateable interface found\n");
@@ -130,46 +130,49 @@ bool ConsoleGame::Init()
 void ConsoleGame::OnConstructorsAdded()
 {
 	// This could have resulted in a change of object pointer, so release old and get new one.
-	if( m_pUpdateable )
-	{
-		IObject* pObj = m_pRuntimeObjectSystem->GetObjectFactorySystem()->GetObject( m_ObjectId );
-		pObj->GetInterface( &m_pUpdateable );
-		if( 0 == m_pUpdateable )
-		{
-			delete pObj;
-			m_pCompilerLogger->LogError( "Error - no updateable interface found\n");
-		}
-	}
+	if (m_pUpdateable == NULL)
+        return;
+
+    CheckObjectFactoriesForUpdatableContructor();
 }
 
-
+void ConsoleGame::CheckObjectFactoriesForUpdatableContructor() {
+    IObject* pObj = m_pRuntimeObjectSystem->GetObjectFactorySystem()->GetObject(m_ObjectId);
+    if (pObj == NULL)
+        return;
+    
+    m_pUpdateable = pObj->GetInterface<IUpdateable>();
+    delete pObj;
+    
+    if (m_pUpdateable != NULL)
+        return;
+    
+    m_pCompilerLogger->LogError("Error - no updateable interface found\n");
+}
 
 bool ConsoleGame::MainLoop()
 {
-	//check status of any compile
-	if( m_pRuntimeObjectSystem->GetIsCompiledComplete() )
-	{
-		// load module when compile complete
+	if(m_pRuntimeObjectSystem->GetIsCompiledComplete())
 		m_pRuntimeObjectSystem->LoadCompiledModule();
-	}
 
-	if( !m_pRuntimeObjectSystem->GetIsCompiling() )
-	{
-        static int numUpdates = 0;
-		std::cout << "\nMain Loop - press q to quit. Updates every second. Update: " << numUpdates++ << "\n";
-		if( _kbhit() )
-		{
-			int ret = _getche();
-			if( 'q' == ret )
-			{
-				return false;
-			}
-		}
-		const float deltaTime = 1.0f;
-		m_pRuntimeObjectSystem->GetFileChangeNotifier()->Update( deltaTime );
-		m_pUpdateable->Update( deltaTime );
-		Sleep(1000);
-	}
+	if(m_pRuntimeObjectSystem->GetIsCompiling())
+       return true;
+
+    static int numUpdates = 0;
+    std::cout << "\nMain Loop - press q to quit. Updates every second. Update: " << numUpdates++ << "\n";
+    if(_kbhit())
+    {
+        int ret = _getche();
+        if( 'q' == ret )
+        {
+            return false;
+        }
+    }
+    const float deltaTime = 1.0f;
+    
+    m_pRuntimeObjectSystem->GetFileChangeNotifier()->Update( deltaTime );
+    m_pUpdateable->Update( deltaTime );
+    Sleep(1000);
 
 	return true;
 }

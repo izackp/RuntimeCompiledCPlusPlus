@@ -880,157 +880,646 @@
 			name = test;
 			sourceTree = "<group>";
 		};
-		6E8B1BD8123AABCD00C451C8 /* Core */ = {
+		6A88F3DC197FE38A00D00600 /* Colour */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBAB12481DD40014316D /* Colour.h */,
+				6EF3BBAC12481DD40014316D /* Colour.inl */,
+			);
+			name = Colour;
+			sourceTree = "<group>";
+		};
+		6A88F3DD197FE3A000D00600 /* Box */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBAA12481DD40014316D /* Box.h */,
+				6EF28B78120580DA000FAF17 /* Box.cpp */,
+			);
+			name = Box;
+			sourceTree = "<group>";
+		};
+		6A88F3DE197FE3AD00D00600 /* BaseXMLParser */ = {
 			isa = PBXGroup;
 			children = (
 				6EF3BBA912481DD40014316D /* BaseXMLParser.h */,
-				6EF3BBAA12481DD40014316D /* Box.h */,
-				6EF3BBAB12481DD40014316D /* Colour.h */,
-				6EF3BBAC12481DD40014316D /* Colour.inl */,
-				6EF3BBAD12481DD40014316D /* Context.h */,
-				6EF3BBAE12481DD40014316D /* ContextInstancer.h */,
-				6EF3BBAF12481DD40014316D /* ConvolutionFilter.h */,
-				6EF3BBB012481DD40014316D /* Core.h */,
-				6EF3BBB112481DD40014316D /* Debug.h */,
-				6EF3BBB212481DD40014316D /* Decorator.h */,
-				6EF3BBB312481DD40014316D /* DecoratorInstancer.h */,
-				6EF3BBB412481DD40014316D /* Dictionary.h */,
-				6EF3BBB512481DD40014316D /* Dictionary.inl */,
-				6EF3BBB612481DD40014316D /* Element.h */,
-				6EF3BBB712481DD40014316D /* Element.inl */,
-				6EF3BBB812481DD40014316D /* ElementDocument.h */,
-				6EF3BBB912481DD40014316D /* ElementInstancer.h */,
-				6EF3BBBA12481DD40014316D /* ElementInstancerGeneric.h */,
-				6EF3BBBB12481DD40014316D /* ElementInstancerGeneric.inl */,
-				6EF3BBBC12481DD40014316D /* ElementReference.h */,
-				6EF3BBBD12481DD40014316D /* ElementScroll.h */,
-				6EF3BBBE12481DD40014316D /* ElementText.h */,
-				6EF3BBBF12481DD40014316D /* ElementUtilities.h */,
-				6EF3BBC012481DD40014316D /* Event.h */,
-				6EF3BBC112481DD40014316D /* EventInstancer.h */,
-				6EF3BBC212481DD40014316D /* EventListener.h */,
-				6EF3BBC312481DD40014316D /* EventListenerInstancer.h */,
-				6EF3BBC412481DD40014316D /* Factory.h */,
-				6EF3BBC512481DD40014316D /* FileInterface.h */,
-				6EF3BBC612481DD40014316D /* Font.h */,
-				6EF3BBC712481DD40014316D /* FontDatabase.h */,
-				6EF3BBC812481DD40014316D /* FontEffect.h */,
-				6EF3BBC912481DD40014316D /* FontEffectInstancer.h */,
-				6EF3BBCA12481DD40014316D /* FontGlyph.h */,
-				6EF3BBCB12481DD40014316D /* Geometry.h */,
-				6EF3BBCC12481DD40014316D /* GeometryUtilities.h */,
-				6EF3BBCD12481DD40014316D /* Header.h */,
-				6EF3BBCE12481DD40014316D /* Input.h */,
-				6EF3BBCF12481DD40014316D /* Log.h */,
-				6EF3BBD012481DD40014316D /* Math.h */,
-				6EF3BBD112481DD40014316D /* MathTypes.h */,
-				6EF3BBD212481DD40014316D /* Platform.h */,
-				6EF3BBD312481DD40014316D /* Plugin.h */,
-				6EF3BBD512481DD40014316D /* Pool.inl */,
-				6EF3BBD612481DD40014316D /* Property.h */,
-				6EF3BBD712481DD40014316D /* PropertyDefinition.h */,
-				6EF3BBD812481DD40014316D /* PropertyDictionary.h */,
-				6EF3BBD912481DD40014316D /* PropertyParser.h */,
-				6EF3BBDA12481DD40014316D /* PropertySpecification.h */,
-				6EF3BBE712481DD40014316D /* ReferenceCountable.h */,
-				6EF3BBE812481DD40014316D /* RenderInterface.h */,
-				6EF3BBE912481DD40014316D /* ScriptInterface.h */,
-				6EF3BBEA12481DD40014316D /* Stream.h */,
-				6EF3BBEB12481DD40014316D /* StreamMemory.h */,
-				6EF3BBEC12481DD40014316D /* String.h */,
-				6EF3BBED12481DD40014316D /* StringBase.h */,
-				6EF3BBEE12481DD40014316D /* StringBase.inl */,
-				6EF3BBF012481DD40014316D /* StringUtilities.h */,
-				6EF3BBF112481DD40014316D /* StyleSheet.h */,
-				6EF3BBF212481DD40014316D /* StyleSheetKeywords.h */,
-				6EF3BBF312481DD40014316D /* StyleSheetSpecification.h */,
-				6EF3BBF412481DD40014316D /* SystemInterface.h */,
-				6EF3BBF512481DD40014316D /* Texture.h */,
-				6EF3BBF612481DD40014316D /* TypeConverter.h */,
-				6EF3BBF712481DD40014316D /* TypeConverter.inl */,
-				6EF3BBF812481DD40014316D /* Types.h */,
-				6EF3BBF912481DD40014316D /* URL.h */,
-				6EF3BBFA12481DD40014316D /* Variant.h */,
-				6EF3BBFB12481DD40014316D /* Variant.inl */,
-				6EF3BBFC12481DD40014316D /* Vector2.h */,
-				6EF3BBFD12481DD40014316D /* Vector2.inl */,
-				6EF3BBFE12481DD40014316D /* Vertex.h */,
-				6EF3BBFF12481DD40014316D /* WString.h */,
-				6EF3BC0012481DD40014316D /* XMLNodeHandler.h */,
-				6EF3BC0112481DD40014316D /* XMLParser.h */,
 				6E9D09261209823B00099E1A /* BaseXMLParser.cpp */,
-				6EF28B78120580DA000FAF17 /* Box.cpp */,
-				6EF28D0312058A45000FAF17 /* Clock.cpp */,
+			);
+			name = BaseXMLParser;
+			sourceTree = "<group>";
+		};
+		6A88F3DF197FE3B600D00600 /* Context */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBAD12481DD40014316D /* Context.h */,
 				6EF28D0512058A45000FAF17 /* Context.cpp */,
+			);
+			name = Context;
+			sourceTree = "<group>";
+		};
+		6A88F3E0197FE3C400D00600 /* ContextInstancer */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBAE12481DD40014316D /* ContextInstancer.h */,
 				6EF28D0612058A45000FAF17 /* ContextInstancer.cpp */,
 				6EF28D0712058A45000FAF17 /* ContextInstancerDefault.cpp */,
+			);
+			name = ContextInstancer;
+			sourceTree = "<group>";
+		};
+		6A88F3E1197FE3CE00D00600 /* ConvolutionFilter */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBAF12481DD40014316D /* ConvolutionFilter.h */,
 				6EF28D0912058A45000FAF17 /* ConvolutionFilter.cpp */,
+			);
+			name = ConvolutionFilter;
+			sourceTree = "<group>";
+		};
+		6A88F3E2197FE3D800D00600 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBB012481DD40014316D /* Core.h */,
 				6EF28D0A12058A45000FAF17 /* Core.cpp */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		6A88F3E3197FE3DC00D00600 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBB112481DD40014316D /* Debug.h */,
+			);
+			name = Debug;
+			sourceTree = "<group>";
+		};
+		6A88F3E4197FE3E100D00600 /* Decorator */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBB212481DD40014316D /* Decorator.h */,
 				6EF28D0C12058A45000FAF17 /* Decorator.cpp */,
-				6EF28D0D12058A45000FAF17 /* DecoratorInstancer.cpp */,
 				6EF28D0E12058A45000FAF17 /* DecoratorNone.cpp */,
-				6EF28D1012058A45000FAF17 /* DecoratorNoneInstancer.cpp */,
 				6EF28D1212058A45000FAF17 /* DecoratorTiled.cpp */,
 				6EF28D1412058A45000FAF17 /* DecoratorTiledBox.cpp */,
-				6EF28D1612058A45000FAF17 /* DecoratorTiledBoxInstancer.cpp */,
 				6EF28D1812058A45000FAF17 /* DecoratorTiledHorizontal.cpp */,
-				6EF28D1A12058A45000FAF17 /* DecoratorTiledHorizontalInstancer.cpp */,
 				6EF28D1C12058A45000FAF17 /* DecoratorTiledImage.cpp */,
+				6EF28D2212058A45000FAF17 /* DecoratorTiledVertical.cpp */,
+			);
+			name = Decorator;
+			sourceTree = "<group>";
+		};
+		6A88F3E5197FE3E700D00600 /* DecoratorInstancer */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBB312481DD40014316D /* DecoratorInstancer.h */,
+				6EF28D0D12058A45000FAF17 /* DecoratorInstancer.cpp */,
+				6EF28D1012058A45000FAF17 /* DecoratorNoneInstancer.cpp */,
+				6EF28D1612058A45000FAF17 /* DecoratorTiledBoxInstancer.cpp */,
+				6EF28D1A12058A45000FAF17 /* DecoratorTiledHorizontalInstancer.cpp */,
 				6EF28D1E12058A45000FAF17 /* DecoratorTiledImageInstancer.cpp */,
 				6EF28D2012058A45000FAF17 /* DecoratorTiledInstancer.cpp */,
-				6EF28D2212058A45000FAF17 /* DecoratorTiledVertical.cpp */,
 				6EF28D2412058A45000FAF17 /* DecoratorTiledVerticalInstancer.cpp */,
+			);
+			name = DecoratorInstancer;
+			sourceTree = "<group>";
+		};
+		6A88F3E6197FE3ED00D00600 /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBB412481DD40014316D /* Dictionary.h */,
+				6EF3BBB512481DD40014316D /* Dictionary.inl */,
 				6E9D09271209823B00099E1A /* Dictionary.cpp */,
-				6EF28D2612058A45000FAF17 /* DocumentHeader.cpp */,
+			);
+			name = Dictionary;
+			sourceTree = "<group>";
+		};
+		6A88F3E7197FE3F200D00600 /* Element */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBB612481DD40014316D /* Element.h */,
+				6EF3BBB712481DD40014316D /* Element.inl */,
 				6EF28D2812058A45000FAF17 /* Element.cpp */,
+			);
+			name = Element;
+			sourceTree = "<group>";
+		};
+		6A88F3E8197FE3F700D00600 /* ElementDocument */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBB812481DD40014316D /* ElementDocument.h */,
+				6EF28D3112058A45000FAF17 /* ElementDocument.cpp */,
+			);
+			name = ElementDocument;
+			sourceTree = "<group>";
+		};
+		6A88F3E9197FE40500D00600 /* ElementInstancerGeneric */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBBA12481DD40014316D /* ElementInstancerGeneric.h */,
+				6EF3BBBB12481DD40014316D /* ElementInstancerGeneric.inl */,
+			);
+			name = ElementInstancerGeneric;
+			sourceTree = "<group>";
+		};
+		6A88F3EA197FE40C00D00600 /* ElementReference */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBBC12481DD40014316D /* ElementReference.h */,
+				6EF28D3712058A45000FAF17 /* ElementReference.cpp */,
+			);
+			name = ElementReference;
+			sourceTree = "<group>";
+		};
+		6A88F3EB197FE41200D00600 /* ElementScroll */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBBD12481DD40014316D /* ElementScroll.h */,
+				6EF28D3812058A45000FAF17 /* ElementScroll.cpp */,
+			);
+			name = ElementScroll;
+			sourceTree = "<group>";
+		};
+		6A88F3EC197FE41700D00600 /* ElementText */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBBE12481DD40014316D /* ElementText.h */,
+				6EF28D3B12058A45000FAF17 /* ElementText.cpp */,
+				6EF28D3C12058A45000FAF17 /* ElementTextDefault.cpp */,
+			);
+			name = ElementText;
+			sourceTree = "<group>";
+		};
+		6A88F3ED197FE41C00D00600 /* ElementUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBBF12481DD40014316D /* ElementUtilities.h */,
+				6EF28D3E12058A45000FAF17 /* ElementUtilities.cpp */,
+			);
+			name = ElementUtilities;
+			sourceTree = "<group>";
+		};
+		6A88F3EE197FE43000D00600 /* ElementInstancer */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBB912481DD40014316D /* ElementInstancer.h */,
+				6EF28D3612058A45000FAF17 /* ElementInstancer.cpp */,
+			);
+			name = ElementInstancer;
+			sourceTree = "<group>";
+		};
+		6A88F3EF197FE46200D00600 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBC012481DD40014316D /* Event.h */,
+			);
+			name = Event;
+			sourceTree = "<group>";
+		};
+		6A88F3F0197FE46800D00600 /* EventInstancer */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBC112481DD40014316D /* EventInstancer.h */,
+			);
+			name = EventInstancer;
+			sourceTree = "<group>";
+		};
+		6A88F3F1197FE46D00D00600 /* EventListener */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBC212481DD40014316D /* EventListener.h */,
+			);
+			name = EventListener;
+			sourceTree = "<group>";
+		};
+		6A88F3F2197FE47200D00600 /* EventListenerInstancer */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBC312481DD40014316D /* EventListenerInstancer.h */,
+			);
+			name = EventListenerInstancer;
+			sourceTree = "<group>";
+		};
+		6A88F3F3197FE47800D00600 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBC412481DD40014316D /* Factory.h */,
+			);
+			name = Factory;
+			sourceTree = "<group>";
+		};
+		6A88F3F4197FE47C00D00600 /* FileInterface */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBC512481DD40014316D /* FileInterface.h */,
+			);
+			name = FileInterface;
+			sourceTree = "<group>";
+		};
+		6A88F3F5197FE48200D00600 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBC612481DD40014316D /* Font.h */,
+			);
+			name = Font;
+			sourceTree = "<group>";
+		};
+		6A88F3F6197FE48800D00600 /* ElementStuff */ = {
+			isa = PBXGroup;
+			children = (
+				6A88F3E7197FE3F200D00600 /* Element */,
+				6A88F3E8197FE3F700D00600 /* ElementDocument */,
+				6A88F3EE197FE43000D00600 /* ElementInstancer */,
+				6A88F3E9197FE40500D00600 /* ElementInstancerGeneric */,
+				6A88F3EA197FE40C00D00600 /* ElementReference */,
+				6A88F3EB197FE41200D00600 /* ElementScroll */,
+				6A88F3EC197FE41700D00600 /* ElementText */,
+				6A88F3ED197FE41C00D00600 /* ElementUtilities */,
 				6EF28D2912058A45000FAF17 /* ElementBackground.cpp */,
 				6EF28D2B12058A45000FAF17 /* ElementBorder.cpp */,
 				6EF28D2D12058A45000FAF17 /* ElementDecoration.cpp */,
 				6EF28D2F12058A45000FAF17 /* ElementDefinition.cpp */,
-				6EF28D3112058A45000FAF17 /* ElementDocument.cpp */,
 				6EF28D3212058A45000FAF17 /* ElementHandle.cpp */,
 				6EF28D3412058A45000FAF17 /* ElementImage.cpp */,
-				6EF28D3612058A45000FAF17 /* ElementInstancer.cpp */,
-				6EF28D3712058A45000FAF17 /* ElementReference.cpp */,
-				6EF28D3812058A45000FAF17 /* ElementScroll.cpp */,
 				6EF28D3912058A45000FAF17 /* ElementStyle.cpp */,
-				6EF28D3B12058A45000FAF17 /* ElementText.cpp */,
-				6EF28D3C12058A45000FAF17 /* ElementTextDefault.cpp */,
-				6EF28D3E12058A45000FAF17 /* ElementUtilities.cpp */,
-				6EF28D3F12058A45000FAF17 /* Event.cpp */,
-				6EF28D4012058A45000FAF17 /* EventDispatcher.cpp */,
-				6EF28D4212058A45000FAF17 /* EventInstancer.cpp */,
-				6EF28D4312058A45000FAF17 /* EventInstancerDefault.cpp */,
-				6EF28D4612058A45000FAF17 /* EventListenerInstancer.cpp */,
-				6EF28D4712058A45000FAF17 /* Factory.cpp */,
-				6EF28D4812058A45000FAF17 /* FileInterface.cpp */,
-				6EF28D4912058A45000FAF17 /* FileInterfaceDefault.cpp */,
+			);
+			name = ElementStuff;
+			sourceTree = "<group>";
+		};
+		6A88F3F7197FE49F00D00600 /* FontDatabase */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBC712481DD40014316D /* FontDatabase.h */,
 				6EF28D4B12058A45000FAF17 /* FontDatabase.cpp */,
+			);
+			name = FontDatabase;
+			sourceTree = "<group>";
+		};
+		6A88F3F8197FE4A300D00600 /* FontEffect */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBC812481DD40014316D /* FontEffect.h */,
 				6EF28D4C12058A45000FAF17 /* FontEffect.cpp */,
-				6EF28D4D12058A45000FAF17 /* FontEffectInstancer.cpp */,
 				6EF28D4E12058A45000FAF17 /* FontEffectNone.cpp */,
-				6EF28D5012058A45000FAF17 /* FontEffectNoneInstancer.cpp */,
 				6EF28D5212058A45000FAF17 /* FontEffectOutline.cpp */,
-				6EF28D5412058A45000FAF17 /* FontEffectOutlineInstancer.cpp */,
 				6EF28D5612058A45000FAF17 /* FontEffectShadow.cpp */,
+			);
+			name = FontEffect;
+			sourceTree = "<group>";
+		};
+		6A88F3F9197FE4A900D00600 /* FontEffectInstancer */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBC912481DD40014316D /* FontEffectInstancer.h */,
+				6EF28D4D12058A45000FAF17 /* FontEffectInstancer.cpp */,
+				6EF28D5012058A45000FAF17 /* FontEffectNoneInstancer.cpp */,
+				6EF28D5412058A45000FAF17 /* FontEffectOutlineInstancer.cpp */,
 				6EF28D5812058A45000FAF17 /* FontEffectShadowInstancer.cpp */,
+			);
+			name = FontEffectInstancer;
+			sourceTree = "<group>";
+		};
+		6A88F3FA197FE4AE00D00600 /* FontGlyph */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBCA12481DD40014316D /* FontGlyph.h */,
+			);
+			name = FontGlyph;
+			sourceTree = "<group>";
+		};
+		6A88F3FB197FE4C400D00600 /* EventStuff */ = {
+			isa = PBXGroup;
+			children = (
+				6A88F3EF197FE46200D00600 /* Event */,
+				6A88F3F0197FE46800D00600 /* EventInstancer */,
+				6A88F3F1197FE46D00D00600 /* EventListener */,
+				6A88F3F2197FE47200D00600 /* EventListenerInstancer */,
+			);
+			name = EventStuff;
+			sourceTree = "<group>";
+		};
+		6A88F3FC197FE4D600D00600 /* FontStuff */ = {
+			isa = PBXGroup;
+			children = (
+				6A88F3F5197FE48200D00600 /* Font */,
+				6A88F3F7197FE49F00D00600 /* FontDatabase */,
+				6A88F3F8197FE4A300D00600 /* FontEffect */,
+				6A88F3F9197FE4A900D00600 /* FontEffectInstancer */,
+				6A88F3FA197FE4AE00D00600 /* FontGlyph */,
 				6EF28D5A12058A45000FAF17 /* FontFace.cpp */,
 				6EF28D5C12058A45000FAF17 /* FontFaceHandle.cpp */,
 				6EF28D5E12058A45000FAF17 /* FontFaceLayer.cpp */,
 				6EF28D6012058A45000FAF17 /* FontFamily.cpp */,
-				6EF28D6212058A45000FAF17 /* Geometry.cpp */,
-				6EF28D6312058A45000FAF17 /* GeometryDatabase.cpp */,
-				6EF28D6512058A45000FAF17 /* GeometryUtilities.cpp */,
-				6EF28D6612058A45000FAF17 /* LayoutBlockBox.cpp */,
-				6EF28D6812058A45000FAF17 /* LayoutBlockBoxSpace.cpp */,
-				6EF28D6A12058A45000FAF17 /* LayoutEngine.cpp */,
-				6EF28D6C12058A45000FAF17 /* LayoutInlineBox.cpp */,
-				6EF28D6E12058A45000FAF17 /* LayoutInlineBoxText.cpp */,
-				6EF28D7012058A45000FAF17 /* LayoutLineBox.cpp */,
-				6EF28D7212058A45000FAF17 /* Log.cpp */,
-				6E9D09771209858B00099E1A /* Math.cpp */,
-				6EF28D7312058A45000FAF17 /* Plugin.cpp */,
-				6EF28D7412058A45000FAF17 /* PluginRegistry.cpp */,
+			);
+			name = FontStuff;
+			sourceTree = "<group>";
+		};
+		6A88F3FD197FE4F300D00600 /* Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBCB12481DD40014316D /* Geometry.h */,
+			);
+			name = Geometry;
+			sourceTree = "<group>";
+		};
+		6A88F3FE197FE4F900D00600 /* GeometryUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBCC12481DD40014316D /* GeometryUtilities.h */,
+			);
+			name = GeometryUtilities;
+			sourceTree = "<group>";
+		};
+		6A88F3FF197FE50600D00600 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBCE12481DD40014316D /* Input.h */,
+			);
+			name = Input;
+			sourceTree = "<group>";
+		};
+		6A88F400197FE50B00D00600 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBCF12481DD40014316D /* Log.h */,
+			);
+			name = Log;
+			sourceTree = "<group>";
+		};
+		6A88F401197FE51000D00600 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBD012481DD40014316D /* Math.h */,
+			);
+			name = Math;
+			sourceTree = "<group>";
+		};
+		6A88F402197FE51500D00600 /* MathTypes */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBD112481DD40014316D /* MathTypes.h */,
+			);
+			name = MathTypes;
+			sourceTree = "<group>";
+		};
+		6A88F404197FE51F00D00600 /* Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBD312481DD40014316D /* Plugin.h */,
+			);
+			name = Plugin;
+			sourceTree = "<group>";
+		};
+		6A88F405197FE52300D00600 /* Pool */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBD512481DD40014316D /* Pool.inl */,
+			);
+			name = Pool;
+			sourceTree = "<group>";
+		};
+		6A88F406197FE52800D00600 /* Property */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBD612481DD40014316D /* Property.h */,
+			);
+			name = Property;
+			sourceTree = "<group>";
+		};
+		6A88F407197FE52C00D00600 /* PropertyDefinition */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBD712481DD40014316D /* PropertyDefinition.h */,
+			);
+			name = PropertyDefinition;
+			sourceTree = "<group>";
+		};
+		6A88F408197FE53200D00600 /* PropertyDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBD812481DD40014316D /* PropertyDictionary.h */,
+			);
+			name = PropertyDictionary;
+			sourceTree = "<group>";
+		};
+		6A88F409197FE54200D00600 /* PropertyParser */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBD912481DD40014316D /* PropertyParser.h */,
+			);
+			name = PropertyParser;
+			sourceTree = "<group>";
+		};
+		6A88F40A197FE54700D00600 /* PropertySpecification */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBDA12481DD40014316D /* PropertySpecification.h */,
+			);
+			name = PropertySpecification;
+			sourceTree = "<group>";
+		};
+		6A88F40B197FE54D00D00600 /* ReferenceCountable */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBE712481DD40014316D /* ReferenceCountable.h */,
+			);
+			name = ReferenceCountable;
+			sourceTree = "<group>";
+		};
+		6A88F40C197FE55500D00600 /* RenderInterface */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBE812481DD40014316D /* RenderInterface.h */,
+			);
+			name = RenderInterface;
+			sourceTree = "<group>";
+		};
+		6A88F40D197FE55900D00600 /* ScriptInterface */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBE912481DD40014316D /* ScriptInterface.h */,
+			);
+			name = ScriptInterface;
+			sourceTree = "<group>";
+		};
+		6A88F40E197FE55E00D00600 /* Stream */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBEA12481DD40014316D /* Stream.h */,
+			);
+			name = Stream;
+			sourceTree = "<group>";
+		};
+		6A88F40F197FE56200D00600 /* StreamMemory */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBEB12481DD40014316D /* StreamMemory.h */,
+			);
+			name = StreamMemory;
+			sourceTree = "<group>";
+		};
+		6A88F410197FE56800D00600 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBEC12481DD40014316D /* String.h */,
+			);
+			name = String;
+			sourceTree = "<group>";
+		};
+		6A88F411197FE56D00D00600 /* StringBase */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBED12481DD40014316D /* StringBase.h */,
+				6EF3BBEE12481DD40014316D /* StringBase.inl */,
+			);
+			name = StringBase;
+			sourceTree = "<group>";
+		};
+		6A88F412197FE5B800D00600 /* StringUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBF012481DD40014316D /* StringUtilities.h */,
+			);
+			name = StringUtilities;
+			sourceTree = "<group>";
+		};
+		6A88F413197FE5C200D00600 /* StyleSheet */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBF112481DD40014316D /* StyleSheet.h */,
+			);
+			name = StyleSheet;
+			sourceTree = "<group>";
+		};
+		6A88F414197FE5C500D00600 /* StyleSheetKeywords */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBF212481DD40014316D /* StyleSheetKeywords.h */,
+			);
+			name = StyleSheetKeywords;
+			sourceTree = "<group>";
+		};
+		6A88F415197FE5CA00D00600 /* StyleSheetSpecification */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBF312481DD40014316D /* StyleSheetSpecification.h */,
+			);
+			name = StyleSheetSpecification;
+			sourceTree = "<group>";
+		};
+		6A88F416197FE5CF00D00600 /* SystemInterface */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBF412481DD40014316D /* SystemInterface.h */,
+			);
+			name = SystemInterface;
+			sourceTree = "<group>";
+		};
+		6A88F417197FE5D300D00600 /* Texture */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBF512481DD40014316D /* Texture.h */,
+				6EF28E0D12058A45000FAF17 /* Texture.cpp */,
+				6EF28E0E12058A45000FAF17 /* TextureDatabase.cpp */,
+				6EF28E1012058A45000FAF17 /* TextureLayout.cpp */,
+				6EF28E1212058A45000FAF17 /* TextureLayoutRectangle.cpp */,
+				6EF28E1412058A45000FAF17 /* TextureLayoutRow.cpp */,
+				6EF28E1612058A45000FAF17 /* TextureLayoutTexture.cpp */,
+				6EF28E1812058A45000FAF17 /* TextureResource.cpp */,
+			);
+			name = Texture;
+			sourceTree = "<group>";
+		};
+		6A88F418197FE5D700D00600 /* TypeConverter */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBF612481DD40014316D /* TypeConverter.h */,
+				6EF3BBF712481DD40014316D /* TypeConverter.inl */,
+			);
+			name = TypeConverter;
+			sourceTree = "<group>";
+		};
+		6A88F419197FE5DC00D00600 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBF812481DD40014316D /* Types.h */,
+			);
+			name = Types;
+			sourceTree = "<group>";
+		};
+		6A88F41A197FE5E200D00600 /* URL */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBF912481DD40014316D /* URL.h */,
+				6E9D092B1209823B00099E1A /* URL.cpp */,
+			);
+			name = URL;
+			sourceTree = "<group>";
+		};
+		6A88F41B197FE5E500D00600 /* Variant */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBFA12481DD40014316D /* Variant.h */,
+				6EF3BBFB12481DD40014316D /* Variant.inl */,
+			);
+			name = Variant;
+			sourceTree = "<group>";
+		};
+		6A88F41C197FE5EA00D00600 /* Vector2 */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBFC12481DD40014316D /* Vector2.h */,
+				6EF3BBFD12481DD40014316D /* Vector2.inl */,
+			);
+			name = Vector2;
+			sourceTree = "<group>";
+		};
+		6A88F41D197FE5ED00D00600 /* Vertex */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBFE12481DD40014316D /* Vertex.h */,
+			);
+			name = Vertex;
+			sourceTree = "<group>";
+		};
+		6A88F41E197FE5F100D00600 /* WString */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBFF12481DD40014316D /* WString.h */,
+			);
+			name = WString;
+			sourceTree = "<group>";
+		};
+		6A88F41F197FE5F500D00600 /* XMLNodeHandler */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BC0012481DD40014316D /* XMLNodeHandler.h */,
+				6EF28E2412058A45000FAF17 /* XMLNodeHandlerBody.cpp */,
+				6EF28E2612058A45000FAF17 /* XMLNodeHandlerDefault.cpp */,
+				6EF28E2812058A45000FAF17 /* XMLNodeHandlerHead.cpp */,
+				6EF28E2A12058A45000FAF17 /* XMLNodeHandlerTemplate.cpp */,
+				6EF28E2312058A45000FAF17 /* XMLNodeHandler.cpp */,
+			);
+			name = XMLNodeHandler;
+			sourceTree = "<group>";
+		};
+		6A88F420197FE5F900D00600 /* XMLParser */ = {
+			isa = PBXGroup;
+			children = (
+				6A88F41F197FE5F500D00600 /* XMLNodeHandler */,
+				6EF3BC0112481DD40014316D /* XMLParser.h */,
+				6EF28E2C12058A45000FAF17 /* XMLParser.cpp */,
+				6EF28E2D12058A45000FAF17 /* XMLParseTools.cpp */,
+			);
+			name = XMLParser;
+			sourceTree = "<group>";
+		};
+		6A88F421197FE64E00D00600 /* PropertyStuff */ = {
+			isa = PBXGroup;
+			children = (
+				6A88F406197FE52800D00600 /* Property */,
+				6A88F407197FE52C00D00600 /* PropertyDefinition */,
+				6A88F408197FE53200D00600 /* PropertyDictionary */,
+				6A88F409197FE54200D00600 /* PropertyParser */,
+				6A88F40A197FE54700D00600 /* PropertySpecification */,
 				6EF28D7812058A45000FAF17 /* Property.cpp */,
 				6EF28D7912058A45000FAF17 /* PropertyDefinition.cpp */,
 				6EF28D7A12058A45000FAF17 /* PropertyDictionary.cpp */,
@@ -1039,14 +1528,31 @@
 				6EF28D7F12058A45000FAF17 /* PropertyParserNumber.cpp */,
 				6EF28D8112058A45000FAF17 /* PropertyParserString.cpp */,
 				6EF28D8412058A45000FAF17 /* PropertySpecification.cpp */,
-				6E9D0987120986B600099E1A /* ReferenceCountable.cpp */,
-				6EF28DE212058A45000FAF17 /* RenderInterface.cpp */,
-				6E9D09281209823B00099E1A /* Stream.cpp */,
-				6EF28DE312058A45000FAF17 /* StreamFile.cpp */,
-				6E9D09291209823B00099E1A /* StreamMemory.cpp */,
+			);
+			name = PropertyStuff;
+			sourceTree = "<group>";
+		};
+		6A88F422197FE66600D00600 /* StringStuff */ = {
+			isa = PBXGroup;
+			children = (
+				6A88F410197FE56800D00600 /* String */,
+				6A88F411197FE56D00D00600 /* StringBase */,
+				6A88F412197FE5B800D00600 /* StringUtilities */,
+				6A88F41E197FE5F100D00600 /* WString */,
 				6E9D099B1209878A00099E1A /* String.cpp */,
 				6EF28DE612058A45000FAF17 /* StringCache.cpp */,
 				6E9D092A1209823B00099E1A /* StringUtilities.cpp */,
+				6EF28DE512058A45000FAF17 /* WString.cpp */,
+			);
+			name = StringStuff;
+			sourceTree = "<group>";
+		};
+		6A88F423197FE67400D00600 /* StyleSheetStuff */ = {
+			isa = PBXGroup;
+			children = (
+				6A88F413197FE5C200D00600 /* StyleSheet */,
+				6A88F414197FE5C500D00600 /* StyleSheetKeywords */,
+				6A88F415197FE5CA00D00600 /* StyleSheetSpecification */,
 				6EF28DE812058A45000FAF17 /* StyleSheet.cpp */,
 				6EF28DE912058A45000FAF17 /* StyleSheetFactory.cpp */,
 				6EF28DEB12058A45000FAF17 /* StyleSheetNode.cpp */,
@@ -1064,29 +1570,91 @@
 				6EF28E0312058A45000FAF17 /* StyleSheetNodeSelectorOnlyOfType.cpp */,
 				6EF28E0512058A45000FAF17 /* StyleSheetParser.cpp */,
 				6EF28E0712058A45000FAF17 /* StyleSheetSpecification.cpp */,
+			);
+			name = StyleSheetStuff;
+			sourceTree = "<group>";
+		};
+		6E8B1BD8123AABCD00C451C8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				6EF3BBCD12481DD40014316D /* Header.h */,
+				6EF3BBD212481DD40014316D /* Platform.h */,
+				6A88F3DE197FE3AD00D00600 /* BaseXMLParser */,
+				6A88F3DD197FE3A000D00600 /* Box */,
+				6A88F3DC197FE38A00D00600 /* Colour */,
+				6A88F3DF197FE3B600D00600 /* Context */,
+				6A88F3E0197FE3C400D00600 /* ContextInstancer */,
+				6A88F3E1197FE3CE00D00600 /* ConvolutionFilter */,
+				6A88F3E2197FE3D800D00600 /* Core */,
+				6A88F3E3197FE3DC00D00600 /* Debug */,
+				6A88F3E4197FE3E100D00600 /* Decorator */,
+				6A88F3E5197FE3E700D00600 /* DecoratorInstancer */,
+				6A88F3E6197FE3ED00D00600 /* Dictionary */,
+				6A88F3F6197FE48800D00600 /* ElementStuff */,
+				6A88F3FB197FE4C400D00600 /* EventStuff */,
+				6A88F3F3197FE47800D00600 /* Factory */,
+				6A88F3F4197FE47C00D00600 /* FileInterface */,
+				6A88F3FC197FE4D600D00600 /* FontStuff */,
+				6A88F3FD197FE4F300D00600 /* Geometry */,
+				6A88F3FE197FE4F900D00600 /* GeometryUtilities */,
+				6A88F3FF197FE50600D00600 /* Input */,
+				6A88F400197FE50B00D00600 /* Log */,
+				6A88F401197FE51000D00600 /* Math */,
+				6A88F402197FE51500D00600 /* MathTypes */,
+				6A88F404197FE51F00D00600 /* Plugin */,
+				6A88F405197FE52300D00600 /* Pool */,
+				6A88F421197FE64E00D00600 /* PropertyStuff */,
+				6A88F40B197FE54D00D00600 /* ReferenceCountable */,
+				6A88F40C197FE55500D00600 /* RenderInterface */,
+				6A88F40D197FE55900D00600 /* ScriptInterface */,
+				6A88F40E197FE55E00D00600 /* Stream */,
+				6A88F40F197FE56200D00600 /* StreamMemory */,
+				6A88F422197FE66600D00600 /* StringStuff */,
+				6A88F423197FE67400D00600 /* StyleSheetStuff */,
+				6A88F416197FE5CF00D00600 /* SystemInterface */,
+				6A88F417197FE5D300D00600 /* Texture */,
+				6A88F418197FE5D700D00600 /* TypeConverter */,
+				6A88F419197FE5DC00D00600 /* Types */,
+				6A88F41A197FE5E200D00600 /* URL */,
+				6A88F41B197FE5E500D00600 /* Variant */,
+				6A88F41C197FE5EA00D00600 /* Vector2 */,
+				6A88F41D197FE5ED00D00600 /* Vertex */,
+				6A88F420197FE5F900D00600 /* XMLParser */,
+				6EF28D0312058A45000FAF17 /* Clock.cpp */,
+				6EF28D2612058A45000FAF17 /* DocumentHeader.cpp */,
+				6EF28D3F12058A45000FAF17 /* Event.cpp */,
+				6EF28D4012058A45000FAF17 /* EventDispatcher.cpp */,
+				6EF28D4212058A45000FAF17 /* EventInstancer.cpp */,
+				6EF28D4312058A45000FAF17 /* EventInstancerDefault.cpp */,
+				6EF28D4612058A45000FAF17 /* EventListenerInstancer.cpp */,
+				6EF28D4712058A45000FAF17 /* Factory.cpp */,
+				6EF28D4812058A45000FAF17 /* FileInterface.cpp */,
+				6EF28D4912058A45000FAF17 /* FileInterfaceDefault.cpp */,
+				6EF28D6212058A45000FAF17 /* Geometry.cpp */,
+				6EF28D6312058A45000FAF17 /* GeometryDatabase.cpp */,
+				6EF28D6512058A45000FAF17 /* GeometryUtilities.cpp */,
+				6EF28D6612058A45000FAF17 /* LayoutBlockBox.cpp */,
+				6EF28D6812058A45000FAF17 /* LayoutBlockBoxSpace.cpp */,
+				6EF28D6A12058A45000FAF17 /* LayoutEngine.cpp */,
+				6EF28D6C12058A45000FAF17 /* LayoutInlineBox.cpp */,
+				6EF28D6E12058A45000FAF17 /* LayoutInlineBoxText.cpp */,
+				6EF28D7012058A45000FAF17 /* LayoutLineBox.cpp */,
+				6EF28D7212058A45000FAF17 /* Log.cpp */,
+				6E9D09771209858B00099E1A /* Math.cpp */,
+				6EF28D7312058A45000FAF17 /* Plugin.cpp */,
+				6EF28D7412058A45000FAF17 /* PluginRegistry.cpp */,
+				6E9D0987120986B600099E1A /* ReferenceCountable.cpp */,
+				6EF28DE212058A45000FAF17 /* RenderInterface.cpp */,
+				6E9D09281209823B00099E1A /* Stream.cpp */,
+				6EF28DE312058A45000FAF17 /* StreamFile.cpp */,
+				6E9D09291209823B00099E1A /* StreamMemory.cpp */,
 				6EF28E0812058A45000FAF17 /* SystemInterface.cpp */,
 				6EF28E0912058A45000FAF17 /* Template.cpp */,
 				6EF28E0B12058A45000FAF17 /* TemplateCache.cpp */,
-				6EF28E0D12058A45000FAF17 /* Texture.cpp */,
-				6EF28E0E12058A45000FAF17 /* TextureDatabase.cpp */,
-				6EF28E1012058A45000FAF17 /* TextureLayout.cpp */,
-				6EF28E1212058A45000FAF17 /* TextureLayoutRectangle.cpp */,
-				6EF28E1412058A45000FAF17 /* TextureLayoutRow.cpp */,
-				6EF28E1612058A45000FAF17 /* TextureLayoutTexture.cpp */,
-				6EF28E1812058A45000FAF17 /* TextureResource.cpp */,
 				6EF28E1D12058A45000FAF17 /* UnicodeRange.cpp */,
-				6E9D092B1209823B00099E1A /* URL.cpp */,
 				6E9D092C1209823B00099E1A /* Variant.cpp */,
 				6EF28E1F12058A45000FAF17 /* WidgetSlider.cpp */,
 				6EF28E2112058A45000FAF17 /* WidgetSliderScroll.cpp */,
-				6EF28DE512058A45000FAF17 /* WString.cpp */,
-				6EF28E2312058A45000FAF17 /* XMLNodeHandler.cpp */,
-				6EF28E2412058A45000FAF17 /* XMLNodeHandlerBody.cpp */,
-				6EF28E2612058A45000FAF17 /* XMLNodeHandlerDefault.cpp */,
-				6EF28E2812058A45000FAF17 /* XMLNodeHandlerHead.cpp */,
-				6EF28E2A12058A45000FAF17 /* XMLNodeHandlerTemplate.cpp */,
-				6EF28E2C12058A45000FAF17 /* XMLParser.cpp */,
-				6EF28E2D12058A45000FAF17 /* XMLParseTools.cpp */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -1470,6 +2038,8 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "Rocket" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;

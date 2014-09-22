@@ -49,16 +49,12 @@ typedef unsigned int InterfaceID;
 template< InterfaceID Tiid, typename TSuper> struct TInterface : public TSuper
 {
 	static const InterfaceID s_interfaceID = Tiid;
-	virtual void GetInterface( InterfaceID _iid, void** pReturn )
+	virtual void* GetInterface( InterfaceID _iid)
 	{
-		switch(_iid)
-		{
-		case Tiid:
-			*pReturn= this;
-			break;
-		default:
-			TSuper::GetInterface(_iid, pReturn);
-		}
+        if (_iid == Tiid)
+            return this;
+        
+        return TSuper::GetInterface(_iid);
 	}
 };
 
@@ -69,21 +65,17 @@ struct IObject
 {
 	static const InterfaceID s_interfaceID = IID_IOBJECT;
 
-	virtual void GetInterface( InterfaceID iid, void** pReturn )
+	virtual void* GetInterface(InterfaceID iid)
 	{
-		switch( iid )
-		{
-		case IID_IOBJECT:
-			*pReturn = this;
-			break;
-		default:
-			*pReturn = NULL;
-		}
+		if (iid == IID_IOBJECT)
+			return this;
+		return NULL;
 	}
 
-	template< typename T> void GetInterface( T** pReturn )
+	template<typename T> T* GetInterface()
 	{
-		GetInterface( T::s_interfaceID, (void**)pReturn );
+        T* interface = (T*)GetInterface(T::s_interfaceID);
+		return interface;
 	}
 
 

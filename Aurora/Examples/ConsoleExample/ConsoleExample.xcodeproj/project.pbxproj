@@ -200,6 +200,7 @@
 		91A171D9161B175E004B5954 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				HEADER_SEARCH_PATHS = ../../External/boost;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -214,6 +215,7 @@
 		91A171DA161B175E004B5954 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				HEADER_SEARCH_PATHS = ../../External/boost;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

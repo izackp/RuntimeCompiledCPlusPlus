@@ -59,6 +59,7 @@ private:
 	IUpdateable* 			m_pUpdateable;
 	ObjectId	   			m_ObjectId;
 
+    void CheckObjectFactoriesForUpdatableContructor();
 };
 
 #endif // CONSOLEGAME_INCLUDED

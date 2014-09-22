@@ -388,15 +388,18 @@ bool RuntimeObjectSystem::LoadCompiledModule()
 #endif
 	if (!pPerModuleInterfaceProcAdd)
 	{
-		if (m_pCompilerLogger) { m_pCompilerLogger->LogError( "Failed GetProcAddress\n"); }
+		if (m_pCompilerLogger)
+            m_pCompilerLogger->LogError( "Failed GetProcAddress\n");
 		return false;
 	}
 
     pPerModuleInterfaceProcAdd()->SetModuleFileName( m_CurrentlyCompilingModuleName.c_str() );
-    pPerModuleInterfaceProcAdd( )->SetProjectIdForAllConstructors( m_CurrentlyBuildingProject );
+    pPerModuleInterfaceProcAdd()->SetProjectIdForAllConstructors( m_CurrentlyBuildingProject );
     m_Modules.push_back( module );
 
-	if (m_pCompilerLogger) { m_pCompilerLogger->LogInfo( "Compilation Succeeded\n"); }
+	if (m_pCompilerLogger)
+        m_pCompilerLogger->LogInfo( "Compilation Succeeded\n");
+    
     ++m_TotalLoadedModulesEver;
 
 	SetupObjectConstructors(pPerModuleInterfaceProcAdd());
