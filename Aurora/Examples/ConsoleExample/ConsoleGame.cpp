@@ -105,26 +105,27 @@ bool ConsoleGame::Init()
         m_pRuntimeObjectSystem = NULL;
         return false;
     }
-	m_pRuntimeObjectSystem->GetObjectFactorySystem()->AddListener(this);
+    m_pRuntimeObjectSystem->GetObjectFactorySystem()->AddListener(this);
 
+	return ConstructAnObject();
+}
 
-	// construct first object
-	IObjectConstructor* pCtor = m_pRuntimeObjectSystem->GetObjectFactorySystem()->GetConstructor( "RuntimeObject01" );
-	if (pCtor)
-	{
-		IObject* pObj = pCtor->Construct(); //Comes out as TActual<RuntimeObject01> *
-		m_pUpdateable = pObj->GetInterface<IUpdateable>();//Also Comes out as TActual<RuntimeObject01> *
-		if (m_pUpdateable == 0)
-		{
-			delete pObj;
-			m_pCompilerLogger->LogError("Error - no updateable interface found\n");
-			return false;
-		}
-		m_ObjectId = pObj->GetObjectId();
-
-	}
-
-	return true;
+bool ConsoleGame::ConstructAnObject() {
+    // construct first object
+    IObjectConstructor* pCtor = m_pRuntimeObjectSystem->GetObjectFactorySystem()->GetConstructor( "RuntimeObject01" );
+    if (pCtor == NULL)
+        return false;
+    
+    IObject* pObj = pCtor->Construct(); //Comes out as TActual<RuntimeObject01> *
+    m_pUpdateable = pObj->GetInterface<IUpdateable>();//Also Comes out as TActual<RuntimeObject01> *
+    if (m_pUpdateable == 0)
+    {
+        delete pObj;
+        m_pCompilerLogger->LogError("Error - no updateable interface found\n");
+        return false;
+    }
+    m_ObjectId = pObj->GetObjectId();
+    return true;
 }
 
 void ConsoleGame::OnConstructorsAdded()

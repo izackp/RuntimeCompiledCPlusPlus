@@ -59,6 +59,7 @@ private:
 	IUpdateable* 			m_pUpdateable;
 	ObjectId	   			m_ObjectId;
 
+    bool ConstructAnObject();
     void CheckObjectFactoriesForUpdatableContructor();
 };
 
