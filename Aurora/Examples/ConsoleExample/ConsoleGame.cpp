@@ -117,7 +117,7 @@ bool ConsoleGame::ConstructAnObject() {
         return false;
     
     IObject* pObj = pCtor->Construct(); //Comes out as TActual<RuntimeObject01> *
-    m_pUpdateable = pObj->GetInterface<IUpdateable>();//Also Comes out as TActual<RuntimeObject01> *
+	m_pUpdateable = (IUpdateable*)pObj;
     if (m_pUpdateable == 0)
     {
         delete pObj;
@@ -128,27 +128,28 @@ bool ConsoleGame::ConstructAnObject() {
     return true;
 }
 
+//TODO: not the best call back name? 
+// This method is used to reload all of the live objects; nothing in the callback name implies that this should be used for that
 void ConsoleGame::OnConstructorsAdded()
 {
 	// This could have resulted in a change of object pointer, so release old and get new one.
 	if (m_pUpdateable == NULL)
         return;
 
-    CheckObjectFactoriesForUpdatableContructor();
+	ReloadLiveObject();
 }
 
-void ConsoleGame::CheckObjectFactoriesForUpdatableContructor() {
+void ConsoleGame::ReloadLiveObject() {
     IObject* pObj = m_pRuntimeObjectSystem->GetObjectFactorySystem()->GetObject(m_ObjectId);
     if (pObj == NULL)
         return;
     
-    m_pUpdateable = pObj->GetInterface<IUpdateable>();
-    delete pObj;
-    
-    if (m_pUpdateable != NULL)
-        return;
-    
-    m_pCompilerLogger->LogError("Error - no updateable interface found\n");
+	m_pUpdateable = dynamic_cast<IUpdateable*>(pObj);
+	if (m_pUpdateable == NULL)
+	{
+		delete pObj;
+		m_pCompilerLogger->LogError("Error - no updateable interface found\n");
+	}
 }
 
 bool ConsoleGame::MainLoop()
