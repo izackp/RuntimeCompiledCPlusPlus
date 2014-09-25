@@ -34,7 +34,6 @@ if(UNIX)
 endif()
 
 if(BUILD_EXAMPLES)
-
 	#
 	# ConsoleExample
 	#
@@ -119,22 +118,5 @@ if(BUILD_EXAMPLES)
 		External/libRocket/Include
 		External/assimp/include
 	)
-	if(WIN32)
-		add_executable(SimpleTest WIN32 ${SimpleTest_SRCS})
-	else()
-		add_executable(SimpleTest ${SimpleTest_SRCS})
-	endif()
-	target_link_libraries(SimpleTest 
-			RuntimeCompiler 
-			RuntimeObjectSystem 
-			Renderer
-			Systems
-			RocketCore 
-			RocketControls 
-			RocketDebugger
-			${OPENGL_LIBRARIES} 
-			${GLFW_LIBRARIES}
-			${ASSIMP_LIBRARIES}
-		)
 	
 endif()

@@ -46,7 +46,8 @@ if(BUILD_EXAMPLES)
 	#
 	# ConsoleExample Source
 	#
-	aux_source_directory(Examples/ConsoleExample ConsoleExample_SRCS)
+	#aux_source_directory(Examples/ConsoleExample ConsoleExample_SRCS)
+	file(GLOB_RECURSE ConsoleExample_SRCS "Examples/ConsoleExample/*.cpp")
 	#
 	# SimpleTest Source
 	#
