@@ -34,7 +34,7 @@
 
 struct ISimpleSerializer;
 class ObjectFactorySystem;
-
+/*
 // IIDs
 enum InterfaceIDEnum
 {
@@ -56,13 +56,14 @@ template< InterfaceID Tiid, typename TSuper> struct TInterface : public TSuper
         
         return TSuper::GetInterface(_iid);
 	}
-};
+};*/
 
 // IObject itself below is a special case as the base class
 // Also it doesn't hurt to have it coded up explicitly for reference
 
 struct IObject
 {
+	/*
 	static const InterfaceID s_interfaceID = IID_IOBJECT;
 
 	virtual void* GetInterface(InterfaceID iid)
@@ -77,7 +78,7 @@ struct IObject
         T* interface = (T*)GetInterface(T::s_interfaceID);
 		return interface;
 	}
-
+	*/
 
 	IObject() : _isRuntimeDelete(false) {}
 	virtual ~IObject()

@@ -60,7 +60,7 @@ private:
 	ObjectId	   			m_ObjectId;
 
     bool ConstructAnObject();
-    void CheckObjectFactoriesForUpdatableContructor();
+	void ReloadLiveObject();
 };
 
 #endif // CONSOLEGAME_INCLUDED

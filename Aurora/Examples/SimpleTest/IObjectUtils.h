@@ -87,7 +87,7 @@ struct IObjectUtils
 
 		IAUEntity* pEntity = pEntitySystem->Get( id );
 		IEntityObject* pBase( 0 );
-		pObj->GetInterface( IID_IENTITYOBJECT, (void**)&pBase );
+		pBase = (IEntityObject*)pObj;
 		if( pBase )
 		{
 			pBase->SetEntity( pEntity );
