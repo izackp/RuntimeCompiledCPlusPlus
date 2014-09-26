@@ -64,7 +64,7 @@ namespace FW
 		void removeWatch(WatchID watchid);
 
 		/// Updates the watcher. Must be called often.
-		void update();
+		void scanEvents();
 
 		/// Handles the action
 		void handleAction(WatchStruct* watch, const String& filename, unsigned long action);

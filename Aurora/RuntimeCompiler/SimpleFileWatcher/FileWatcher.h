@@ -58,7 +58,6 @@ namespace FW
 			Add = 1,
 			/// Sent when a file is deleted or renamed
 			Delete = 2,
-			/// Sent when a file is modified
 			Modified = 4
 		};
 	};
@@ -95,10 +94,9 @@ namespace FW
 		void update();
 
 	private:
-		/// The implementation
 		FileWatcherImpl* mImpl;
 
-	};//end FileWatcher
+	};
 
 
 	/// Basic interface for listening for file events.
@@ -116,8 +114,8 @@ namespace FW
 		/// @param action Action that was performed
 		virtual void handleFileAction(WatchID watchid, const String& dir, const String& filename, Action action) = 0;
 
-	};//class FileWatchListener
+	};
 
-};//namespace FW
+};
 
-#endif//_FW_FILEWATCHER_H_
+#endif

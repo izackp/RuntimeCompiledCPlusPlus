@@ -24,8 +24,6 @@
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	THE SOFTWARE.
 */
-#ifndef _FW_FILEWATCHERIMPL_H_
-#define _FW_FILEWATCHERIMPL_H_
 #pragma once
 
 #include "FileWatcher.h"
@@ -49,30 +47,24 @@ namespace FW
 	class FileWatcherImpl
 	{
 	public:
-		///
-		///
 		FileWatcherImpl() {}
 
-		///
-		///
 		virtual ~FileWatcherImpl() {}
 
 		/// Add a directory watch
 		virtual WatchID addWatch(const String& directory, FileWatchListener* watcher, bool recursive) = 0;
 
-		/// Remove a directory watch. This is a brute force lazy search O(nlogn).
+		/// Remove a directory watch. O(nlogn).
 		virtual void removeWatch(const String& directory) = 0;
 
-		/// Remove a directory watch. This is a map lookup O(logn).
+		/// Remove a directory watch. O(logn).
 		virtual void removeWatch(WatchID watchid) = 0;
 
 		/// Updates the watcher. Must be called often.
-		virtual void update() = 0;
+		virtual void scanEvents() = 0;
 
 		/// Handles the action
 		virtual void handleAction(WatchStruct* watch, const String& filename, unsigned long action) = 0;
 
-	};//end FileWatcherImpl
-};//namespace FW
-
-#endif//_FW_FILEWATCHERIMPL_H_
+	};
+};

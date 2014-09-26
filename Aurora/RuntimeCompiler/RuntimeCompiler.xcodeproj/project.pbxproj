@@ -89,8 +89,8 @@
 		91CDEF9E1619F0E30061B76E /* SimpleFileWatcher */ = {
 			isa = PBXGroup;
 			children = (
-				91CDEF881619F0D70061B76E /* FileWatcher.cpp */,
 				91CDEF891619F0D70061B76E /* FileWatcher.h */,
+				91CDEF881619F0D70061B76E /* FileWatcher.cpp */,
 				91CDEF8A1619F0D70061B76E /* FileWatcherImpl.h */,
 				91CDEF8B1619F0D70061B76E /* FileWatcherOSX.cpp */,
 				91CDEF8C1619F0D70061B76E /* FileWatcherOSX.h */,
