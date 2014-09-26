@@ -32,8 +32,7 @@ int _getche();
 struct IUpdateable;
 struct IRuntimeObjectSystem;
 
-class ConsoleGame : public IObjectFactoryListener
-{
+class ConsoleGame : public IObjectFactoryListener {
 public:
 	ConsoleGame();
 	virtual ~ConsoleGame();

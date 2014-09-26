@@ -35,27 +35,23 @@
 
 
 struct ISerializedValue {
-	virtual ~ISerializedValue()
-	{
+	virtual ~ISerializedValue() {
 	}
 };
 
 template <typename T>
-struct SerializedValue : ISerializedValue
-{
+struct SerializedValue : ISerializedValue {
 	// NOTE: this requires value being serialized to have a correct copy constructor that
 	// will copy all values that would otherwise be deleted when object being serialized
 	// is deleted	
-	SerializedValue(const T& value) : value(value)
-	{
+	SerializedValue(const T& value) : value(value) {
 	}
 
 	const T value;
 };
 
 
-struct ISimpleSerializer
-{
+struct ISimpleSerializer {
 	virtual void Clear() = 0;
 	virtual void Clear(ObjectId ownerId) = 0;
 	virtual void Clear(ObjectId ownerId, const char* propertyName) = 0;
@@ -69,9 +65,9 @@ struct ISimpleSerializer
 	// Array of T version of SerializeProperty
 	// Stores a copy of the value when loading is false
 	// Returns true on successful property load, or always when saving a value
-	template <typename T, size_t N> bool SerializeProperty(const char* propertyName, T (&arrayIn)[N] );
+	template <typename T, size_t N> bool SerializeProperty(const char* propertyName, T (&arrayIn)[N]);
  
-    virtual ~ISimpleSerializer( ) {}
+    virtual ~ISimpleSerializer() {}
 private:
 	// Implementation requires backing the following functions with keyed storage
     // pValue should be deleted by implementation in destructor.
@@ -85,10 +81,8 @@ private:
 // but allows for user code to generally have much simpler serialization methods without needing to 
 // handle save and load separately (in most cases)
 template <typename T>
-inline bool ISimpleSerializer::SerializeProperty(const char* propertyName, T& value)
-{
-	if (IsLoading())
-	{
+inline bool ISimpleSerializer::SerializeProperty(const char* propertyName, T& value) {
+	if (IsLoading()) {
 		const SerializedValue<T>* pSV = static_cast<const SerializedValue<T>*>(GetISerializedValue(propertyName));
 		if (!pSV)
 		{
@@ -97,8 +91,7 @@ inline bool ISimpleSerializer::SerializeProperty(const char* propertyName, T& va
 
 		value = pSV->value;
 	}
-	else
-	{
+	else {
 		const SerializedValue<T>* pSv = new SerializedValue<T>(value);
 		SetISerializedValue(propertyName, pSv);
 	}	
@@ -107,14 +100,12 @@ inline bool ISimpleSerializer::SerializeProperty(const char* propertyName, T& va
 }
 
 template <typename T, size_t N>
-struct SerializedValueArray : ISerializedValue
-{
+struct SerializedValueArray : ISerializedValue {
 	// NOTE: this requires value being serialized to have a correct copy constructor that
 	// will copy all values that would otherwise be deleted when object being serialized
 	// is deleted	
-	SerializedValueArray(const T (&arrayIn)[N] )
-	{
-		memcpy( valueArray, arrayIn, sizeof( valueArray) );
+	SerializedValueArray(const T (&arrayIn)[N]) {
+		memcpy(valueArray, arrayIn, sizeof(valueArray));
 	}
 
 	T valueArray[N];
@@ -124,20 +115,17 @@ struct SerializedValueArray : ISerializedValue
 // but allows for user code to generally have much simpler serialization methods without needing to 
 // handle save and load separately (in most cases)
 template <typename T, size_t N>
-inline bool ISimpleSerializer::SerializeProperty(const char* propertyName, T (&arrayIn)[N])
-{
-	if (IsLoading())
-	{
+inline bool ISimpleSerializer::SerializeProperty(const char* propertyName, T (&arrayIn)[N]) {
+	if (IsLoading()) {
 		const SerializedValueArray<T,N>* pSV = static_cast<const SerializedValueArray<T,N>*>(GetISerializedValue(propertyName));
 		if (!pSV)
 		{
 			return false;
 		}
 
-		memcpy( arrayIn, pSV->valueArray, sizeof( arrayIn ) );
+		memcpy(arrayIn, pSV->valueArray, sizeof(arrayIn));
 	}
-	else
-	{
+	else {
 		const SerializedValueArray<T,N>* pSv = new SerializedValueArray<T,N>(arrayIn);
 		SetISerializedValue(propertyName, pSv);
 	}	

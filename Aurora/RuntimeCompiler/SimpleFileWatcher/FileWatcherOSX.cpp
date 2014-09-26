@@ -28,7 +28,7 @@
 
 #include "FileWatcherOSX.h"
 
-#if FILEWATCHER_PLATFORM == FILEWATCHER_PLATFORM_KQUEUE
+#if FILEWATCHER_PLATFORM == FILEWATCHER_PLATFORM_OSX
 
 #include <sys/event.h>
 #include <sys/time.h>
@@ -41,15 +41,13 @@
 #include <string.h>
 #include <assert.h>
 
-namespace FW
-{
+namespace FW {
 	
 #define MAX_FILELIST_SIZE 2048
 	
 	typedef struct kevent KEvent;
 	
-	struct FileInfo
-	{
+	struct FileInfo {
 		FileInfo()
 		: mFilename(0), mModifiedTime(0)
 		{
@@ -58,8 +56,7 @@ namespace FW
 		time_t mModifiedTime;
 	};
     
-    int comparator(const void* f1, const void* f2)
-    {
+    int comparator(const void* f1, const void* f2) {
         FileInfo* finfo1 = (FileInfo*)f1;
         FileInfo* finfo2 = (FileInfo*)f2;
         
@@ -69,8 +66,7 @@ namespace FW
     }
     
     
-	struct WatchStruct
-	{
+	struct WatchStruct {
 		WatchID             mWatchID;
 		String              mDirName;
 		FileWatchListener*  mListener;
@@ -80,13 +76,12 @@ namespace FW
 		size_t              mFileListCount;
 		
 		WatchStruct(WatchID watchid, const String& dirname, FileWatchListener* listener)
-		: mWatchID(watchid), mDirName(dirname), mListener(listener), mFileListCount( 0 )
+		: mWatchID(watchid), mDirName(dirname), mListener(listener), mFileListCount(0)
 		{
 			addAll(true);
 		}
         
-        ~WatchStruct()
-        {
+        ~WatchStruct() {
             removeAll();
         }
 		
@@ -110,8 +105,7 @@ namespace FW
 			FileInfo key;
 			key.mFilename =  name.c_str();
 			FileInfo* found = (FileInfo*)bsearch(&key, &mFileList, mFileListCount, sizeof(FileInfo), comparator);
-			if(!found)
-            {
+			if(!found) {
 				return;
             }
             
@@ -119,7 +113,7 @@ namespace FW
 			delete found->mFilename;
             found->mFilename = 0;
             
-            assert( mFileListCount > 1 );
+            assert(mFileListCount > 1);
 			// move end to current
 			memcpy(found, &mFileList[mFileListCount-1], sizeof(FileInfo));
 			memset(&mFileList[mFileListCount-1], 0, sizeof(FileInfo));
@@ -149,7 +143,7 @@ namespace FW
 				if(!S_ISREG(attrib.st_mode))
 					continue;
 				
-				if( fileIndex < mFileListCount )
+				if (fileIndex < mFileListCount)
 				{
 					FileInfo& entry = mFileList[fileIndex];
 					int result = strcmp(entry.mFilename, fname.c_str());
@@ -172,7 +166,7 @@ namespace FW
                         // otherwise we have an add
                         bRescanRequired = true;
                         size_t currFile = fileIndex+1;
-                        while( currFile < mFileListCount )
+                        while(currFile < mFileListCount)
                         {
                             FileInfo& entry = mFileList[currFile];
                             int res = strcmp(entry.mFilename, fname.c_str());
@@ -185,10 +179,10 @@ namespace FW
                         }
                         
                         //process events but don't add/remove to list.
-                        if( currFile < mFileListCount )
+                        if (currFile < mFileListCount)
                         {
                            //have some deletions.
-                           while( fileIndex < currFile )
+                           while(fileIndex < currFile)
                            {
                                FileInfo& entry = mFileList[currFile];
                                handleAction(entry.mFilename, Actions::Delete);
@@ -214,8 +208,7 @@ namespace FW
 			
 			closedir(dir);
             
-            while( fileIndex < mFileListCount )
-            {
+            while(fileIndex < mFileListCount) {
                 // the last files have been deleted...
                 bRescanRequired = true;
                 FileInfo& entry = mFileList[fileIndex];
@@ -223,8 +216,7 @@ namespace FW
                 ++fileIndex;
             }
             
-            if( bRescanRequired )
-            {
+            if (bRescanRequired) {
                 removeAll();
                 addAll(false);
             }
@@ -235,10 +227,9 @@ namespace FW
 			mListener->handleFileAction(mWatchID, mDirName, filename, action);
 		}
 		
-		void addAll( bool bCreatedirevent )
+		void addAll(bool bCreatedirevent)
 		{
-            if( bCreatedirevent )
-            {
+            if (bCreatedirevent) {
                 // add base dir
                 int fd = open(mDirName.c_str(), O_RDONLY);
                 EV_SET(&mDirKevent, fd, EVFILT_VNODE,
@@ -284,26 +275,23 @@ namespace FW
 		}
 	};
 	
-	void FileWatcherOSX::scanEvents()
-	{
+	void FileWatcherOSX::scanEvents() {
 		int nev = 0;
 		struct kevent event;
         
         // DJB updated code to handle multiple directories correctly
         // first look for events which have occurred in our queue
-		while((nev = kevent(mDescriptor, 0, 0, &event, 1, &mTimeOut)) != 0)
-        {
+		while((nev = kevent(mDescriptor, 0, 0, &event, 1, &mTimeOut)) != 0) {
             if(nev == -1)
                 perror("kevent");
-            else
-            {
+            else {
                 // have an event, need to find the watch which has this event
                 WatchMap::iterator iter = mWatches.begin();
                 WatchMap::iterator end = mWatches.end();
                 for(; iter != end; ++iter)
                 {
                     WatchStruct* watch = iter->second;
-                    if( event.ident ==  watch->mDirKevent.ident )
+                    if (event.ident ==  watch->mDirKevent.ident)
                     {
                         watch->rescan();
                         break;
@@ -314,16 +302,14 @@ namespace FW
     }
 	
 	//--------
-	FileWatcherOSX::FileWatcherOSX()
-	{
+	FileWatcherOSX::FileWatcherOSX() {
 		mDescriptor = kqueue();
 		mTimeOut.tv_sec = 0;
 		mTimeOut.tv_nsec = 0;
 	}
 
 	//--------
-	FileWatcherOSX::~FileWatcherOSX()
-	{
+	FileWatcherOSX::~FileWatcherOSX() {
 		WatchMap::iterator iter = mWatches.begin();
 		WatchMap::iterator end = mWatches.end();
 		for(; iter != end; ++iter)
@@ -336,8 +322,7 @@ namespace FW
 	}
 
 	//--------
-	WatchID FileWatcherOSX::addWatch(const String& directory, FileWatchListener* watcher, bool recursive)
-	{
+	WatchID FileWatcherOSX::addWatch(const String& directory, FileWatchListener* watcher, bool recursive) {
 		
 		WatchStruct* watch = new WatchStruct(++mLastWatchID, directory, watcher);
 		mWatches.insert(std::make_pair(mLastWatchID, watch));
@@ -349,8 +334,7 @@ namespace FW
 	}
 
 	//--------
-	void FileWatcherOSX::removeWatch(const String& directory)
-	{
+	void FileWatcherOSX::removeWatch(const String& directory) {
 		WatchMap::iterator iter = mWatches.begin();
 		WatchMap::iterator end = mWatches.end();
 		for(; iter != end; ++iter)
@@ -364,8 +348,7 @@ namespace FW
 	}
 
 	//--------
-	void FileWatcherOSX::removeWatch(WatchID watchid)
-	{
+	void FileWatcherOSX::removeWatch(WatchID watchid) {
 		WatchMap::iterator iter = mWatches.find(watchid);
 
 		if(iter == mWatches.end())
@@ -381,11 +364,10 @@ namespace FW
 	}
 	
 	//--------
-	void FileWatcherOSX::handleAction(WatchStruct* watch, const String& filename, unsigned long action)
-	{
+	void FileWatcherOSX::handleAction(WatchStruct* watch, const String& filename, unsigned long action) {
         assert(false);//should not get here for OSX impl
 	}
 
 };//namespace FW
 
-#endif//FILEWATCHER_PLATFORM_KQUEUE
+#endif

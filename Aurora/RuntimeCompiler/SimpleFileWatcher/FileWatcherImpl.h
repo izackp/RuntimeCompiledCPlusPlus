@@ -30,22 +30,20 @@
 
 #define FILEWATCHER_PLATFORM_WIN32 1
 #define FILEWATCHER_PLATFORM_LINUX 2
-#define FILEWATCHER_PLATFORM_KQUEUE 3
+#define FILEWATCHER_PLATFORM_OSX 3
 
 #if defined(_WIN32)
 #	define FILEWATCHER_PLATFORM FILEWATCHER_PLATFORM_WIN32
 #elif defined(__APPLE_CC__) || defined(BSD)
-#	define FILEWATCHER_PLATFORM FILEWATCHER_PLATFORM_KQUEUE
+#	define FILEWATCHER_PLATFORM FILEWATCHER_PLATFORM_OSX
 #elif defined(__linux__)
 #	define FILEWATCHER_PLATFORM FILEWATCHER_PLATFORM_LINUX
 #endif
 
-namespace FW
-{
+namespace FW {
 	struct WatchStruct;
 
-	class FileWatcherImpl
-	{
+	class FileWatcherImpl {
 	public:
 		FileWatcherImpl() {}
 

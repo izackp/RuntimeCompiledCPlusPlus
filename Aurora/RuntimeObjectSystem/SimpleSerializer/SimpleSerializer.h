@@ -27,8 +27,7 @@
 
 struct IObject;
 
-class SimpleSerializer : public ISimpleSerializer
-{
+class SimpleSerializer : public ISimpleSerializer {
 public:
 
 	SimpleSerializer();
@@ -40,16 +39,14 @@ public:
 	void Clear(ObjectId ownerId);
 	void Clear(ObjectId ownerId, const char* propertyName);
 
-	void Serialize( IObject* Object );
+	void Serialize(IObject* Object);
 
 	void SetISerializedValue(const char* propertyName, const ISerializedValue* pValue);
 	const ISerializedValue *GetISerializedValue(const char* propertyName) const;
-	virtual bool IsLoading() const
-	{
+	virtual bool IsLoading() const {
 		return m_bLoading;
 	}
-	void SetIsLoading( bool loading )
-	{
+	void SetIsLoading(bool loading) {
 		m_bLoading = loading;
 		m_pCurrentObject = 0;
 	}

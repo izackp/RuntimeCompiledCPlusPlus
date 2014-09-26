@@ -24,28 +24,22 @@
 using namespace std;
 using namespace FileSystemUtils;
 
-BuildTool::BuildTool()
-{
+BuildTool::BuildTool() {
 }
 
 
-BuildTool::~BuildTool()
-{
+BuildTool::~BuildTool() {
 }
 
-void BuildTool::Clean() const
-{
+void BuildTool::Clean() const {
 	// Remove any existing intermediate directory
 
-    FileSystemUtils::PathIterator pathIter(  m_Compiler.GetRuntimeIntermediatePath() );
+    FileSystemUtils::PathIterator pathIter( m_Compiler.GetRuntimeIntermediatePath());
     std::string obj_extension = m_Compiler.GetObjectFileExtension();
-    while( ++pathIter )
-    {
-        if( pathIter.GetPath().Extension() == obj_extension )
-        {
-            if( m_pLogger )
-            {
-                m_pLogger->LogInfo( "Deleting temp RCC++ obj file: %s\n", pathIter.GetPath().c_str() );
+    while(++pathIter) {
+        if (pathIter.GetPath().Extension() == obj_extension) {
+            if (m_pLogger) {
+                m_pLogger->LogInfo("Deleting temp RCC++ obj file: %s\n", pathIter.GetPath().c_str());
             }
             pathIter.GetPath().Remove();
         }
@@ -53,70 +47,64 @@ void BuildTool::Clean() const
 }
 
 
-void BuildTool::Initialise( ICompilerLogger * pLogger )
-{
+void BuildTool::Initialise(ICompilerLogger * pLogger) {
 	m_pLogger = pLogger;
 	m_Compiler.Initialise(pLogger);
 }
 
-void BuildTool::BuildModule( const std::vector<FileToBuild>& buildFileList,
+void BuildTool::BuildModule(const std::vector<FileToBuild>& buildFileList,
 							 const std::vector<FileSystemUtils::Path>& includeDirList,
 							 const std::vector<FileSystemUtils::Path>& libraryDirList,
 							 const std::vector<FileSystemUtils::Path>& linkLibraryList,
 							 RCppOptimizationLevel optimizationLevel_,
 							 const char* pCompileOptions,
 							 const char* pLinkOptions,
-							 const FileSystemUtils::Path& moduleName )
-{
+							 const FileSystemUtils::Path& moduleName) {
 	// Initial version is very basic, simply compiles them.
 	Path objectFileExtension = m_Compiler.GetObjectFileExtension();
 	vector<Path> compileFileList;			// List of files we pass to the compiler
-	compileFileList.reserve( buildFileList.size() );
+	compileFileList.reserve(buildFileList.size());
 	vector<Path> forcedCompileFileList;		// List of files which must be compiled even if object file exists
 	vector<Path> nonForcedCompileFileList;	// List of files which can be linked if already compiled
 
 	// Seperate into seperate file lists of force and non-forced,
 	// so we can ensure we don't have the same file in both
-	for( size_t i = 0; i < buildFileList.size(); ++i )
-	{
+	for(size_t i = 0; i < buildFileList.size(); ++i) {
 		Path buildFile = buildFileList[i].filePath;
-		if( buildFileList[i].forceCompile )
+		if (buildFileList[i].forceCompile)
 		{
-			if( find( forcedCompileFileList.begin(), forcedCompileFileList.end(), buildFile ) == forcedCompileFileList.end() )
+			if (find(forcedCompileFileList.begin(), forcedCompileFileList.end(), buildFile) == forcedCompileFileList.end())
 			{
-				forcedCompileFileList.push_back( buildFile );
+				forcedCompileFileList.push_back(buildFile);
 			}
 		}
 		else
 		{
-			if( find( nonForcedCompileFileList.begin(), nonForcedCompileFileList.end(), buildFile ) == nonForcedCompileFileList.end() )
+			if (find(nonForcedCompileFileList.begin(), nonForcedCompileFileList.end(), buildFile) == nonForcedCompileFileList.end())
 			{
-				nonForcedCompileFileList.push_back( buildFile );
+				nonForcedCompileFileList.push_back(buildFile);
 			}
 		}
 	}
 	
 	// Add all forced compile files to build list
-	for( size_t i = 0; i < forcedCompileFileList.size(); ++i )
-	{
-		compileFileList.push_back(  forcedCompileFileList[i] );
+	for(size_t i = 0; i < forcedCompileFileList.size(); ++i) {
+		compileFileList.push_back( forcedCompileFileList[i]);
 	}
 
 	// Add non forced files, but only if they don't exist in forced compile list
     Path runtimeFolder = m_Compiler.GetRuntimeIntermediatePath();
-	for( size_t i = 0; i < nonForcedCompileFileList.size(); ++i )
-	{
+	for(size_t i = 0; i < nonForcedCompileFileList.size(); ++i) {
 		Path buildFile = nonForcedCompileFileList[i];
-		if( find( forcedCompileFileList.begin(), forcedCompileFileList.end(), buildFile ) == forcedCompileFileList.end() )
+		if (find(forcedCompileFileList.begin(), forcedCompileFileList.end(), buildFile) == forcedCompileFileList.end())
 		{
 			// Check if we have a pre-compiled object version of this file, and if so use that.
 			Path objectFileName = runtimeFolder/buildFile.Filename();
 			objectFileName.ReplaceExtension(objectFileExtension.c_str());
 
-			if( objectFileName.Exists() && buildFile.Exists() )
-            {
+			if (objectFileName.Exists() && buildFile.Exists()) {
                 FileSystemUtils::filetime_t objTime = objectFileName.GetLastWriteTime();
-                if( objTime > buildFile.GetLastWriteTime() )
+                if (objTime > buildFile.GetLastWriteTime())
  			    {
                     // we only want to use the object file if it's newer than the source file
 				    buildFile = objectFileName;
@@ -126,5 +114,5 @@ void BuildTool::BuildModule( const std::vector<FileToBuild>& buildFileList,
 		}
 	}
 
-	m_Compiler.RunCompile( compileFileList, includeDirList, libraryDirList, linkLibraryList, optimizationLevel_, pCompileOptions, pLinkOptions, moduleName );
+	m_Compiler.RunCompile(compileFileList, includeDirList, libraryDirList, linkLibraryList, optimizationLevel_, pCompileOptions, pLinkOptions, moduleName);
 }

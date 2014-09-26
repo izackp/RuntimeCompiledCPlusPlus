@@ -36,8 +36,7 @@ struct ISimpleSerializer;
 class ObjectFactorySystem;
 /*
 // IIDs
-enum InterfaceIDEnum
-{
+enum InterfaceIDEnum {
 	IID_IOBJECT,
 
 	IID_ENDInterfaceID
@@ -46,11 +45,9 @@ enum InterfaceIDEnum
 typedef unsigned int InterfaceID;
 
 // Template to help with IIDs
-template< InterfaceID Tiid, typename TSuper> struct TInterface : public TSuper
-{
+template< InterfaceID Tiid, typename TSuper> struct TInterface : public TSuper {
 	static const InterfaceID s_interfaceID = Tiid;
-	virtual void* GetInterface( InterfaceID _iid)
-	{
+	virtual void* GetInterface(InterfaceID _iid) {
         if (_iid == Tiid)
             return this;
         
@@ -61,49 +58,42 @@ template< InterfaceID Tiid, typename TSuper> struct TInterface : public TSuper
 // IObject itself below is a special case as the base class
 // Also it doesn't hurt to have it coded up explicitly for reference
 
-struct IObject
-{
+struct IObject {
 	/*
 	static const InterfaceID s_interfaceID = IID_IOBJECT;
 
-	virtual void* GetInterface(InterfaceID iid)
-	{
+	virtual void* GetInterface(InterfaceID iid) {
 		if (iid == IID_IOBJECT)
 			return this;
 		return NULL;
 	}
 
-	template<typename T> T* GetInterface()
-	{
+	template<typename T> T* GetInterface() {
         T* interface = (T*)GetInterface(T::s_interfaceID);
 		return interface;
 	}
 	*/
 
 	IObject() : _isRuntimeDelete(false) {}
-	virtual ~IObject()
-	{
+	virtual ~IObject() {
 	}
 
 	// Perform any object initialization
 	// Should be called with isFirstInit=true on object creation
 	// Will automatically be called with isFirstInit=false whenever a system serialization is performed
-	virtual void Init( bool isFirstInit )
-	{
+	virtual void Init(bool isFirstInit) {
 	}
 
 	//return the PerTypeObjectId of this object, which is unique per class
 	virtual PerTypeObjectId GetPerTypeId() const = 0;
 
-	virtual void GetObjectId( ObjectId& id ) const
-	{
+	virtual void GetObjectId(ObjectId& id) const {
 		id.m_ConstructorId = GetConstructor()->GetConstructorId();
 		id.m_PerTypeId = GetPerTypeId();
 	}
-	virtual ObjectId GetObjectId() const
-	{
+	virtual ObjectId GetObjectId() const {
 		ObjectId ret;
-		GetObjectId( ret );
+		GetObjectId(ret);
 		return ret;
 	}
 

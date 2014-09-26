@@ -38,20 +38,17 @@
 #include <tchar.h>
 #else
 #include <unistd.h>
-int _getche()
-{
+int _getche() {
     int ret = getchar();
     return ret;
 }
-int _kbhit()
-{
+int _kbhit() {
     std::cout << "This port needs a fix, CTRL-C to quit\n";
     return 0;
 }
 
-int Sleep( int msecs )
-{
-    return usleep( msecs * 1000);
+int Sleep(int msecs) {
+    return usleep(msecs * 1000);
 }
 #endif
 #include <sstream>
@@ -69,24 +66,20 @@ using FileSystemUtils::Path;
 ConsoleGame::ConsoleGame()
 	: m_pCompilerLogger(0)
 	, m_pRuntimeObjectSystem(0)
-	, m_pUpdateable(0)
-{
+	, m_pUpdateable(0) {
 }
 
-ConsoleGame::~ConsoleGame()
-{
-    if( m_pRuntimeObjectSystem )
-    {
+ConsoleGame::~ConsoleGame() {
+    if (m_pRuntimeObjectSystem) {
         // clean temp object files
         m_pRuntimeObjectSystem->CleanObjectFiles();
     }
 
-    if( m_pRuntimeObjectSystem && m_pRuntimeObjectSystem->GetObjectFactorySystem() )
-    {
+    if (m_pRuntimeObjectSystem && m_pRuntimeObjectSystem->GetObjectFactorySystem()) {
         m_pRuntimeObjectSystem->GetObjectFactorySystem()->RemoveListener(this);
 
         // delete object via correct interface
-        IObject* pObj = m_pRuntimeObjectSystem->GetObjectFactorySystem()->GetObject( m_ObjectId );
+        IObject* pObj = m_pRuntimeObjectSystem->GetObjectFactorySystem()->GetObject(m_ObjectId);
         delete pObj;
     }
 
@@ -95,13 +88,11 @@ ConsoleGame::~ConsoleGame()
 }
 
 
-bool ConsoleGame::Init()
-{
+bool ConsoleGame::Init() {
 	//Initialise the RuntimeObjectSystem
 	m_pRuntimeObjectSystem = new RuntimeObjectSystem;
 	m_pCompilerLogger = new StdioLogSystem();
-	if( !m_pRuntimeObjectSystem->Initialise(m_pCompilerLogger, 0) )
-    {
+	if (!m_pRuntimeObjectSystem->Initialise(m_pCompilerLogger, 0)) {
         m_pRuntimeObjectSystem = NULL;
         return false;
     }
@@ -112,14 +103,13 @@ bool ConsoleGame::Init()
 
 bool ConsoleGame::ConstructAnObject() {
     // construct first object
-    IObjectConstructor* pCtor = m_pRuntimeObjectSystem->GetObjectFactorySystem()->GetConstructor( "RuntimeObject01" );
+    IObjectConstructor* pCtor = m_pRuntimeObjectSystem->GetObjectFactorySystem()->GetConstructor("RuntimeObject01");
     if (pCtor == NULL)
         return false;
     
     IObject* pObj = pCtor->Construct(); //Comes out as TActual<RuntimeObject01> *
 	m_pUpdateable = (IUpdateable*)pObj;
-    if (m_pUpdateable == 0)
-    {
+    if (m_pUpdateable == 0) {
         delete pObj;
         m_pCompilerLogger->LogError("Error - no updateable interface found\n");
         return false;
@@ -130,8 +120,7 @@ bool ConsoleGame::ConstructAnObject() {
 
 //TODO: not the best call back name? 
 // This method is used to reload all of the live objects; nothing in the callback name implies that this should be used for that
-void ConsoleGame::OnConstructorsAdded()
-{
+void ConsoleGame::OnConstructorsAdded() {
 	// This could have resulted in a change of object pointer, so release old and get new one.
 	if (m_pUpdateable == NULL)
         return;
@@ -145,15 +134,13 @@ void ConsoleGame::ReloadLiveObject() {
         return;
     
 	m_pUpdateable = dynamic_cast<IUpdateable*>(pObj);
-	if (m_pUpdateable == NULL)
-	{
+	if (m_pUpdateable == NULL) {
 		delete pObj;
 		m_pCompilerLogger->LogError("Error - no updateable interface found\n");
 	}
 }
 
-bool ConsoleGame::MainLoop()
-{
+bool ConsoleGame::MainLoop() {
 	if(m_pRuntimeObjectSystem->GetIsCompiledComplete())
 		m_pRuntimeObjectSystem->LoadCompiledModule();
 
@@ -162,18 +149,16 @@ bool ConsoleGame::MainLoop()
 
     static int numUpdates = 0;
     std::cout << "\nMain Loop - press q to quit. Updates every second. Update: " << numUpdates++ << "\n";
-    if(_kbhit())
-    {
+    if(_kbhit()) {
         int ret = _getche();
-        if( 'q' == ret )
-        {
+        if ('q' == ret) {
             return false;
         }
     }
     const float deltaTime = 1.0f;
     
-    m_pRuntimeObjectSystem->GetFileChangeNotifier()->Update( deltaTime );
-    m_pUpdateable->Update( deltaTime );
+    m_pRuntimeObjectSystem->GetFileChangeNotifier()->Update(deltaTime);
+    m_pUpdateable->Update(deltaTime);
     Sleep(5000);
 
 	return true;

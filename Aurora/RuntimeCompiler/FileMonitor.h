@@ -33,8 +33,7 @@
 
 
 
-class FileMonitor : public IFileMonitor, public FW::FileWatchListener
-{
+class FileMonitor : public IFileMonitor, public FW::FileWatchListener {
 public:
 	//typedef ThreadSafeQueue<FileSystemUtils::Path> TNotifications;
 	typedef std::vector<FileSystemUtils::Path> TNotifications;
@@ -51,54 +50,50 @@ public:
 
 	// IFileMonitor
 
-	virtual void Update( float fDeltaTime );
+	virtual void Update(float fDeltaTime);
 
 	// Watch file or directory for changes
 	// Optional callbackFunc will be notified on change occurring
 	// If callback is specified, file will not be added to change list when it changes
-	virtual void Watch( const FileSystemUtils::Path& filename, IFileMonitorListener *pListener /*=0*/ );
-	virtual void Watch( const char* filename, IFileMonitorListener *pListener /*=0*/ );
+	virtual void Watch(const FileSystemUtils::Path& filename, IFileMonitorListener *pListener /*=0*/);
+	virtual void Watch(const char* filename, IFileMonitorListener *pListener /*=0*/);
 
 	// ~IFileMonitor
 
 
 	// Returns if there are any changes detected - does not poll files
 	// but simply returns change flag status which is updated asynchronously
-	bool GetHasChanges() const
-	{
+	bool GetHasChanges() const {
 		return m_bChangeFlag;
 	}
 
 	// Clears the list of changes, resets changed flag
 	void ClearChanges();
 
-	const std::vector<FileSystemUtils::Path>& GetChanges() const
-	{
+	const std::vector<FileSystemUtils::Path>& GetChanges() const {
 		return m_FileChangedList;
 	}
 
 
 private:
 	
-	struct WatchedFile
-	{
+	struct WatchedFile {
 		FileSystemUtils::Path file;
 		IFileMonitorListener *pListener;
 
-		WatchedFile( const FileSystemUtils::Path& file_, IFileMonitorListener *pListener_ )
+		WatchedFile(const FileSystemUtils::Path& file_, IFileMonitorListener *pListener_)
 			: file(file_), pListener(pListener_)
 		{}
 	};
 	typedef std::vector<WatchedFile> TFileList;
 
-	struct WatchedDir
-	{
+	struct WatchedDir {
 		FileSystemUtils::Path dir;
 		IFileMonitorListener *pListener; // used when the directory itself is explicitly being watched
 		TFileList fileWatchList;
 		bool bWatchDirItself;
 
-		WatchedDir( const FileSystemUtils::Path& dir_ )
+		WatchedDir(const FileSystemUtils::Path& dir_)
 			: dir(dir_)
 			, pListener(0)
 			, bWatchDirItself(false)
@@ -107,11 +102,11 @@ private:
 	typedef std::vector<WatchedDir> TDirList;
 	
 
-	void StartWatchingDir( WatchedDir& dir );
-	TDirList::iterator GetWatchedDirEntry( const FileSystemUtils::Path& dir );
-	TFileList::iterator GetWatchedFileEntry( const FileSystemUtils::Path& file, TFileList& fileList );
-	void ProcessChangeNotification( const FileSystemUtils::Path& file );
-	bool ArePathsEqual( const FileSystemUtils::Path& file1, const FileSystemUtils::Path& file2 ) const;
+	void StartWatchingDir(WatchedDir& dir);
+	TDirList::iterator GetWatchedDirEntry(const FileSystemUtils::Path& dir);
+	TFileList::iterator GetWatchedFileEntry(const FileSystemUtils::Path& file, TFileList& fileList);
+	void ProcessChangeNotification(const FileSystemUtils::Path& file);
+	bool ArePathsEqual(const FileSystemUtils::Path& file1, const FileSystemUtils::Path& file2) const;
 
 	TDirList 							m_DirWatchList;
 	std::vector<FileSystemUtils::Path>	m_FileChangedList;
@@ -121,8 +116,7 @@ private:
 };
 
 
-inline bool FileMonitor::ArePathsEqual( const FileSystemUtils::Path& file1, const FileSystemUtils::Path& file2 ) const
-{
+inline bool FileMonitor::ArePathsEqual(const FileSystemUtils::Path& file1, const FileSystemUtils::Path& file2) const {
 #ifdef _WIN32
 	// Do case insensitive comparison on Windows
 	return _stricmp(file1.c_str(), file2.c_str()) == 0;

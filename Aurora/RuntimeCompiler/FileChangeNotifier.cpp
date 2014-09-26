@@ -32,33 +32,27 @@ FileChangeNotifier::FileChangeNotifier()
 	, m_fMinTimeBetweenNotifications(DEFAULT_MIN_TIME_BETWEEN_RECOMPILES)
 	, m_fChangeNotifyDelay(DEFAULT_NOTIFY_DELAY)
 	, m_fTimeUntilNextAllowedRecompile(0.0f)
-	, m_fFileChangeSpamTimeRemaining(0.0f)
-{
+	, m_fFileChangeSpamTimeRemaining(0.0f) {
 	m_pFileMonitor = new FileMonitor();
 	m_LastFileChanged = "";
 }
 
 
-FileChangeNotifier::~FileChangeNotifier()
-{
+FileChangeNotifier::~FileChangeNotifier() {
 	delete m_pFileMonitor;
 }
 
 
-void FileChangeNotifier::SetMinTimeBetweenNotifications( float fMinTime )
-{
+void FileChangeNotifier::SetMinTimeBetweenNotifications(float fMinTime) {
 	m_fMinTimeBetweenNotifications = max(0.0f, fMinTime);
 }
 
-void FileChangeNotifier::SetChangeNotifyDelay( float fDelay)
-{
+void FileChangeNotifier::SetChangeNotifyDelay(float fDelay) {
 	m_fChangeNotifyDelay = max(0.0f, fDelay);
 }
 
-void FileChangeNotifier::Update( float fDeltaTime )
-{
-	if (m_bActive)
-	{
+void FileChangeNotifier::Update(float fDeltaTime) {
+	if (m_bActive) {
 		m_pFileMonitor->Update(fDeltaTime);
 		m_fTimeUntilNextAllowedRecompile = max(0.0f, m_fTimeUntilNextAllowedRecompile - fDeltaTime);
 		m_fFileChangeSpamTimeRemaining = max(0.0f, m_fFileChangeSpamTimeRemaining - fDeltaTime);
@@ -71,8 +65,7 @@ void FileChangeNotifier::Update( float fDeltaTime )
 }
 
 
-void FileChangeNotifier::Watch( const FileSystemUtils::Path& filename, IFileChangeListener *pListener )
-{
+void FileChangeNotifier::Watch(const FileSystemUtils::Path& filename, IFileChangeListener *pListener) {
 	FileSystemUtils::Path fixedFilename = filename.DelimitersToOSDefault(); // Note this doesn't handle ../
 	
     fixedFilename = fixedFilename.GetCleanPath();
@@ -84,17 +77,14 @@ void FileChangeNotifier::Watch( const FileSystemUtils::Path& filename, IFileChan
 }
 
 
-void FileChangeNotifier::Watch( const char *filename, IFileChangeListener *pListener )
-{
+void FileChangeNotifier::Watch(const char *filename, IFileChangeListener *pListener) {
 	Watch(FileSystemUtils::Path(filename), pListener);
 }
 
-void FileChangeNotifier::RemoveListener( IFileChangeListener *pListener )
-{
+void FileChangeNotifier::RemoveListener(IFileChangeListener *pListener) {
 	TFileListenerMap::iterator it = m_fileListenerMap.begin();
 	TFileListenerMap::iterator itEnd = m_fileListenerMap.end();
-	while (it != itEnd)
-	{
+	while (it != itEnd) {
 		it->second.erase(pListener);
 		++it;
 	}
@@ -102,10 +92,8 @@ void FileChangeNotifier::RemoveListener( IFileChangeListener *pListener )
 	pListener->OnRegisteredWithNotifier(NULL);
 }
 
-void FileChangeNotifier::OnFileChange( const FileSystemUtils::Path& filename )
-{
-	if (m_bActive)
-	{
+void FileChangeNotifier::OnFileChange(const FileSystemUtils::Path& filename) {
+	if (m_bActive) {
 		// Check for multiple hits on the same file in close succession 
 		// (Can be caused by NTFS system making multiple changes even though only
 		//  one actual change occurred)
@@ -132,10 +120,8 @@ void FileChangeNotifier::OnFileChange( const FileSystemUtils::Path& filename )
 	}
 }
 
-void FileChangeNotifier::TriggerNotificationIfPossible()
-{
-	if (m_fTimeUntilNextAllowedRecompile <= 0.0f)
-	{
+void FileChangeNotifier::TriggerNotificationIfPossible() {
+	if (m_fTimeUntilNextAllowedRecompile <= 0.0f) {
 		m_fTimeUntilNextAllowedRecompile = m_fMinTimeBetweenNotifications;
 		m_bRecompilePending = false;
 
@@ -143,21 +129,18 @@ void FileChangeNotifier::TriggerNotificationIfPossible()
 					
 		m_changedFileList.clear();
 	}
-	else
-	{
+	else {
 		m_bRecompilePending = true;
 	}	
 }
 
-void FileChangeNotifier::NotifyListeners()
-{
+void FileChangeNotifier::NotifyListeners() {
 	std::map<IFileChangeListener*, AUDynArray<const char*> > interestedListenersMap;
 
 	// Determine which listeners are interested in which changed files
 	TPathNameList::const_iterator fileIt = m_changedFileList.begin();
 	TPathNameList::const_iterator fileItEnd = m_changedFileList.end();
-	while (fileIt != fileItEnd)
-	{
+	while (fileIt != fileItEnd) {
 		TFileChangeListeners& listeners = m_fileListenerMap[*fileIt];
 		TFileChangeListeners::iterator listenerIt = listeners.begin();
 		TFileChangeListeners::iterator listenerItEnd = listeners.end();
@@ -173,8 +156,7 @@ void FileChangeNotifier::NotifyListeners()
 	// Notify each listener with an appropriate file list
 	std::map<IFileChangeListener*, AUDynArray<const char*> >::iterator finalIt = interestedListenersMap.begin();
 	std::map<IFileChangeListener*, AUDynArray<const char*> >::iterator finalItEnd = interestedListenersMap.end();
-	while (finalIt != finalItEnd)
-	{
+	while (finalIt != finalItEnd) {
 		finalIt->first->OnFileChange(finalIt->second);	
 		++finalIt;
 	}

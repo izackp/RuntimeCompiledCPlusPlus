@@ -29,16 +29,15 @@
 // amortize virtual function call and exception handling by processing many things in one call
 // note this isn't a functor as we prefer the explicit function name, and not using lambda's due to Cx11
 // not being supported sufficiently as yet
-struct RuntimeProtector
-{
+struct RuntimeProtector {
 	// consctructor, hint allow debug may be ignored when true if on an OS which has not had this implemented
     RuntimeProtector()
-	    : m_bHashadException( false )
-	    , m_bHintAllowDebug( true )
-        , m_ModulesLoadedCount( 0 )
+	    : m_bHashadException(false)
+	    , m_bHintAllowDebug(true)
+        , m_ModulesLoadedCount(0)
 #ifndef _WIN32
-    	, m_pPrevious( 0 )
-#endif
+    	, m_pPrevious(0)
+#endif 
     {
     }
 
@@ -47,18 +46,15 @@ struct RuntimeProtector
      // don't call this directly, derive a class and implement it for your protected func
     virtual void ProtectedFunc() = 0;
     
-    bool HasHadException() const
-    {
+    bool HasHadException() const {
         return m_bHashadException;
     }
-    void ClearExceptions()
-    {
+    void ClearExceptions() {
         m_bHashadException = false;
     }
    
     //exception information (exposed rather than get/set for simplicity)
-    enum ExceptionType
-    {
+    enum ExceptionType {
         ESE_Unknown,
         ESE_AccessViolation,
         ESE_AccessViolationRead,    //may just get ESE_AccessViolation
@@ -66,8 +62,7 @@ struct RuntimeProtector
         ESE_InvalidInstruction
         
     };
-    struct ExceptionInfo_t
-    {
+    struct ExceptionInfo_t {
         ExceptionType       Type;
         void*               Addr; //address of data for access voilation, or instruction for invalid instruction
     };

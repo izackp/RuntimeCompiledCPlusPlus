@@ -5,11 +5,9 @@
 #include "InterfaceIds.h"
 #include <iostream>
 
-class RuntimeObject01 : public IUpdateable
-{
+class RuntimeObject01 : public IUpdateable {
 public:
-	virtual void Update( float deltaTime )
-	{
+	virtual void Update(float deltaTime) {
 		std::cout << "Runtime Object 012 update called!\n";
 	}
 };

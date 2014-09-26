@@ -25,8 +25,7 @@
 #include "../RuntimeCompiler/ICompilerLogger.h"
 struct IRuntimeObjectSystem;
 
-struct IObjectFactoryListener
-{
+struct IObjectFactoryListener {
 	// Called after a full serialization of objects is done when a new
 	// object constructor is added, so listeners can update any object
 	// pointers they're holding
@@ -34,20 +33,19 @@ struct IObjectFactoryListener
     virtual ~IObjectFactoryListener() {}
 };
 
-struct IObjectFactorySystem
-{
-	virtual IObjectConstructor* GetConstructor( const char* type ) const = 0;
-	virtual ConstructorId		GetConstructorId( const char* type ) const = 0;
-	virtual IObjectConstructor* GetConstructor( ConstructorId id ) const = 0;
+struct IObjectFactorySystem {
+	virtual IObjectConstructor* GetConstructor(const char* type) const = 0;
+	virtual ConstructorId		GetConstructorId(const char* type) const = 0;
+	virtual IObjectConstructor* GetConstructor(ConstructorId id) const = 0;
 	virtual void				AddConstructors(IAUDynArray<IObjectConstructor*> &constructors) = 0;
 	virtual void				GetAll(IAUDynArray<IObjectConstructor*> &constructors) const = 0;
-	virtual IObject*			GetObject( ObjectId id ) const = 0;
+	virtual IObject*			GetObject(ObjectId id) const = 0;
 
 	virtual void				AddListener(IObjectFactoryListener* pListener) = 0;
 	virtual void				RemoveListener(IObjectFactoryListener* pListener) = 0;
-	virtual void				SetLogger( ICompilerLogger* pLogger ) = 0;
-	virtual void				SetRuntimeObjectSystem( IRuntimeObjectSystem* pRuntimeObjectSystem ) = 0;
-    virtual void				SetTestSerialization( bool bTest ) = 0;
+	virtual void				SetLogger(ICompilerLogger* pLogger) = 0;
+	virtual void				SetRuntimeObjectSystem(IRuntimeObjectSystem* pRuntimeObjectSystem) = 0;
+    virtual void				SetTestSerialization(bool bTest) = 0;
     virtual bool				GetTestSerialization() const = 0;
     virtual						~IObjectFactorySystem() {}
 
@@ -57,7 +55,7 @@ struct IObjectFactorySystem
 	// default history size is 0, which means history is off (no undo & redo)
 	// if AddConstructors is called when the current history location is -ve,
 	// the constructors are updated to locatin 0 (current) prior to adding.
-	virtual void				SetObjectConstructorHistorySize( int num_ ) = 0;
+	virtual void				SetObjectConstructorHistorySize(int num_) = 0;
 	virtual int					GetObjectConstructorHistorySize() = 0;
 
 	// undo & redo object constructor changes

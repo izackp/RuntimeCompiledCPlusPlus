@@ -29,8 +29,7 @@
 
 const size_t LOGSYSTEM_MAX_BUFFER = 4096;
 
-class StdioLogSystem : public ICompilerLogger
-{
+class StdioLogSystem : public ICompilerLogger {
 public:	
 	virtual void LogError(const char * format, ...);
 	virtual void LogWarning(const char * format, ...);

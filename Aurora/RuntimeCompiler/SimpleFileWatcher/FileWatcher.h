@@ -35,8 +35,7 @@
 
 #include "../FileSystemUtils.h"
 
-namespace FW
-{
+namespace FW {
 	/// Type for a string
 	typedef FileSystemUtils::Path String;
 	/// Type for a watch id
@@ -50,8 +49,7 @@ namespace FW
 	/// Actions to listen for. Rename will send two events, one for
 	/// the deletion of the old file, and one for the creation of the
 	/// new file.
-	namespace Actions
-	{
+	namespace Actions {
 		enum Action
 		{
 			/// Sent when a file is created or renamed
@@ -66,8 +64,7 @@ namespace FW
 	/// Listens to files and directories and dispatches events
 	/// to notify the parent program of the changes.
 	/// @class FileWatcher
-	class FileWatcher
-	{
+	class FileWatcher {
 	public:
 		///
 		///
@@ -91,7 +88,7 @@ namespace FW
 		void removeWatch(WatchID watchid);
 
 		/// Updates the watcher. Must be called often.
-		void update();
+		void scanEvents();
 
 	private:
 		FileWatcherImpl* mImpl;
@@ -101,8 +98,7 @@ namespace FW
 
 	/// Basic interface for listening for file events.
 	/// @class FileWatchListener
-	class FileWatchListener
-	{
+	class FileWatchListener {
 	public:
 		FileWatchListener() {}
 		virtual ~FileWatchListener() {}

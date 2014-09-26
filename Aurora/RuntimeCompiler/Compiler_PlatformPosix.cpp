@@ -36,14 +36,12 @@
 using namespace std;
 const char	c_CompletionToken[] = "_COMPLETION_TOKEN_" ;
 
-class PlatformCompilerImplData
-{
+class PlatformCompilerImplData {
 public:
 	PlatformCompilerImplData()
-		: m_bCompileIsComplete( false )
-        , m_pLogger( 0 )
-        , m_ChildForCompilationPID( 0 )
-	{
+		: m_bCompileIsComplete(false)
+        , m_pLogger(0)
+        , m_ChildForCompilationPID(0) {
         m_PipeStdOut[0] = 0;
         m_PipeStdOut[1] = 1;
         m_PipeStdErr[0] = 0;
@@ -59,130 +57,114 @@ public:
 };
 
 Compiler::Compiler() 
-	: m_pImplData( 0 )
-{
+	: m_pImplData(0) {
 }
 
-Compiler::~Compiler()
-{
+Compiler::~Compiler() {
 }
 
-std::string Compiler::GetObjectFileExtension() const
-{
+std::string Compiler::GetObjectFileExtension() const {
 	return ".o";
 }
 
-bool Compiler::GetIsComplete() const
-{
-    if( !m_pImplData->m_bCompileIsComplete && m_pImplData->m_ChildForCompilationPID )
-    {
+bool Compiler::GetIsComplete() const {
+    if (!m_pImplData->m_bCompileIsComplete && m_pImplData->m_ChildForCompilationPID) {
         
         // check for whether process is closed
         int procStatus;
-        pid_t ret = waitpid( m_pImplData->m_ChildForCompilationPID, &procStatus, WNOHANG);
-        if( ret && ( WIFEXITED(procStatus) || WIFSIGNALED(procStatus) ) )
-        {
+        pid_t ret = waitpid(m_pImplData->m_ChildForCompilationPID, &procStatus, WNOHANG);
+        if (ret && (WIFEXITED(procStatus) || WIFSIGNALED(procStatus))) {
             m_pImplData->m_bCompileIsComplete = true;
             m_pImplData->m_ChildForCompilationPID = 0;
  
             // get output and log
-            if( m_pImplData->m_pLogger )
-            {
+            if (m_pImplData->m_pLogger) {
                 const size_t buffSize = 256 * 80; //should allow for a few lines...
                 char buffer[buffSize];
                 ssize_t numread = 0;
-                while( ( numread = read( m_pImplData->m_PipeStdOut[0], buffer, buffSize-1 ) ) > 0 )
+                while((numread = read(m_pImplData->m_PipeStdOut[0], buffer, buffSize-1)) > 0)
                 {
                     buffer[numread] = 0;
-                    m_pImplData->m_pLogger->LogInfo( buffer );
+                    m_pImplData->m_pLogger->LogInfo(buffer);
                 }
                 
-                while( ( numread = read( m_pImplData->m_PipeStdErr[0], buffer, buffSize-1 ) )> 0 )
+                while((numread = read(m_pImplData->m_PipeStdErr[0], buffer, buffSize-1))> 0)
                 {
                     buffer[numread] = 0;
-                    m_pImplData->m_pLogger->LogError( buffer );    //TODO: seperate warnings from errors.
+                    m_pImplData->m_pLogger->LogError(buffer);    //TODO: seperate warnings from errors.
                 }
             }
 
             // close the pipes as this process no longer needs them.
-            close( m_pImplData->m_PipeStdOut[0] );
+            close(m_pImplData->m_PipeStdOut[0]);
             m_pImplData->m_PipeStdOut[0] = 0;
-            close( m_pImplData->m_PipeStdErr[0] );
+            close(m_pImplData->m_PipeStdErr[0]);
             m_pImplData->m_PipeStdErr[0] = 0;
         }
     }
 	return m_pImplData->m_bCompileIsComplete;
 }
 
-void Compiler::Initialise( ICompilerLogger * pLogger )
-{
+void Compiler::Initialise(ICompilerLogger * pLogger) {
     m_pImplData = new PlatformCompilerImplData;
     m_pImplData->m_pLogger = pLogger;
 	m_pImplData->m_intermediatePath = "./Runtime";
 }
 
-FileSystemUtils::Path Compiler::GetRuntimeIntermediatePath() const
-{
+FileSystemUtils::Path Compiler::GetRuntimeIntermediatePath() const {
     return m_pImplData->m_intermediatePath;
 }
 
-void Compiler::RunCompile( const std::vector<FileSystemUtils::Path>& filesToCompile,
+void Compiler::RunCompile(const std::vector<FileSystemUtils::Path>& filesToCompile,
 					 const std::vector<FileSystemUtils::Path>& includeDirList,
 					 const std::vector<FileSystemUtils::Path>& libraryDirList,
                      const std::vector<FileSystemUtils::Path>& linkLibraryList,
                      RCppOptimizationLevel optimizationLevel_,
 					 const char* pCompileOptions,
 					 const char* pLinkOptions,
-					 const FileSystemUtils::Path& outputFile )
-{
+					 const FileSystemUtils::Path& outputFile) {
     //NOTE: Currently doesn't check if a prior compile is ongoing or not, which could lead to memory leaks
  	m_pImplData->m_bCompileIsComplete = false;
     
     //create pipes
-    if ( pipe( m_pImplData->m_PipeStdOut ) != 0 )
-    {
-        if( m_pImplData->m_pLogger )
-        {
-            m_pImplData->m_pLogger->LogError( "Error in Compiler::RunCompile, cannot create pipe - perhaps insufficient memory?\n");
+    if (pipe(m_pImplData->m_PipeStdOut) != 0) {
+        if (m_pImplData->m_pLogger) {
+            m_pImplData->m_pLogger->LogError("Error in Compiler::RunCompile, cannot create pipe - perhaps insufficient memory?\n");
         }
         return;
     }
     //create pipes
-    if ( pipe( m_pImplData->m_PipeStdErr ) != 0 )
-    {
-        if( m_pImplData->m_pLogger )
-        {
-            m_pImplData->m_pLogger->LogError( "Error in Compiler::RunCompile, cannot create pipe - perhaps insufficient memory?\n");
+    if (pipe(m_pImplData->m_PipeStdErr) != 0) {
+        if (m_pImplData->m_pLogger) {
+            m_pImplData->m_pLogger->LogError("Error in Compiler::RunCompile, cannot create pipe - perhaps insufficient memory?\n");
         }
         return;
     }
     
     pid_t retPID;
-    switch( retPID = fork() )
-    {
+    switch(retPID = fork()) {
         case -1: // error, no fork
-            if( m_pImplData->m_pLogger )
-            {
-                m_pImplData->m_pLogger->LogError( "Error in Compiler::RunCompile, cannot fork() process - perhaps insufficient memory?\n");
+            if (m_pImplData->m_pLogger) {
+                m_pImplData->m_pLogger->LogError("Error in Compiler::RunCompile, cannot fork() process - perhaps insufficient memory?\n");
             }
             return;
         case 0: // child process - carries on below.
             break;
         default: // current process - returns to allow application to run whilst compiling
-            close( m_pImplData->m_PipeStdOut[1] );
+            close(m_pImplData->m_PipeStdOut[1]);
             m_pImplData->m_PipeStdOut[1] = 0;
-            close( m_pImplData->m_PipeStdErr[1] );
+            close(m_pImplData->m_PipeStdErr[1]);
             m_pImplData->m_PipeStdErr[1] = 0;
             m_pImplData->m_ChildForCompilationPID = retPID;
            return;
     }
     
     //duplicate the pipe to stdout, so output goes to pipe
-    dup2( m_pImplData->m_PipeStdErr[1], STDERR_FILENO );
-    dup2( m_pImplData->m_PipeStdOut[1], STDOUT_FILENO );
-    close( m_pImplData->m_PipeStdOut[0] );
+    dup2(m_pImplData->m_PipeStdErr[1], STDERR_FILENO);
+    dup2(m_pImplData->m_PipeStdOut[1], STDOUT_FILENO);
+    close(m_pImplData->m_PipeStdOut[0]);
     m_pImplData->m_PipeStdOut[0] = 0;
-    close( m_pImplData->m_PipeStdErr[0] );
+    close(m_pImplData->m_PipeStdErr[0]);
     m_pImplData->m_PipeStdErr[0] = 0;
 
 #ifdef __APPLE__
@@ -195,8 +177,7 @@ void Compiler::RunCompile( const std::vector<FileSystemUtils::Path>& filesToComp
 	compileString += "-m32 ";
 #endif
 
-	if( RCCPPOPTIMIZATIONLEVEL_DEFAULT == optimizationLevel_ )
-	{
+	if (RCCPPOPTIMIZATIONLEVEL_DEFAULT == optimizationLevel_) {
 	#ifdef DEBUG
 		optimizationLevel_ = RCCPPOPTIMIZATIONLEVEL_DEBUG;
 	#else
@@ -204,8 +185,7 @@ void Compiler::RunCompile( const std::vector<FileSystemUtils::Path>& filesToComp
 	#endif
 	}
 	
-	switch( optimizationLevel_ )
-	{
+	switch(optimizationLevel_) {
 	case RCCPPOPTIMIZATIONLEVEL_DEFAULT:
 		assert(false);
 	case RCCPPOPTIMIZATIONLEVEL_DEBUG:
@@ -218,14 +198,12 @@ void Compiler::RunCompile( const std::vector<FileSystemUtils::Path>& filesToComp
 	}
 	
     // include directories
-    for( size_t i = 0; i < includeDirList.size(); ++i )
-	{
+    for(size_t i = 0; i < includeDirList.size(); ++i) {
         compileString += "-I\"" + includeDirList[i].m_string + "\" ";
     }
     
     // library and framework directories
-    for( size_t i = 0; i < libraryDirList.size(); ++i )
-	{
+    for(size_t i = 0; i < libraryDirList.size(); ++i) {
         compileString += "-L\"" + libraryDirList[i].m_string + "\" ";
         compileString += "-F\"" + libraryDirList[i].m_string + "\" ";
     }
@@ -234,25 +212,21 @@ void Compiler::RunCompile( const std::vector<FileSystemUtils::Path>& filesToComp
     compileString += "-o " + outputFile.m_string + " ";
 
 
-	if( pCompileOptions )
-	{
+	if (pCompileOptions) {
 		compileString += pCompileOptions;
 	}
-	if( pLinkOptions && strlen(pLinkOptions) )
-	{
+	if (pLinkOptions && strlen(pLinkOptions)) {
 		compileString += "-Wl,";
 		compileString += pLinkOptions;
 	}
 	
     // files to compile
-    for( size_t i = 0; i < filesToCompile.size(); ++i )
-	{
+    for(size_t i = 0; i < filesToCompile.size(); ++i) {
         compileString += "\"" + filesToCompile[i].m_string + "\" ";
     }
     
     // libraries to link
-    for( size_t i = 0; i < linkLibraryList.size(); ++i )
-	{
+    for(size_t i = 0; i < linkLibraryList.size(); ++i) {
         compileString += " " + linkLibraryList[i].m_string + " ";
     }
     

@@ -30,17 +30,15 @@
 
 #include "FileWatcherImpl.h"
 
-#if FILEWATCHER_PLATFORM == FILEWATCHER_PLATFORM_KQUEUE
+#if FILEWATCHER_PLATFORM == FILEWATCHER_PLATFORM_OSX
 
 #include <map>
 #include <sys/types.h>
 
-namespace FW
-{
+namespace FW {
 	/// Implementation for OSX based on kqueue.
 	/// @class FileWatcherOSX
-	class FileWatcherOSX : public FileWatcherImpl
-	{
+	class FileWatcherOSX : public FileWatcherImpl {
 	public:
 		/// type for a map from WatchID to WatchStruct pointer
 		typedef std::map<WatchID, WatchStruct*> WatchMap;

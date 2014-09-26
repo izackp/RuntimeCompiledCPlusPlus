@@ -28,56 +28,45 @@ extern "C"
 #else
 __attribute__((visibility("default")))
 #endif
-IPerModuleInterface* GetPerModuleInterface()
-{
+IPerModuleInterface* GetPerModuleInterface() {
 	return PerModuleInterface::GetInstance();
 }
 
-PerModuleInterface* PerModuleInterface::GetInstance()
-{
-	if( !ms_pObjectManager )
-	{
+PerModuleInterface* PerModuleInterface::GetInstance() {
+	if (!ms_pObjectManager) {
 		ms_pObjectManager = new PerModuleInterface;
 	}
 	return ms_pObjectManager;
 }
 
-void PerModuleInterface::AddConstructor( IObjectConstructor* pConstructor )
-{
-	m_ObjectConstructors.push_back( pConstructor );
+void PerModuleInterface::AddConstructor(IObjectConstructor* pConstructor) {
+	m_ObjectConstructors.push_back(pConstructor);
 }
 
-std::vector<IObjectConstructor*>& PerModuleInterface::GetConstructors()
-{
+std::vector<IObjectConstructor*>& PerModuleInterface::GetConstructors() {
 	return m_ObjectConstructors;
 }
 
-void PerModuleInterface::SetProjectIdForAllConstructors( unsigned short projectId_ )
-{
-    for( size_t i = 0; i < m_ObjectConstructors.size(); ++i )
-    {
-        m_ObjectConstructors[ i ]->SetProjectId( projectId_ );
+void PerModuleInterface::SetProjectIdForAllConstructors(unsigned short projectId_) {
+    for(size_t i = 0; i < m_ObjectConstructors.size(); ++i) {
+        m_ObjectConstructors[ i ]->SetProjectId(projectId_);
     }
 }
 
 
-void PerModuleInterface::SetSystemTable( SystemTable* pSystemTable )
-{
+void PerModuleInterface::SetSystemTable(SystemTable* pSystemTable) {
 	g_pSystemTable = pSystemTable;
 }
 
-PerModuleInterface::PerModuleInterface()
-{
+PerModuleInterface::PerModuleInterface() {
 	//ensure this file gets compiled
-	AddRequiredSourceFiles( __FILE__ );
+	AddRequiredSourceFiles(__FILE__);
 }
 
-const std::vector<const char*>& PerModuleInterface::GetRequiredSourceFiles() const
-{
+const std::vector<const char*>& PerModuleInterface::GetRequiredSourceFiles() const {
 	return m_RequiredSourceFiles;
 }
 
-void PerModuleInterface::AddRequiredSourceFiles( const char* file_ )
-{
-	m_RequiredSourceFiles.push_back( file_ );
+void PerModuleInterface::AddRequiredSourceFiles(const char* file_) {
+	m_RequiredSourceFiles.push_back(file_);
 }

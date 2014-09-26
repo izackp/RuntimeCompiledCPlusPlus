@@ -31,35 +31,29 @@ using namespace std;
 
 FileMonitor::FileMonitor()
 	: m_changeNotifications(CHANGE_QUEUE_SIZE)
-	, m_pFileWatcher( new FW::FileWatcher() ) // Create the file watch object
-	, m_bChangeFlag(false)
-{
+	, m_pFileWatcher(new FW::FileWatcher()) // Create the file watch object
+	, m_bChangeFlag(false) {
 }
 
 
-FileMonitor::~FileMonitor()
-{
+FileMonitor::~FileMonitor() {
 	delete m_pFileWatcher;
 }
 
-void FileMonitor::Update(	float fDeltaTime )
-{
-	m_pFileWatcher->update();
+void FileMonitor::Update(	float fDeltaTime) {
+	m_pFileWatcher->scanEvents();
 
-	while (!m_changeNotifications.empty())
-	{
+	while (!m_changeNotifications.empty()) {
 		ProcessChangeNotification(m_changeNotifications.back());
 		m_changeNotifications.pop_back();
 	}
 }
 
-void FileMonitor::Watch( const char* filename, IFileMonitorListener *pListener /*= NULL*/ )
-{
+void FileMonitor::Watch(const char* filename, IFileMonitorListener *pListener /*= NULL*/) {
 	Watch(FileSystemUtils::Path(filename), pListener);
 }
 
-void FileMonitor::Watch( const FileSystemUtils::Path& filename, IFileMonitorListener *pListener /*= NULL*/ )
-{
+void FileMonitor::Watch(const FileSystemUtils::Path& filename, IFileMonitorListener *pListener /*= NULL*/) {
 	FileSystemUtils::Path filepath = filename.DelimitersToOSDefault();
 
 
@@ -73,17 +67,15 @@ void FileMonitor::Watch( const FileSystemUtils::Path& filename, IFileMonitorList
 
 	FileSystemUtils::Path pathDir = bPathIsDir ? filepath : filepath.ParentPath();
 	TDirList::iterator dirIt = GetWatchedDirEntry(pathDir);	
-	if (dirIt == m_DirWatchList.end())
-	{
+	if (dirIt == m_DirWatchList.end()) {
 		// New directory entry
-		m_DirWatchList.push_back( WatchedDir(pathDir) );
+		m_DirWatchList.push_back(WatchedDir(pathDir));
 		dirIt = --(m_DirWatchList.end());
 		StartWatchingDir(*dirIt);
 	}
 	assert(dirIt != m_DirWatchList.end());
 
-	if (bPathIsDir)
-	{
+	if (bPathIsDir) {
 		if (!dirIt->bWatchDirItself)
 		{
 			assert(!dirIt->pListener);
@@ -91,8 +83,7 @@ void FileMonitor::Watch( const FileSystemUtils::Path& filename, IFileMonitorList
 			dirIt->bWatchDirItself = true;
 		}
 	}
-	else
-	{
+	else {
 		// Add file to directory's watch list (if it's not already there)
 		TFileList::iterator fileIt = GetWatchedFileEntry(filepath, dirIt->fileWatchList);
 		if (fileIt == dirIt->fileWatchList.end())
@@ -103,12 +94,10 @@ void FileMonitor::Watch( const FileSystemUtils::Path& filename, IFileMonitorList
 }
 
 
-FileMonitor::TDirList::iterator FileMonitor::GetWatchedDirEntry( const FileSystemUtils::Path& dir )
-{
+FileMonitor::TDirList::iterator FileMonitor::GetWatchedDirEntry(const FileSystemUtils::Path& dir) {
 	TDirList::iterator dirIt = m_DirWatchList.begin();
 	TDirList::iterator dirItEnd = m_DirWatchList.end();
-	while (dirIt != dirItEnd && !ArePathsEqual(dirIt->dir, dir))
-	{
+	while (dirIt != dirItEnd && !ArePathsEqual(dirIt->dir, dir)) {
 		dirIt++;
 	}
 
@@ -116,12 +105,10 @@ FileMonitor::TDirList::iterator FileMonitor::GetWatchedDirEntry( const FileSyste
 }
 
 
-FileMonitor::TFileList::iterator FileMonitor::GetWatchedFileEntry( const FileSystemUtils::Path& file, TFileList& fileList )
-{
+FileMonitor::TFileList::iterator FileMonitor::GetWatchedFileEntry(const FileSystemUtils::Path& file, TFileList& fileList) {
 	TFileList::iterator fileIt = fileList.begin();
 	TFileList::iterator fileItEnd = fileList.end();
-	while (fileIt != fileItEnd && !ArePathsEqual(fileIt->file, file))
-	{
+	while (fileIt != fileItEnd && !ArePathsEqual(fileIt->file, file)) {
 		fileIt++;
 	}
 
@@ -129,21 +116,18 @@ FileMonitor::TFileList::iterator FileMonitor::GetWatchedFileEntry( const FileSys
 }
 
 
-void FileMonitor::ClearChanges()
-{
+void FileMonitor::ClearChanges() {
 	m_bChangeFlag = false;
 	m_FileChangedList.clear();
 }
 
 
-void FileMonitor::StartWatchingDir( WatchedDir& dirEntry )
-{
-	m_pFileWatcher->addWatch( dirEntry.dir, this );
+void FileMonitor::StartWatchingDir(WatchedDir& dirEntry) {
+	m_pFileWatcher->addWatch(dirEntry.dir, this);
 }
 
 
-void FileMonitor::ProcessChangeNotification( const FileSystemUtils::Path& file )
-{
+void FileMonitor::ProcessChangeNotification(const FileSystemUtils::Path& file) {
 	// Notify any listeners and add to change list if this is a watched file/dir
 	
 	// Again - this isn't correct, just a hack
@@ -151,8 +135,7 @@ void FileMonitor::ProcessChangeNotification( const FileSystemUtils::Path& file )
 	FileSystemUtils::Path pathDir = bPathIsDir ? file : file.ParentPath();
 
 	TDirList::iterator dirIt = GetWatchedDirEntry(pathDir);	
-	if (dirIt != m_DirWatchList.end())
-	{
+	if (dirIt != m_DirWatchList.end()) {
 		// Is directory itself being watched?
 		// Unsure here - no need to notify as folder will get it's own notification come through?
 		// Bit below feels redundant
@@ -187,10 +170,8 @@ void FileMonitor::ProcessChangeNotification( const FileSystemUtils::Path& file )
 }
 
 void FileMonitor::handleFileAction(FW::WatchID watchid, const FW::String& dir, const FW::String& filename,
-                   FW::Action action)
-{
-	switch(action)
-	{
+                   FW::Action action) {
+	switch(action) {
 	case FW::Actions::Add:
 		// Currently do nothing
 		break;
@@ -200,7 +181,7 @@ void FileMonitor::handleFileAction(FW::WatchID watchid, const FW::String& dir, c
 	case FW::Actions::Modified:
 		{
   			FileSystemUtils::Path filePath(filename);
- 			if( !filename.HasParentPath() )
+ 			if (!filename.HasParentPath())
   			{
   				filePath = dir / filePath;
   			}
@@ -209,7 +190,7 @@ void FileMonitor::handleFileAction(FW::WatchID watchid, const FW::String& dir, c
 		}
 		break;
 	default:
-		assert( false ); //should not happen
+		assert(false); //should not happen
 	}
 
 }

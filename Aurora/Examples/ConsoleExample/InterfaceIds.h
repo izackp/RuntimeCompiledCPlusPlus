@@ -31,8 +31,7 @@
 #include "../../RuntimeObjectSystem/IObject.h"
 
 /*
-enum InterfaceIDEnumConsoleExample
-{
+enum InterfaceIDEnumConsoleExample {
 	IID_IUPDATEABLE = IID_ENDInterfaceID,
 
 	IID_ENDInterfaceIDEnumConsoleExample

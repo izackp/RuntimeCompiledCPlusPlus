@@ -31,52 +31,47 @@
 
 // Manages the registering of files with the file monitor and triggering
 // Of compilation when a registered file changes
-class FileChangeNotifier : public IFileChangeNotifier, public IFileMonitorListener
-{
+class FileChangeNotifier : public IFileChangeNotifier, public IFileMonitorListener {
 public:
 	FileChangeNotifier();
 	virtual ~FileChangeNotifier();
 
 	// IFileChangeNotifier
 		
-	virtual bool IsMonitoringActive() const
-	{
+	virtual bool IsMonitoringActive() const {
 		return m_bActive;
 	}
 
-	virtual void SetMonitoringActive( bool bActive )
-	{
+	virtual void SetMonitoringActive(bool bActive) {
 		m_bActive = bActive;
 	}
 
-	virtual float GetMinTimeBetweenNotifications() const
-	{
+	virtual float GetMinTimeBetweenNotifications() const {
 		return m_fMinTimeBetweenNotifications;
 	}
 
-	virtual void SetMinTimeBetweenNotifications( float fMinTime );
+	virtual void SetMinTimeBetweenNotifications(float fMinTime);
 
-	virtual float GetChangeNotifyDelay() const
-	{
+	virtual float GetChangeNotifyDelay() const {
 		return m_fChangeNotifyDelay;
 	}
 
-	virtual void SetChangeNotifyDelay( float fDelay );
+	virtual void SetChangeNotifyDelay(float fDelay);
 
-	virtual void Update( float fDeltaTime );
+	virtual void Update(float fDeltaTime);
 
 	// Add file to trigger compilation when it changes
-	virtual void Watch( const FileSystemUtils::Path& filename, IFileChangeListener *pListener );
-	virtual void Watch( const char *filename, IFileChangeListener *pListener );
+	virtual void Watch(const FileSystemUtils::Path& filename, IFileChangeListener *pListener);
+	virtual void Watch(const char *filename, IFileChangeListener *pListener);
 
-	virtual void RemoveListener( IFileChangeListener *pListener );
+	virtual void RemoveListener(IFileChangeListener *pListener);
 
 	// ~IFileChangeNotifier
 
 
 	// IFileMonitorListener
 
-	void OnFileChange( const FileSystemUtils::Path& filename );
+	void OnFileChange(const FileSystemUtils::Path& filename);
 
 	// ~IFileMonitorListener
 	

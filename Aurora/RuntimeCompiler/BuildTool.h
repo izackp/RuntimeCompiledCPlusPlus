@@ -23,48 +23,44 @@
 
 #include "FileSystemUtils.h"
 
-class BuildTool
-{
+class BuildTool {
 public:
 	BuildTool();
 	~BuildTool();
-	void Initialise( ICompilerLogger * pLogger );
+	void Initialise(ICompilerLogger * pLogger);
 
     // Clean - cleans up the intermediate files
     void Clean() const;
 
-	struct FileToBuild
-	{
-		FileToBuild( const FileSystemUtils::Path& filePath_ )
-			: filePath( filePath_ )
-			, forceCompile( false )
+	struct FileToBuild {
+		FileToBuild(const FileSystemUtils::Path& filePath_)
+			: filePath(filePath_)
+			, forceCompile(false)
 		{
 		}
-		FileToBuild( const FileSystemUtils::Path& filePath_, bool forceCompile_ )
-			: filePath( filePath_ )
-			, forceCompile( forceCompile_ )
+		FileToBuild(const FileSystemUtils::Path& filePath_, bool forceCompile_)
+			: filePath(filePath_)
+			, forceCompile(forceCompile_)
 		{
 		}
 		FileSystemUtils::Path	filePath;
 		bool					forceCompile; //if true the file is compiled even if object file is present
 	};
 
-	void BuildModule( const std::vector<FileToBuild>& buildFileList, 
+	void BuildModule(const std::vector<FileToBuild>& buildFileList, 
 					  const std::vector<FileSystemUtils::Path>& includeDirList, 
 					  const std::vector<FileSystemUtils::Path>& libraryDirList,
 					  const std::vector<FileSystemUtils::Path>& linkLibraryList,
 					  RCppOptimizationLevel optimizationLevel_,
 					  const char* pCompileOptions,
 					  const char* pLinkOptions,
-					  const FileSystemUtils::Path& moduleName );
-	bool GetIsComplete()
-	{
+					  const FileSystemUtils::Path& moduleName);
+	bool GetIsComplete() {
 		return m_Compiler.GetIsComplete();
 	}
 
-    void SetFastCompileMode( bool bFast )
-    {
-        m_Compiler.SetFastCompileMode( bFast );
+    void SetFastCompileMode(bool bFast) {
+        m_Compiler.SetFastCompileMode(bFast);
     }
     
 

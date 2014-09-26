@@ -25,17 +25,14 @@
 #endif
 
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
 	ConsoleGame game;
-	if( game.Init() )
-	{
-		while( game.MainLoop() )
+	if (game.Init()) {
+		while(game.MainLoop())
 		{
 		}
 	}
-	else
-	{
+	else {
 		std::cout << "\nFailed Initialisation, press a key to exit.\n";
 		_getche();
 	}

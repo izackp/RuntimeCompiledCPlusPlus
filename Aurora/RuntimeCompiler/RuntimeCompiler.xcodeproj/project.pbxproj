@@ -61,12 +61,12 @@
 		919FE6F51619F04600A269B6 = {
 			isa = PBXGroup;
 			children = (
+				91CDEF801619F0D70061B76E /* Compiler.h */,
 				915C293316EB817400654B4E /* Compiler_PlatformPosix.cpp */,
 				9106B90016AE8B9A003D2CD9 /* FileSystemUtils.h */,
 				91CDEF9E1619F0E30061B76E /* SimpleFileWatcher */,
 				91CDEF7D1619F0D70061B76E /* BuildTool.cpp */,
 				91CDEF7E1619F0D70061B76E /* BuildTool.h */,
-				91CDEF801619F0D70061B76E /* Compiler.h */,
 				91CDEF811619F0D70061B76E /* FileChangeNotifier.cpp */,
 				91CDEF821619F0D70061B76E /* FileChangeNotifier.h */,
 				91CDEF831619F0D70061B76E /* FileMonitor.cpp */,

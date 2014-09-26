@@ -19,7 +19,6 @@
 
 #include "../../RuntimeObjectSystem/IObject.h"
 
-struct IUpdateable : public IObject
-{
-	virtual void Update( float deltaTime ) = 0;
+struct IUpdateable : public IObject {
+	virtual void Update(float deltaTime) = 0;
 };

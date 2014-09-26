@@ -41,11 +41,9 @@ static __thread RuntimeProtector*   m_pCurrProtector    = 0; // for nested threa
 	static thread_state_flavor_t   old_flavors[NUM_OLD_EXCEPTION_HANDLERS];
 #endif
 
-void RuntimeObjectSystem::CreatePlatformImpl()
-{
+void RuntimeObjectSystem::CreatePlatformImpl() {
 #ifdef __APPLE__
-    if( !ms_bMachPortSet )
-    {
+    if (!ms_bMachPortSet) {
         // prevent OS X debugger from catching signals in a none re-catchable way
         task_get_exception_ports(mach_task_self(), EXC_MASK_BAD_ACCESS | EXC_MASK_BAD_INSTRUCTION, old_masks, &old_count, old_ports, old_behaviors, old_flavors);
         task_set_exception_ports(mach_task_self(), EXC_MASK_BAD_ACCESS | EXC_MASK_BAD_INSTRUCTION, MACH_PORT_NULL, EXCEPTION_DEFAULT, MACHINE_THREAD_STATE);
@@ -54,26 +52,20 @@ void RuntimeObjectSystem::CreatePlatformImpl()
 #endif
 }
 
-void RuntimeObjectSystem::DeletePlatformImpl()
-{
+void RuntimeObjectSystem::DeletePlatformImpl() {
 }
 
-void RuntimeObjectSystem::SetProtectionEnabled( bool bProtectionEnabled_ )
-{
+void RuntimeObjectSystem::SetProtectionEnabled(bool bProtectionEnabled_) {
     m_bProtectionEnabled = bProtectionEnabled_;
 #ifdef __APPLE__
-    if( !m_bProtectionEnabled )
-    {
-        if( ms_bMachPortSet )
-        {
-            for( int i = 0; i < old_count; ++i )
-            {
-                task_set_exception_ports( mach_task_self(), old_masks[i], old_ports[i], old_behaviors[i], old_flavors[i]);
+    if (!m_bProtectionEnabled) {
+        if (ms_bMachPortSet) {
+            for(int i = 0; i < old_count; ++i) {
+                task_set_exception_ports(mach_task_self(), old_masks[i], old_ports[i], old_behaviors[i], old_flavors[i]);
             }
         }
     }
-    else
-    {
+    else {
         CreatePlatformImpl();
     }
 #endif
@@ -81,14 +73,12 @@ void RuntimeObjectSystem::SetProtectionEnabled( bool bProtectionEnabled_ )
 
 
 
-void signalHandler(int sig, siginfo_t *info, void *context)
-{
+void signalHandler(int sig, siginfo_t *info, void *context) {
     // we only handle synchronous signals with this handler, so they come to the correct thread.
-    assert( m_pCurrProtector );
+    assert(m_pCurrProtector);
     
     // store exception information
-    switch( sig )
-    {
+    switch(sig) {
         case SIGILL:
             m_pCurrProtector->ExceptionInfo.Type = RuntimeProtector::ESE_InvalidInstruction;
             break;
@@ -101,12 +91,11 @@ void signalHandler(int sig, siginfo_t *info, void *context)
         default: assert(false); //should not get here
     }
     m_pCurrProtector->ExceptionInfo.Addr = info->si_addr;
-    longjmp(m_pCurrProtector->m_env, sig );
+    longjmp(m_pCurrProtector->m_env, sig);
 }
 
-bool RuntimeObjectSystem::TryProtectedFunction( RuntimeProtector* pProtectedObject_ )
-{
-   if( !m_bProtectionEnabled )
+bool RuntimeObjectSystem::TryProtectedFunction(RuntimeProtector* pProtectedObject_) {
+   if (!m_bProtectionEnabled)
    {
        pProtectedObject_->ProtectedFunc();
        return true;
@@ -119,45 +108,40 @@ bool RuntimeObjectSystem::TryProtectedFunction( RuntimeProtector* pProtectedObje
     struct sigaction oldAction[3]; // we need to store old actions, could remove for optimization
 
     bool bHasJustHadException = false;
-    if( m_TotalLoadedModulesEver != pProtectedObject_->m_ModulesLoadedCount )
-    {
+    if (m_TotalLoadedModulesEver != pProtectedObject_->m_ModulesLoadedCount) {
         // clear exceptions if we've just loaded a new module
         pProtectedObject_->m_ModulesLoadedCount = m_TotalLoadedModulesEver;
     	pProtectedObject_->m_bHashadException = false;
     }
 
-    if( !pProtectedObject_->m_bHashadException )
-    {
-        if( setjmp(m_pCurrProtector->m_env) )
-        {
+    if (!pProtectedObject_->m_bHashadException) {
+        if (setjmp(m_pCurrProtector->m_env)) {
             pProtectedObject_->m_bHashadException = true;
             bHasJustHadException = true;
         }
-        else
-        {
+        else {
             struct sigaction newAction;
-            memset( &newAction, 0, sizeof( newAction ));
+            memset(&newAction, 0, sizeof(newAction));
             newAction.sa_sigaction = signalHandler;
             newAction.sa_flags = SA_SIGINFO; //use complex signal hander function sa_sigaction not sa_handler
-            sigaction(SIGILL, &newAction, &oldAction[0] );
-            sigaction(SIGBUS, &newAction, &oldAction[1] );
-            sigaction(SIGSEGV, &newAction, &oldAction[2] );
+            sigaction(SIGILL, &newAction, &oldAction[0]);
+            sigaction(SIGBUS, &newAction, &oldAction[1]);
+            sigaction(SIGSEGV, &newAction, &oldAction[2]);
                 
             pProtectedObject_->ProtectedFunc();
         }
         
         //reset
-        sigaction(SIGILL, &oldAction[0], NULL );
-        sigaction(SIGBUS, &oldAction[1], NULL );
-        sigaction(SIGSEGV, &oldAction[2], NULL );
+        sigaction(SIGILL, &oldAction[0], NULL);
+        sigaction(SIGBUS, &oldAction[1], NULL);
+        sigaction(SIGSEGV, &oldAction[2], NULL);
     }
     m_pCurrProtector = pProtectedObject_->m_pPrevious;
     return !bHasJustHadException;
 }
 
 
-bool RuntimeObjectSystem::TestBuildWaitAndUpdate()
-{
-    usleep( 100 * 1000 );
+bool RuntimeObjectSystem::TestBuildWaitAndUpdate() {
+    usleep(100 * 1000);
     return true;
 }

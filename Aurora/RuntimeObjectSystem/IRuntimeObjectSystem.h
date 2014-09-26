@@ -30,8 +30,7 @@ struct RuntimeProtector;
 struct SystemTable;
 struct IPerModuleInterface;
 
-enum TestBuildResult
-{
+enum TestBuildResult {
     TESTBUILDRRESULT_SUCCESS,            // SUCCESS, yay!
     TESTBUILDRRESULT_NO_FILES_TO_BUILD,  // file registration error or no runtime files of this type
     TESTBUILDRRESULT_BUILD_FILE_GONE,    // the file is no longer present
@@ -41,8 +40,7 @@ enum TestBuildResult
 };
 
 
-struct ITestBuildNotifier
-{
+struct ITestBuildNotifier {
     // Notifier gets name of file which and result type.
     // Errors will also be output to log in 'standard' RCC++ way.
     // file may be NULL if type TESTBUILDFAILTYPE_NO_FILES_TO_BUILD.
@@ -60,16 +58,14 @@ struct ITestBuildNotifier
     virtual bool TestBuildWaitAndUpdate() = 0;
 };
 
-namespace FileSystemUtils
-{
+namespace FileSystemUtils {
     class Path;
 }
 
-struct IRuntimeObjectSystem : public ITestBuildNotifier
-{
+struct IRuntimeObjectSystem : public ITestBuildNotifier {
 	// Initialise RuntimeObjectSystem. pLogger and pSystemTable should be deleted by creator. 
 	// Both pLogger and pSystemTable can be 0
-	virtual bool Initialise( ICompilerLogger * pLogger, SystemTable* pSystemTable  ) = 0;
+	virtual bool Initialise(ICompilerLogger * pLogger, SystemTable* pSystemTable ) = 0;
 
 	virtual bool GetIsCompiling() = 0;
 	virtual bool GetIsCompiledComplete() = 0;
@@ -83,7 +79,7 @@ struct IRuntimeObjectSystem : public ITestBuildNotifier
 	virtual IObjectFactorySystem* GetObjectFactorySystem() const = 0;
 	virtual IFileChangeNotifier* GetFileChangeNotifier() const = 0;
 
-	virtual void CompileAll( bool bForceRecompile ) = 0;
+	virtual void CompileAll(bool bForceRecompile) = 0;
 
     // Compile & Link settings can be associated with a project identifier.
     // This identifier should be defined by the application using RCC++,
@@ -91,21 +87,21 @@ struct IRuntimeObjectSystem : public ITestBuildNotifier
     // Identifier 0 is the default for all code not using the project identifiers.
     // The backing storage will use the an array lookup, so use compact identifiers
     // such as (0, 1, 2, 3) and not (20,39,42,250).
-    virtual void CompileAllInProject(           bool bForcerecompile_,  unsigned short projectId_ = 0 ) = 0;
-    virtual void AddToRuntimeFileList(          const char* filename,   unsigned short projectId_ = 0 ) = 0;
-    virtual void RemoveFromRuntimeFileList(     const char* filename,   unsigned short projectId_ = 0 ) = 0;
-    virtual void AddIncludeDir(                 const char *path_,      unsigned short projectId_ = 0 ) = 0;
-    virtual void AddLibraryDir(                 const char *path_,      unsigned short projectId_ = 0 ) = 0;
-    virtual void SetAdditionalCompileOptions(   const char *options,    unsigned short projectId_ = 0 ) = 0;
-    virtual void SetAdditionalLinkOptions(      const char *options,    unsigned short projectId_ = 0 ) = 0;
-    virtual void SetOptimizationLevel( RCppOptimizationLevel optimizationLevel_,	unsigned short projectId_ = 0 ) = 0;
-    virtual RCppOptimizationLevel GetOptimizationLevel(					unsigned short projectId_ = 0 ) = 0;
+    virtual void CompileAllInProject(          bool bForcerecompile_,  unsigned short projectId_ = 0) = 0;
+    virtual void AddToRuntimeFileList(         const char* filename,   unsigned short projectId_ = 0) = 0;
+    virtual void RemoveFromRuntimeFileList(    const char* filename,   unsigned short projectId_ = 0) = 0;
+    virtual void AddIncludeDir(                const char *path_,      unsigned short projectId_ = 0) = 0;
+    virtual void AddLibraryDir(                const char *path_,      unsigned short projectId_ = 0) = 0;
+    virtual void SetAdditionalCompileOptions(  const char *options,    unsigned short projectId_ = 0) = 0;
+    virtual void SetAdditionalLinkOptions(     const char *options,    unsigned short projectId_ = 0) = 0;
+    virtual void SetOptimizationLevel(RCppOptimizationLevel optimizationLevel_,	unsigned short projectId_ = 0) = 0;
+    virtual RCppOptimizationLevel GetOptimizationLevel(					unsigned short projectId_ = 0) = 0;
 
-	virtual void SetAutoCompile( bool autoCompile ) = 0;
+	virtual void SetAutoCompile(bool autoCompile) = 0;
 	virtual bool GetAutoCompile() const = 0;
 
     // see Compiler::SetFastCompileMode
-    virtual void SetFastCompileMode( bool bFast ) = 0;
+    virtual void SetFastCompileMode(bool bFast) = 0;
 
     // clean up temporary object files
     virtual void CleanObjectFiles() const = 0;
@@ -116,23 +112,23 @@ struct IRuntimeObjectSystem : public ITestBuildNotifier
 	virtual ~IRuntimeObjectSystem(){};
 
     // exception handling to catch and protect main app from crashing when using runtime compiling
-    virtual void SetProtectionEnabled( bool bProtectionEnabled_ ) = 0;
+    virtual void SetProtectionEnabled(bool bProtectionEnabled_) = 0;
 	virtual bool IsProtectionEnabled() const = 0;
-    virtual bool TryProtectedFunction( RuntimeProtector* pProtectedObject_ ) = 0;
+    virtual bool TryProtectedFunction(RuntimeProtector* pProtectedObject_) = 0;
 
     // tests one by one touching each runtime modifiable source file
     // returns the number of errors - 0 if all passed.
-   virtual int TestBuildAllRuntimeSourceFiles(  ITestBuildNotifier* callback, bool bTestFileTracking ) = 0;
+   virtual int TestBuildAllRuntimeSourceFiles( ITestBuildNotifier* callback, bool bTestFileTracking) = 0;
 
     // tests touching each header which has RUNTIME_MODIFIABLE_INCLUDE.
     // returns the number of errors - 0 if all passed.
-    virtual int TestBuildAllRuntimeHeaders(     ITestBuildNotifier* callback, bool bTestFileTracking ) = 0;
+    virtual int TestBuildAllRuntimeHeaders(    ITestBuildNotifier* callback, bool bTestFileTracking) = 0;
 
     // FindFile - attempts to find the file in a source directory
-    virtual FileSystemUtils::Path   FindFile( const FileSystemUtils::Path& input ) = 0;
+    virtual FileSystemUtils::Path   FindFile(const FileSystemUtils::Path& input) = 0;
 
     // AddPathToSourceSearch - adds a path to help source search. Can be called multiple times to add paths.
-    virtual void AddPathToSourceSearch( const char* path ) = 0;
+    virtual void AddPathToSourceSearch(const char* path) = 0;
 
 };
 
