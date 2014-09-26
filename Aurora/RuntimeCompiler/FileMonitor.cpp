@@ -186,9 +186,6 @@ void FileMonitor::ProcessChangeNotification( const FileSystemUtils::Path& file )
 	}
 }
 
-
-
-
 void FileMonitor::handleFileAction(FW::WatchID watchid, const FW::String& dir, const FW::String& filename,
                    FW::Action action)
 {

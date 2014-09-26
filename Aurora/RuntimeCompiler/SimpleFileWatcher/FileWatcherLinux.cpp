@@ -32,6 +32,7 @@
 #include <stdio.h>
 #include <errno.h>
 #include <sys/inotify.h>
+#include <iostream>
 
 #define BUFF_SIZE ((sizeof(struct inotify_event)+FILENAME_MAX)*1024)
 
@@ -121,13 +122,10 @@ namespace FW
 		WatchStruct* watch = iter->second;
 		mWatches.erase(iter);
 	
-		inotify_rm_watch(mFD, watchid);
+		int wd = inotify_rm_watch(mFD, watchid);
 		if (wd == -1)
 		{
-		  if (errno == ENOENT)
-			  throw directory;
-		  else
-			  throw strerror(errno);
+		    throw strerror(errno);
 		}
 		
 		delete watch;
@@ -166,21 +164,27 @@ namespace FW
 	//--------
 	void FileWatcherLinux::handleAction(WatchStruct* watch, const String& filename, unsigned long action)
 	{
+		std::string sFileName(filename.c_str());
+		std::cout << "Change found for file: " << sFileName << "\n";
 		if(!watch->mListener)
 			return;
-
-		if( (IN_CLOSE_WRITE & action) || (IN_MODIFY & action) || ( IN_ATTRIB & action ) )
+		
+		
+		if ( (IN_CLOSE_WRITE & action) || (IN_MODIFY & action) || ( IN_ATTRIB & action ) || ( IN_MOVED_TO & action ))
 		{
+			std::cout << "\tModified\n";
 			watch->mListener->handleFileAction(watch->mWatchID, watch->mDirName, filename,
 								Actions::Modified);
 		}
-		if( ( IN_MOVED_TO & action ) || ( IN_CREATE & action ) )
+		if (IN_CREATE & action)
 		{
+			std::cout << "\tAdd\n";
 			watch->mListener->handleFileAction(watch->mWatchID, watch->mDirName, filename,
 								Actions::Add);
 		}
-		if(( IN_MOVED_FROM & action ) || ( IN_DELETE & action ) )
+		if (( IN_MOVED_FROM & action ) || ( IN_DELETE & action ) )
 		{
+			std::cout << "\tDeleted\n";
 			watch->mListener->handleFileAction(watch->mWatchID, watch->mDirName, filename,
 								Actions::Delete);
 		}
