@@ -20,7 +20,7 @@ class RuntimeObject01 : public IUpdateable
 public:
 	virtual void Update( float deltaTime )
 	{
-		std::cout << "Runtime Object 1 update called!\n";
+		std::cout << "Runtime Object 3 update called!\n";
 	}
 };
 

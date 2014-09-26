@@ -77,6 +77,14 @@ namespace FW
 		int wd = inotify_add_watch (mFD, pDir,
 			IN_CLOSE_WRITE | IN_MOVED_TO | IN_CREATE | IN_MOVED_FROM | IN_DELETE | IN_MODIFY | IN_ATTRIB );
 
+		if (wd == -1)
+		{
+		  if (errno == ENOENT)
+			  throw directory;
+		  else
+			  throw strerror(errno);
+		}
+			
 		WatchStruct* pWatch = new WatchStruct();
 		pWatch->mListener = watcher;
 		pWatch->mWatchID = wd;

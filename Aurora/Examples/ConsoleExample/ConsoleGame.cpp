@@ -174,7 +174,7 @@ bool ConsoleGame::MainLoop()
     
     m_pRuntimeObjectSystem->GetFileChangeNotifier()->Update( deltaTime );
     m_pUpdateable->Update( deltaTime );
-    Sleep(1000);
+    Sleep(5000);
 
 	return true;
 }

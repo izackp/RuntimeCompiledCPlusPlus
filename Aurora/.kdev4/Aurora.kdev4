@@ -34,5 +34,8 @@ Project Target=Aurora,ConsoleExample
 Working Directory=file:///home/isaac/Projects/RuntimeCompiledCPlusPlus/Aurora/build/
 isExecutable=false
 
+[Launch][Launch Configuration 2][Data]
+Configured from ProjectItem=Aurora,ConsoleExample
+
 [Project]
 VersionControlSupport=kdevgit
