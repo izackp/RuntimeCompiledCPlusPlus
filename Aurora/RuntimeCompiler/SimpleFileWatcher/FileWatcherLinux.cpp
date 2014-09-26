@@ -116,12 +116,19 @@ namespace FW
 		WatchMap::iterator iter = mWatches.find(watchid);
 
 		if(iter == mWatches.end())
-			return;
+		  return;
 
 		WatchStruct* watch = iter->second;
 		mWatches.erase(iter);
 	
 		inotify_rm_watch(mFD, watchid);
+		if (wd == -1)
+		{
+		  if (errno == ENOENT)
+			  throw directory;
+		  else
+			  throw strerror(errno);
+		}
 		
 		delete watch;
 		watch = 0;
