@@ -33,9 +33,7 @@ public:
     void Clean() const;
 
 	struct FileToBuild {
-		FileToBuild(const FileSystemUtils::Path& filePath_)
-			: filePath(filePath_)
-			, forceCompile(false)
+		FileToBuild(const FileSystemUtils::Path& filePath_) : filePath(filePath_), forceCompile(false)
 		{
 		}
 		FileToBuild(const FileSystemUtils::Path& filePath_, bool forceCompile_)

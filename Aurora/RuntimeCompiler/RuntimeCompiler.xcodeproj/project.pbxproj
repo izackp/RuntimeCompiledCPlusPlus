@@ -58,22 +58,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A593AB219D5AEA5001BF583 /* File IO */ = {
+			isa = PBXGroup;
+			children = (
+				91CDEF9E1619F0E30061B76E /* SimpleFileWatcher */,
+				9106B90016AE8B9A003D2CD9 /* FileSystemUtils.h */,
+				91CDEF861619F0D70061B76E /* IFileChangeNotifier.h */,
+				91CDEF871619F0D70061B76E /* IFileMonitor.h */,
+				91CDEF821619F0D70061B76E /* FileChangeNotifier.h */,
+				91CDEF811619F0D70061B76E /* FileChangeNotifier.cpp */,
+				91CDEF841619F0D70061B76E /* FileMonitor.h */,
+				91CDEF831619F0D70061B76E /* FileMonitor.cpp */,
+			);
+			name = "File IO";
+			sourceTree = "<group>";
+		};
 		919FE6F51619F04600A269B6 = {
 			isa = PBXGroup;
 			children = (
+				6A593AB219D5AEA5001BF583 /* File IO */,
 				91CDEF801619F0D70061B76E /* Compiler.h */,
 				915C293316EB817400654B4E /* Compiler_PlatformPosix.cpp */,
-				9106B90016AE8B9A003D2CD9 /* FileSystemUtils.h */,
-				91CDEF9E1619F0E30061B76E /* SimpleFileWatcher */,
-				91CDEF7D1619F0D70061B76E /* BuildTool.cpp */,
 				91CDEF7E1619F0D70061B76E /* BuildTool.h */,
-				91CDEF811619F0D70061B76E /* FileChangeNotifier.cpp */,
-				91CDEF821619F0D70061B76E /* FileChangeNotifier.h */,
-				91CDEF831619F0D70061B76E /* FileMonitor.cpp */,
-				91CDEF841619F0D70061B76E /* FileMonitor.h */,
+				91CDEF7D1619F0D70061B76E /* BuildTool.cpp */,
 				91CDEF851619F0D70061B76E /* ICompilerLogger.h */,
-				91CDEF861619F0D70061B76E /* IFileChangeNotifier.h */,
-				91CDEF871619F0D70061B76E /* IFileMonitor.h */,
 				919FE7011619F04600A269B6 /* Products */,
 			);
 			sourceTree = "<group>";

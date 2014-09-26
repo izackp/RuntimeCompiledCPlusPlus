@@ -15,13 +15,9 @@
 //    misrepresented as being the original software.
 // 3. This notice may not be removed or altered from any source distribution.
 
-#pragma once
-
 // Compiler Logger - implement this interface to recieve logging from the RuntimeCompiler module
-// In Aurora, this interface exists to avoid dependency on the Systems project
 
-#ifndef ICOMPILERLOGGER_INCLUDED
-#define ICOMPILERLOGGER_INCLUDED
+#pragma once
 
 struct ICompilerLogger {
 	virtual void LogError(const char * format, ...) = 0;
@@ -29,5 +25,3 @@ struct ICompilerLogger {
     virtual void LogInfo(const char * format, ...) = 0;
     virtual ~ICompilerLogger() {}
 };
-
-#endif // ICOMPILERLOGGER_INCLUDED

@@ -25,9 +25,7 @@
 
 using namespace std;
 
-
 #define CHANGE_QUEUE_SIZE 1000
-#define DIRECTORY_CHANGE_BUFFER_SIZE 1024
 
 FileMonitor::FileMonitor()
 	: m_changeNotifications(CHANGE_QUEUE_SIZE)
@@ -97,6 +95,7 @@ void FileMonitor::Watch(const FileSystemUtils::Path& filename, IFileMonitorListe
 FileMonitor::TDirList::iterator FileMonitor::GetWatchedDirEntry(const FileSystemUtils::Path& dir) {
 	TDirList::iterator dirIt = m_DirWatchList.begin();
 	TDirList::iterator dirItEnd = m_DirWatchList.end();
+    
 	while (dirIt != dirItEnd && !ArePathsEqual(dirIt->dir, dir)) {
 		dirIt++;
 	}
@@ -169,28 +168,21 @@ void FileMonitor::ProcessChangeNotification(const FileSystemUtils::Path& file) {
 	}
 }
 
-void FileMonitor::handleFileAction(FW::WatchID watchid, const FW::String& dir, const FW::String& filename,
-                   FW::Action action) {
-	switch(action) {
-	case FW::Actions::Add:
-		// Currently do nothing
-		break;
-	case FW::Actions::Delete:
-		// Currently do nothing
-		break;
-	case FW::Actions::Modified:
-		{
-  			FileSystemUtils::Path filePath(filename);
- 			if (!filename.HasParentPath())
-  			{
-  				filePath = dir / filePath;
-  			}
-
-			m_changeNotifications.push_back(filePath.DelimitersToOSDefault());
-		}
-		break;
-	default:
-		assert(false); //should not happen
-	}
-
+void FileMonitor::handleFileAction(FW::WatchID watchid, const FW::String& dir, const FW::String& filename, FW::Action action) {
+    switch(action) {
+        case FW::Actions::Add:
+        case FW::Actions::Delete:
+            // Currently do nothing
+            break;
+        case FW::Actions::Modified:
+        {
+            FileSystemUtils::Path filePath(filename);
+            if (!filename.HasParentPath())
+            {
+                filePath = dir / filePath;
+            }
+            
+            m_changeNotifications.push_back(filePath.DelimitersToOSDefault());
+        }
+    }
 }
