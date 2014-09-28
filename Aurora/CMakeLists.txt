@@ -53,7 +53,7 @@ if(BUILD_EXAMPLES)
 	#
 
 	add_library(Systems ${BUILD_TYPE} ${Systems_SRCS})
-	
+
 	#
 	# Freetype WIN32
 	#
@@ -114,9 +114,13 @@ if(BUILD_EXAMPLES)
 
 	add_subdirectory(External/libRocket/Build)
 	include_directories(
-		${OPENGL_INCLUDE_DIR} 
+		${OPENGL_INCLUDE_DIR}
 		External/libRocket/Include
 		External/assimp/include
 	)
-	
+
 endif()
+
+add_subdirectory(RuntimeCompiler/Compiler)
+
+add_subdirectory(RuntimeCompiler/Compiler)

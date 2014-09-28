@@ -311,9 +311,7 @@ void RuntimeObjectSystem::StartRecompile() {
 	}
 
 
-	m_pBuildTool->BuildModule(	ourBuildFileList,
-                                m_Projects[ project ].m_IncludeDirList,
-                                m_Projects[ project ].m_LibraryDirList,
+	m_pBuildTool->BuildModule(ourBuildFileList, m_Projects[ project ].m_IncludeDirList, m_Projects[ project ].m_LibraryDirList,
 								linkLibraryList,
 								m_Projects[ project ].m_OptimizationLevel,
                                 m_Projects[ project ].m_CompileOptions.c_str(),
@@ -349,7 +347,7 @@ bool RuntimeObjectSystem::LoadCompiledModule() {
     pPerModuleInterfaceProcAdd = (GETPerModuleInterface_PROC) GetProcAddress(module, "GetPerModuleInterface");
 #else
     pPerModuleInterfaceProcAdd = (GETPerModuleInterface_PROC) dlsym(module,"GetPerModuleInterface");
-    
+
 #endif
 	if (!pPerModuleInterfaceProcAdd) {
 		if (m_pCompilerLogger)
@@ -363,7 +361,7 @@ bool RuntimeObjectSystem::LoadCompiledModule() {
 
 	if (m_pCompilerLogger)
         m_pCompilerLogger->LogInfo("Compilation Succeeded\n");
-    
+
     ++m_TotalLoadedModulesEver;
 
 	SetupObjectConstructors(pPerModuleInterfaceProcAdd());
@@ -467,7 +465,7 @@ void RuntimeObjectSystem::SetupRuntimeFileTracking(const IAUDynArray<IObjectCons
                 project.m_RuntimeIncludeMap.insert(includePathPair);
 			}
 		}
-            
+
 
  		//add link library file mappings
 		for (size_t linklibraryNum = 0; linklibraryNum <= constructors_[i]->GetMaxNumLinkLibraries(); ++linklibraryNum)
@@ -498,7 +496,7 @@ void RuntimeObjectSystem::SetupRuntimeFileTracking(const IAUDynArray<IObjectCons
 				sourcePathPair.first = filePath;
 				sourcePathPair.second = pathSrc;
                 project.m_RuntimeSourceDependencyMap.insert(sourcePathPair);
-                
+
                 // if the include file with a source dependancy is logged as an runtime include, then we mark this .cpp as compile dependencies on change
                 TFileToFilesEqualRange range = project.m_RuntimeIncludeMap.equal_range(pathInc);
                 if (range.first != range.second)
@@ -610,7 +608,7 @@ FileSystemUtils::Path RuntimeObjectSystem::FindFile(const FileSystemUtils::Path&
                     bFoundMapping = true;
                 }
             }
-            
+
             if (!bFoundMapping) {
                 // Step 3: Attempt to find a mapping from a known path
                 TFileList requestedSubPaths;
@@ -775,7 +773,7 @@ static int TestBuildFile(ICompilerLogger* pLog, RuntimeObjectSystem* pRTObjSys, 
 // returns the number of errors - 0 if all passed.
 int RuntimeObjectSystem::TestBuildAllRuntimeSourceFiles( ITestBuildNotifier* callback, bool bTestFileTracking) {
     if (m_pCompilerLogger) { m_pCompilerLogger->LogInfo("TestBuildAllRuntimeSourceFiles Starting\n"); }
-   
+
     ITestBuildNotifier* failCallbackLocal = callback;
     if (!failCallbackLocal) {
         failCallbackLocal = this;
@@ -791,7 +789,7 @@ int RuntimeObjectSystem::TestBuildAllRuntimeSourceFiles( ITestBuildNotifier* cal
     if (0 == numFilesToBuild) {
         failCallbackLocal->TestBuildCallback(NULL, TESTBUILDRRESULT_NO_FILES_TO_BUILD);
     }
-    
+
     for(unsigned short proj = 0; proj < m_Projects.size(); ++proj) {
         TFileList filesToTest = m_Projects[ proj ].m_RuntimeFileList; // m_RuntimeFileList could change if file content changes (new includes or source dependencies) so make copy to ensure iterators valid.
         for(TFileList::iterator it = filesToTest.begin(); it != filesToTest.end(); ++it) {
@@ -858,7 +856,7 @@ int RuntimeObjectSystem::TestBuildAllRuntimeHeaders(     ITestBuildNotifier* cal
         }
     }
 
-    
+
     if (0 == numErrors) {
         if (m_pCompilerLogger) { m_pCompilerLogger->LogInfo("All Tests Passed\n"); }
     }
