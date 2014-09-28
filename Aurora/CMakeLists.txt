@@ -120,7 +120,3 @@ if(BUILD_EXAMPLES)
 	)
 
 endif()
-
-add_subdirectory(RuntimeCompiler/Compiler)
-
-add_subdirectory(RuntimeCompiler/Compiler)

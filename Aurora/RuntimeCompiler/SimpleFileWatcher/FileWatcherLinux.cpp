@@ -133,7 +133,7 @@ namespace FW
 	}
 
 	//--------
-	void FileWatcherLinux::update()
+	void FileWatcherLinux::scanEvents()
 	{
 		FD_SET(mFD, &mDescriptorSet);
 
