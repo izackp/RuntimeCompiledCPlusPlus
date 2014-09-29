@@ -21,7 +21,6 @@
 #if defined _WINDOWS_ && defined GetObject
 #undef GetObject
 #endif
-#include "../Common/AUArray.inl"
 #include "../RuntimeCompiler/ICompilerLogger.h"
 #include "../RuntimeCompiler/FileChangeNotifier.h"
 #include "IObjectFactorySystem.h"

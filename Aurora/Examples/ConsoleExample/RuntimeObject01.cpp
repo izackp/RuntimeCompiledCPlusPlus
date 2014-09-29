@@ -9,7 +9,7 @@ class RuntimeObject01 : public IUpdateable
 {
 public:
     virtual void Update(float deltaTime) {
-        std::cout << "Runtime Object 012 update called!\n";
+        std::cout << "Runtime Object 03242 update called!\n";
     }
 };
 

@@ -15,13 +15,7 @@ Extra Arguments=
 Install Directory=file:///usr/local
 
 [Launch]
-Launch Configurations=Launch Configuration 0,Launch Configuration 1
-
-[Launch][Launch Configuration 0]
-Configured Launch Modes=execute
-Configured Launchers=nativeAppLauncher
-Name=New Application Launcher
-Type=Native Application
+Launch Configurations=Launch Configuration 1
 
 [Launch][Launch Configuration 1]
 Configured Launch Modes=debug
@@ -33,9 +27,6 @@ Type=Native Application
 Project Target=Aurora,ConsoleExample
 Working Directory=file:///home/isaac/Projects/RuntimeCompiledCPlusPlus/Aurora/build/
 isExecutable=false
-
-[Launch][Launch Configuration 2][Data]
-Configured from ProjectItem=Aurora,ConsoleExample
 
 [Project]
 VersionControlSupport=kdevgit

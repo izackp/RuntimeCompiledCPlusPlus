@@ -1,0 +1,3 @@
+/home/isaac/Projects/RuntimeCompiledCPlusPlus/Aurora-build/CMakeFiles/ConsoleExample.dir
+/home/isaac/Projects/RuntimeCompiledCPlusPlus/Aurora-build/CMakeFiles/RuntimeCompiler.dir
+/home/isaac/Projects/RuntimeCompiledCPlusPlus/Aurora-build/CMakeFiles/RuntimeObjectSystem.dir

@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -O3 -DNDEBUG   -shared -Wl,-soname,libRenderer.so -o libRenderer.so CMakeFiles/Renderer.dir/Renderer/AURenderContext.cpp.o CMakeFiles/Renderer.dir/Renderer/AURenMesh.cpp.o -lGLU -lGL -lX11 -lXext 
