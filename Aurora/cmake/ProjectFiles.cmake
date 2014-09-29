@@ -48,18 +48,5 @@ if(BUILD_EXAMPLES)
 	#
 	#aux_source_directory(Examples/ConsoleExample ConsoleExample_SRCS)
 	file(GLOB_RECURSE ConsoleExample_SRCS "Examples/ConsoleExample/*.cpp")
-	#
-	# SimpleTest Source
-	#
-	aux_source_directory(Examples/SimpleTest SimpleTest_SRCS)
-	#
-	# Renderer Source
-	#
-	aux_source_directory(Renderer Renderer_SRCS)
-	#
-	# Systems Source
-	#
-	#aux_source_directory(Systems Systems_SRCS)
-	file(GLOB_RECURSE Systems_SRCS "Systems/*.cpp")
 endif()
 

@@ -22,7 +22,7 @@
 
 #include "../RuntimeCompiler/IFileChangeNotifier.h"
 #include "../RuntimeCompiler/BuildTool.h"
-#include "../Common/AUArray.inl"
+#include <vector>
 #include "ObjectInterface.h"
 #include "IRuntimeObjectSystem.h"
 
@@ -133,7 +133,7 @@ public:
 
 	// IFileChangeListener
 
-	virtual void OnFileChange(const IAUDynArray<const char*>& filelist);
+	virtual void OnFileChange(const std::vector<const char*>& filelist);
 
 	// ~IFileChangeListener
 
@@ -149,7 +149,7 @@ private:
 	typedef std::pair<TFileToFilesMap::iterator,TFileToFilesMap::iterator>  TFileToFilesEqualRange;
 
 	void StartRecompile();
-	void SetupRuntimeFileTracking(const IAUDynArray<IObjectConstructor*>& constructors_);
+	void SetupRuntimeFileTracking(const std::vector<IObjectConstructor*>& constructors_);
 
 
 	// Members set in initialise

@@ -20,8 +20,8 @@
 #ifndef IFILECHANGENOTIFIER_INCLUDED
 #define IFILECHANGENOTIFIER_INCLUDED
 
-#include "../Common/AUArray.inl"
 #include <set>
+#include <vector>
 
 struct IFileChangeListener;
 
@@ -58,7 +58,7 @@ struct IFileChangeListener {
 
 
 	// Listener must make copies of strings if it wants to store them
-	virtual void OnFileChange(const IAUDynArray<const char*>& filelist) = 0;
+	virtual void OnFileChange(const std::vector<const char*>& filelist) = 0;
 
 
 	// Should be called by IFileChangeNotifier implementation only

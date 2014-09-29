@@ -97,7 +97,7 @@ bool RuntimeObjectSystem::Initialise(ICompilerLogger * pLogger, SystemTable* pSy
 }
 
 
-void RuntimeObjectSystem::OnFileChange(const IAUDynArray<const char*>& filelist) {
+void RuntimeObjectSystem::OnFileChange(const std::vector<const char*>& filelist) {
 	if (!m_bAutoCompile) {
 		return;
 	}
@@ -111,7 +111,7 @@ void RuntimeObjectSystem::OnFileChange(const IAUDynArray<const char*>& filelist)
 
 
         if (m_pCompilerLogger) { m_pCompilerLogger->LogInfo("FileChangeNotifier triggered recompile with changes to:\n"); }
-        for(size_t i = 0; i < filelist.Size(); ++i) {
+        for(size_t i = 0; i < filelist.size(); ++i) {
             // check this file is in our project list
             TFileList::iterator it = std::find(m_Projects[ proj ].m_RuntimeFileList.begin(), m_Projects[ proj ].m_RuntimeFileList.end(), filelist[i]);
             if (it == m_Projects[ proj ].m_RuntimeFileList.end()) {
@@ -176,7 +176,7 @@ void RuntimeObjectSystem::CompileAllInProject(bool bForceRecompile, unsigned sho
 
 	// ensure we have an up to date list of files to commpile if autocompile is off
 	if (!m_bAutoCompile) {
-		AUDynArray<IObjectConstructor*> constructors;
+		std::vector<IObjectConstructor*> constructors;
 		m_pObjectFactorySystem->GetAll(constructors);
 		SetupRuntimeFileTracking(constructors);
 	}
@@ -203,7 +203,7 @@ void RuntimeObjectSystem::SetAutoCompile(bool autoCompile) {
 	m_bAutoCompile = autoCompile;
 
 	if (m_bAutoCompile) {
-		AUDynArray<IObjectConstructor*> constructors;
+		std::vector<IObjectConstructor*> constructors;
 		m_pObjectFactorySystem->GetAll(constructors);
 		SetupRuntimeFileTracking(constructors);
 	}
@@ -389,7 +389,7 @@ void RuntimeObjectSystem::SetupObjectConstructors(IPerModuleInterface* pPerModul
 
 	// get hold of the constructors
 	const std::vector<IObjectConstructor*> &objectConstructors = pPerModuleInterface->GetConstructors();
-	AUDynArray<IObjectConstructor*> constructors(objectConstructors.size());
+	std::vector<IObjectConstructor*> constructors(objectConstructors.size());
 	for (size_t i = 0, iMax = objectConstructors.size(); i < iMax; ++i) {
 		constructors[i] = objectConstructors[i];
 	}
@@ -402,12 +402,12 @@ void RuntimeObjectSystem::SetupObjectConstructors(IPerModuleInterface* pPerModul
 
 }
 
-void RuntimeObjectSystem::SetupRuntimeFileTracking(const IAUDynArray<IObjectConstructor*>& constructors_) {
+void RuntimeObjectSystem::SetupRuntimeFileTracking(const std::vector<IObjectConstructor*>& constructors_) {
 #ifndef RCCPPOFF
 	// for optimization purposes we skip some actions when running for the first time (i.e. no previous constructors)
 	static bool bFirstTime = true;
 
-	for (size_t i = 0, iMax = constructors_.Size(); i < iMax; ++i) {
+	for (size_t i = 0, iMax = constructors_.size(); i < iMax; ++i) {
 		const char* pFilename = constructors_[i]->GetFileName(); // GetFileName returns full path including GetCompiledPath()
 		if (!pFilename)
 		{
@@ -727,8 +727,8 @@ static int TestBuildFile(ICompilerLogger* pLog, RuntimeObjectSystem* pRTObjSys, 
             }
         }
         else {
-            AUDynArray<const char*> filelist;
-            filelist.Add(file.c_str());
+            std::vector<const char*> filelist;
+            filelist.push_back(file.c_str());
             pRTObjSys->OnFileChange(filelist);
         }
         if (pRTObjSys->GetIsCompiling()) {

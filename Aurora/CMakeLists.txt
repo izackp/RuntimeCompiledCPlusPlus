@@ -1,10 +1,34 @@
 cmake_minimum_required(VERSION 2.8)
 
-#
-# Options
-#
+macro (add_sources)
+    file(RELATIVE_PATH _relPath "${CMAKE_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}")
+	set(Stupid "1")
+    foreach (_src ${ARGN})
+    	if(Stupid STREQUAL "1" )
+    		set(Stupid "0")
+    	else()
+    	        if (_relPath)
+	    			MESSAGE("${_relPath}/${_src}")
+            		list (APPEND SRCS "${_relPath}/${_src}")
+        		else()
+            		list (APPEND SRCS "${_src}")
+        		endif()
+		endif()
+    endforeach()
+
+    if (_relPath)
+    	MESSAGE("${ARGV0} " ${ARGV0} PARENT_SCOPE)
+        set ("${ARGV0}" ${ARGV0} " ${SRCS} ")
+    else()
+    	MESSAGE("${ARGV0} " ${ARGV0})
+    	set ("${ARGV0} " ${ARGV0} " ${SRCS}")
+    endif()
+
+endmacro()
+
 option(BUILD_EXAMPLES "Build example applications" ON)
-option(CMAKE_BUILD_TYPE "CMAKE_BUILD_TYPE" Debug)
+
+project(RuntimeCompiledCPlusPlus)
 
 if(UNIX)
 	set(BUILD_TYPE SHARED)
@@ -15,28 +39,7 @@ else()
 	set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 endif()
 
-include(cmake/ProjectFiles.cmake)
+add_subdirectory(RuntimeCompiler)
+add_subdirectory(RuntimeObjectSystem)
+add_subdirectory(Examples)
 
-#
-# RuntimeCompiler
-#
-add_library(RuntimeCompiler ${BUILD_TYPE} ${RuntimeCompiler_SRCS})
-
-#
-# RuntimeObjectSystem
-#
-add_library(RuntimeObjectSystem ${BUILD_TYPE} ${RuntimeObjectSystem_SRCS})
-target_link_libraries(RuntimeObjectSystem RuntimeCompiler)
-if(UNIX)
-	target_link_libraries(RuntimeObjectSystem dl)
-endif()
-
-if(BUILD_EXAMPLES)
-	#
-	# ConsoleExample
-	#
-
-	add_executable(ConsoleExample ${ConsoleExample_SRCS})
-	target_link_libraries(ConsoleExample RuntimeCompiler RuntimeObjectSystem)
-
-endif()

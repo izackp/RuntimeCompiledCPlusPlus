@@ -1,0 +1,5 @@
+/Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/CMakeFiles/ALL_BUILD.dir
+/Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/Examples/ConsoleExample/CMakeFiles/ConsoleExample.dir
+/Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/RuntimeCompiler/CMakeFiles/RuntimeCompiler.dir
+/Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/RuntimeObjectSystem/CMakeFiles/RuntimeObjectSystem.dir
+/Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/CMakeFiles/ZERO_CHECK.dir

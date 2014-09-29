@@ -45,8 +45,8 @@ public:
 	virtual IObjectConstructor* GetConstructor(const char* type) const;
 	virtual ConstructorId GetConstructorId(const char* type) const;
 	virtual IObjectConstructor* GetConstructor(ConstructorId id) const;
-	virtual void AddConstructors(IAUDynArray<IObjectConstructor*> &constructors);
-	virtual void GetAll(IAUDynArray<IObjectConstructor*> &constructors) const;
+	virtual void AddConstructors(std::vector<IObjectConstructor*> &constructors);
+	virtual void GetAll(std::vector<IObjectConstructor*> &constructors) const;
 	virtual IObject* GetObject(ObjectId id) const;
 
 	virtual void AddListener(IObjectFactoryListener* pListener);

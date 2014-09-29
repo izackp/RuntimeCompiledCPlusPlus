@@ -20,7 +20,7 @@
 #ifndef IOBJECTFACTORYSYSTEM_INCLUDED
 #define IOBJECTFACTORYSYSTEM_INCLUDED
 
-#include "../Common/AUArray.inl"
+#include <vector>
 #include "../RuntimeObjectSystem/ObjectInterface.h"
 #include "../RuntimeCompiler/ICompilerLogger.h"
 struct IRuntimeObjectSystem;
@@ -37,8 +37,8 @@ struct IObjectFactorySystem {
 	virtual IObjectConstructor* GetConstructor(const char* type) const = 0;
 	virtual ConstructorId		GetConstructorId(const char* type) const = 0;
 	virtual IObjectConstructor* GetConstructor(ConstructorId id) const = 0;
-	virtual void				AddConstructors(IAUDynArray<IObjectConstructor*> &constructors) = 0;
-	virtual void				GetAll(IAUDynArray<IObjectConstructor*> &constructors) const = 0;
+	virtual void				AddConstructors(std::vector<IObjectConstructor*> &constructors) = 0;
+	virtual void				GetAll(std::vector<IObjectConstructor*> &constructors) const = 0;
 	virtual IObject*			GetObject(ObjectId id) const = 0;
 
 	virtual void				AddListener(IObjectFactoryListener* pListener) = 0;

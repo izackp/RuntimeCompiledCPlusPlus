@@ -1,0 +1,1207 @@
+// !$*UTF8*$!
+{
+       archiveVersion = 1;
+       classes = {
+       };
+       objectVersion = 46;
+       objects = {
+
+/* Begin PBXAggregateTarget section */
+              4ED021F11A714CEA98D000BC /* ALL_BUILD */ = {
+                     isa = PBXAggregateTarget;
+                     buildConfigurationList = D0C31C6DCD694DB49BDF9DD7 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+                     buildPhases = (
+                            7731610D09E740CB9CE06D8A /* CMake Rules */,
+                     );
+                     dependencies = (
+                            F329F93E1B37499D8FEAAC5A /* PBXTargetDependency */,
+                            C44BA0063BD54D129EA726EC /* PBXTargetDependency */,
+                            661A44697BB84B91A4FAA825 /* PBXTargetDependency */,
+                            F90FC5C0291E43D78DF2AABD /* PBXTargetDependency */,
+                     );
+                     name = ALL_BUILD;
+                     productName = ALL_BUILD;
+              };
+              C7F4D617AF96485D91F53E15 /* ZERO_CHECK */ = {
+                     isa = PBXAggregateTarget;
+                     buildConfigurationList = 0756B34F892B4A668BC59B6F /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+                     buildPhases = (
+                            CF71694E84F748BF8B162AC7 /* CMake Rules */,
+                     );
+                     dependencies = (
+                     );
+                     name = ZERO_CHECK;
+                     productName = ZERO_CHECK;
+              };
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+30859BDB56454E73804F64BC /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/BuildTool.cpp */ = {isa = PBXBuildFile; fileRef = B9B43A5B8D8047ACBF5A2498 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/BuildTool.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+6BCA5A26980F45CBB8EBAA71 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/BuildTool.h */ = {isa = PBXBuildFile; fileRef = 9528D0A799DC4643A6B2205C /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/BuildTool.h */; settings = { COMPILER_FLAGS = ""; }; };
+AB2791D814AA4EEE824243BA /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = AF5FA7349E27439A86B80E70 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/CMakeLists.txt */; settings = { COMPILER_FLAGS = ""; }; };
+2D2A2C6A66B4416F86212AD8 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/CompileOptions.h */ = {isa = PBXBuildFile; fileRef = F63B6A4808D749B5915A93D8 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/CompileOptions.h */; settings = { COMPILER_FLAGS = ""; }; };
+1E53DE9DA1A44679B1CDEC92 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/Compiler.h */ = {isa = PBXBuildFile; fileRef = 5FF0652B5536433889426FF2 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/Compiler.h */; settings = { COMPILER_FLAGS = ""; }; };
+1D3E9D41384948FD966F63DA /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/Compiler_PlatformPosix.cpp */ = {isa = PBXBuildFile; fileRef = BAD9D8A1E7AC4000AB2BD030 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/Compiler_PlatformPosix.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+9E362A4E93A1488493E035ED /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileChangeNotifier.cpp */ = {isa = PBXBuildFile; fileRef = 246ADA0576F044B4B5CCB1F0 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileChangeNotifier.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+735FFD691B914BA88AA52017 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileChangeNotifier.h */ = {isa = PBXBuildFile; fileRef = AC0405BB6A44442CB43179E3 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileChangeNotifier.h */; settings = { COMPILER_FLAGS = ""; }; };
+40AA7B6D15FF4C87B24944DD /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileMonitor.cpp */ = {isa = PBXBuildFile; fileRef = CFC9FF559A6A4601BF50D161 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileMonitor.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+D968EB5079D34A478983675A /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileMonitor.h */ = {isa = PBXBuildFile; fileRef = B09A3A1C842D4BCF9346CC5A /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileMonitor.h */; settings = { COMPILER_FLAGS = ""; }; };
+71C8F8B08D0A4B0E9B0ECEDC /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileSystemUtils.h */ = {isa = PBXBuildFile; fileRef = 60C3F180DB6F4EDA85DE7F30 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileSystemUtils.h */; settings = { COMPILER_FLAGS = ""; }; };
+3E86BAFB82D34A19B1CEFD16 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/ICompilerLogger.h */ = {isa = PBXBuildFile; fileRef = 033D18989ADB4E32A69EFB0E /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/ICompilerLogger.h */; settings = { COMPILER_FLAGS = ""; }; };
+98C2AF4B498845C58E875321 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/IFileChangeNotifier.h */ = {isa = PBXBuildFile; fileRef = 38A674176AF34995854322DD /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/IFileChangeNotifier.h */; settings = { COMPILER_FLAGS = ""; }; };
+F49619A7844047B0932A18A3 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/IFileMonitor.h */ = {isa = PBXBuildFile; fileRef = A71BE1A3A01F44629D1C4699 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/IFileMonitor.h */; settings = { COMPILER_FLAGS = ""; }; };
+DE32CA3F1CEF4C6590E83AF1 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 0AB393437D6A446CBA75702D /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/CMakeLists.txt */; settings = { COMPILER_FLAGS = ""; }; };
+ABD5108CCC4A4A1EAC7DD9E7 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/IObject.h */ = {isa = PBXBuildFile; fileRef = A6A34705AEB743C0AF043F56 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/IObject.h */; settings = { COMPILER_FLAGS = ""; }; };
+1D612EDF17064830903CA73D /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/IObjectFactorySystem.h */ = {isa = PBXBuildFile; fileRef = D2BF1B40169E4543A042A143 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/IObjectFactorySystem.h */; settings = { COMPILER_FLAGS = ""; }; };
+03FD979C31744A708EF9580D /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/IRuntimeObjectSystem.h */ = {isa = PBXBuildFile; fileRef = C0F92B1C70974A6481C941A8 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/IRuntimeObjectSystem.h */; settings = { COMPILER_FLAGS = ""; }; };
+D11E051467F245718DA88B61 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/ISimpleSerializer.h */ = {isa = PBXBuildFile; fileRef = 5C57F7C78A0A4A8DA066DB53 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/ISimpleSerializer.h */; settings = { COMPILER_FLAGS = ""; }; };
+69FE952CA0124FEEBAEA2439 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/ObjectInterface.h */ = {isa = PBXBuildFile; fileRef = 6FB32680D79C4E1291F3C361 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/ObjectInterface.h */; settings = { COMPILER_FLAGS = ""; }; };
+B21EFD4DA27C46E5ABEFF8C4 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/ObjectInterfacePerModule.h */ = {isa = PBXBuildFile; fileRef = FB1D5D9F7D86478D83746881 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/ObjectInterfacePerModule.h */; settings = { COMPILER_FLAGS = ""; }; };
+3C941EDE44344BD5B1DF820D /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/ObjectInterfacePerModuleSource.cpp */ = {isa = PBXBuildFile; fileRef = 532AE88A20B9443AAD9A01EE /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/ObjectInterfacePerModuleSource.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+5A62FB87168D4306807E5180 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeInclude.h */ = {isa = PBXBuildFile; fileRef = 1C6F6070D75D40AE99BF1A69 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeInclude.h */; settings = { COMPILER_FLAGS = ""; }; };
+A9480CFD74C647B0B6168A69 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeLinkLibrary.h */ = {isa = PBXBuildFile; fileRef = 4DA3E74A0AD94B23988E65F2 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeLinkLibrary.h */; settings = { COMPILER_FLAGS = ""; }; };
+AC4F02F33FD54D36B1C0FF37 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeObjectSystem.cpp */ = {isa = PBXBuildFile; fileRef = 47C7CD446FEA4D00A02EE318 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeObjectSystem.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+94229998511D455AB92CA742 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeObjectSystem.h */ = {isa = PBXBuildFile; fileRef = E111AD23939747BEBB613913 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeObjectSystem.h */; settings = { COMPILER_FLAGS = ""; }; };
+05C998992D744A4AB0D5FF7B /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeObjectSystem_PlatformPosix.cpp */ = {isa = PBXBuildFile; fileRef = F10EA0D49E5E481F843BA321 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeObjectSystem_PlatformPosix.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+35C851FD33DC4A9596979896 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeProtector.h */ = {isa = PBXBuildFile; fileRef = 8F3153F1FF6E474CBE421C77 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeProtector.h */; settings = { COMPILER_FLAGS = ""; }; };
+E2C70265CD3F4F9FA1B573D1 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeSourceDependency.h */ = {isa = PBXBuildFile; fileRef = E3F7D2B5A764486781FCEFC7 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeSourceDependency.h */; settings = { COMPILER_FLAGS = ""; }; };
+A952F9D478104F44A7E729E2 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 0226D62A57174A8C96422E0C /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/CMakeLists.txt */; settings = { COMPILER_FLAGS = ""; }; };
+D9F399DFB68C460E88D5FB1B /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/ConsoleExample.cpp */ = {isa = PBXBuildFile; fileRef = 705A863E184146E9B36DC3D7 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/ConsoleExample.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+E4EFC949F16B4682A78E32DE /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/ConsoleGame.cpp */ = {isa = PBXBuildFile; fileRef = 95EAAC88D09341AA9C74A6D7 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/ConsoleGame.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+5394D50A6ECC4A83AC858D33 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/ConsoleGame.h */ = {isa = PBXBuildFile; fileRef = 87E7B372026D4C9891A2CB04 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/ConsoleGame.h */; settings = { COMPILER_FLAGS = ""; }; };
+86C2978EB6154FFA85117EF4 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/IUpdateable.h */ = {isa = PBXBuildFile; fileRef = 63B919108DA7445D8F7BF47E /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/IUpdateable.h */; settings = { COMPILER_FLAGS = ""; }; };
+A6E6D8D04ED6429C84042956 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/InterfaceIds.h */ = {isa = PBXBuildFile; fileRef = 61FDD0BE5CE94B41B4B6A126 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/InterfaceIds.h */; settings = { COMPILER_FLAGS = ""; }; };
+69C77DA63A334295A9CC435F /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/RuntimeObject01.cpp */ = {isa = PBXBuildFile; fileRef = 7B175820BF1A4226842F05B8 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/RuntimeObject01.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+01B9BF72ABFA4BE0851189AF /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/StdioLogSystem.cpp */ = {isa = PBXBuildFile; fileRef = 9599C9C9A2864250BB19D76F /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/StdioLogSystem.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+88194458577D4222B32A3752 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/StdioLogSystem.h */ = {isa = PBXBuildFile; fileRef = B95F203FF2704AC28F55E72D /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/StdioLogSystem.h */; settings = { COMPILER_FLAGS = ""; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+              4FCF732577524F4E94039ED4 /*  */ = {
+                     isa = PBXBuildStyle;
+              };
+              DEF373892DAE402095EBDFDB /* Debug */ = {
+                     isa = PBXBuildStyle;
+                     buildSettings = {
+                            COPY_PHASE_STRIP = NO;
+                     };
+                     name = Debug;
+              };
+              0E8A1CA4E3EF48788B43949D /* Release */ = {
+                     isa = PBXBuildStyle;
+                     buildSettings = {
+                            COPY_PHASE_STRIP = NO;
+                     };
+                     name = Release;
+              };
+              AA73526FBF8244C7926E8F8A /* MinSizeRel */ = {
+                     isa = PBXBuildStyle;
+                     buildSettings = {
+                            COPY_PHASE_STRIP = NO;
+                     };
+                     name = MinSizeRel;
+              };
+              BB774FBFBA6E4CDFB2C07491 /* RelWithDebInfo */ = {
+                     isa = PBXBuildStyle;
+                     buildSettings = {
+                            COPY_PHASE_STRIP = NO;
+                     };
+                     name = RelWithDebInfo;
+              };
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+              FB2CEB2C3D26499888072D46 /* PBXContainerItemProxy */ = {
+                     isa = PBXContainerItemProxy;
+                     containerPortal = 189423D16140421A86E1942F /* Project object */;
+                     proxyType = 1;
+                     remoteGlobalIDString = 86A7E0FD405F4886A9A2719E;
+                     remoteInfo = RuntimeCompiler;
+              };
+              74F278D19C174575BE22D6EE /* PBXContainerItemProxy */ = {
+                     isa = PBXContainerItemProxy;
+                     containerPortal = 189423D16140421A86E1942F /* Project object */;
+                     proxyType = 1;
+                     remoteGlobalIDString = 352E2250B3F44864B8470E8E;
+                     remoteInfo = ConsoleExample;
+              };
+              02ADB27D59B648309CF5AE90 /* PBXContainerItemProxy */ = {
+                     isa = PBXContainerItemProxy;
+                     containerPortal = 189423D16140421A86E1942F /* Project object */;
+                     proxyType = 1;
+                     remoteGlobalIDString = C7F4D617AF96485D91F53E15;
+                     remoteInfo = ZERO_CHECK;
+              };
+              B5E8806A3A7A4F94AA61FE04 /* PBXContainerItemProxy */ = {
+                     isa = PBXContainerItemProxy;
+                     containerPortal = 189423D16140421A86E1942F /* Project object */;
+                     proxyType = 1;
+                     remoteGlobalIDString = 2401A0AD8E384EECB38FB3CB;
+                     remoteInfo = RuntimeObjectSystem;
+              };
+              399A680AF82146B3ABB3B550 /* PBXContainerItemProxy */ = {
+                     isa = PBXContainerItemProxy;
+                     containerPortal = 189423D16140421A86E1942F /* Project object */;
+                     proxyType = 1;
+                     remoteGlobalIDString = C7F4D617AF96485D91F53E15;
+                     remoteInfo = ZERO_CHECK;
+              };
+              C4608B725CFB44469DBBB15A /* PBXContainerItemProxy */ = {
+                     isa = PBXContainerItemProxy;
+                     containerPortal = 189423D16140421A86E1942F /* Project object */;
+                     proxyType = 1;
+                     remoteGlobalIDString = C7F4D617AF96485D91F53E15;
+                     remoteInfo = ZERO_CHECK;
+              };
+              6CCD309179344A79A69DD502 /* PBXContainerItemProxy */ = {
+                     isa = PBXContainerItemProxy;
+                     containerPortal = 189423D16140421A86E1942F /* Project object */;
+                     proxyType = 1;
+                     remoteGlobalIDString = 86A7E0FD405F4886A9A2719E;
+                     remoteInfo = RuntimeCompiler;
+              };
+              01883895F5E740C2BA177C25 /* PBXContainerItemProxy */ = {
+                     isa = PBXContainerItemProxy;
+                     containerPortal = 189423D16140421A86E1942F /* Project object */;
+                     proxyType = 1;
+                     remoteGlobalIDString = C7F4D617AF96485D91F53E15;
+                     remoteInfo = ZERO_CHECK;
+              };
+              42DAA326AB7D4DA68B8A1C9E /* PBXContainerItemProxy */ = {
+                     isa = PBXContainerItemProxy;
+                     containerPortal = 189423D16140421A86E1942F /* Project object */;
+                     proxyType = 1;
+                     remoteGlobalIDString = 2401A0AD8E384EECB38FB3CB;
+                     remoteInfo = RuntimeObjectSystem;
+              };
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+622C4794F96C42A299678817 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = "sourcecode.text"; fileEncoding = 4; name = "CMakeLists.txt"; path = "CMakeLists.txt"; sourceTree = SOURCE_ROOT; };
+39A3236634AA467F9EE34A25 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = "sourcecode.text"; fileEncoding = 4; name = "CMakeLists.txt"; path = "CMakeLists.txt"; sourceTree = SOURCE_ROOT; };
+B9B43A5B8D8047ACBF5A2498 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/BuildTool.cpp */ = {isa = PBXFileReference; explicitFileType = "sourcecode.cpp.cpp"; fileEncoding = 4; name = "BuildTool.cpp"; path = "RuntimeCompiler/BuildTool.cpp"; sourceTree = SOURCE_ROOT; };
+9528D0A799DC4643A6B2205C /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/BuildTool.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "BuildTool.h"; path = "RuntimeCompiler/BuildTool.h"; sourceTree = SOURCE_ROOT; };
+AF5FA7349E27439A86B80E70 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = "sourcecode.text"; fileEncoding = 4; name = "CMakeLists.txt"; path = "RuntimeCompiler/CMakeLists.txt"; sourceTree = SOURCE_ROOT; };
+F63B6A4808D749B5915A93D8 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/CompileOptions.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "CompileOptions.h"; path = "RuntimeCompiler/CompileOptions.h"; sourceTree = SOURCE_ROOT; };
+5FF0652B5536433889426FF2 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/Compiler.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "Compiler.h"; path = "RuntimeCompiler/Compiler.h"; sourceTree = SOURCE_ROOT; };
+BAD9D8A1E7AC4000AB2BD030 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/Compiler_PlatformPosix.cpp */ = {isa = PBXFileReference; explicitFileType = "sourcecode.cpp.cpp"; fileEncoding = 4; name = "Compiler_PlatformPosix.cpp"; path = "RuntimeCompiler/Compiler_PlatformPosix.cpp"; sourceTree = SOURCE_ROOT; };
+246ADA0576F044B4B5CCB1F0 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileChangeNotifier.cpp */ = {isa = PBXFileReference; explicitFileType = "sourcecode.cpp.cpp"; fileEncoding = 4; name = "FileChangeNotifier.cpp"; path = "RuntimeCompiler/FileChangeNotifier.cpp"; sourceTree = SOURCE_ROOT; };
+AC0405BB6A44442CB43179E3 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileChangeNotifier.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "FileChangeNotifier.h"; path = "RuntimeCompiler/FileChangeNotifier.h"; sourceTree = SOURCE_ROOT; };
+CFC9FF559A6A4601BF50D161 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileMonitor.cpp */ = {isa = PBXFileReference; explicitFileType = "sourcecode.cpp.cpp"; fileEncoding = 4; name = "FileMonitor.cpp"; path = "RuntimeCompiler/FileMonitor.cpp"; sourceTree = SOURCE_ROOT; };
+B09A3A1C842D4BCF9346CC5A /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileMonitor.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "FileMonitor.h"; path = "RuntimeCompiler/FileMonitor.h"; sourceTree = SOURCE_ROOT; };
+60C3F180DB6F4EDA85DE7F30 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileSystemUtils.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "FileSystemUtils.h"; path = "RuntimeCompiler/FileSystemUtils.h"; sourceTree = SOURCE_ROOT; };
+033D18989ADB4E32A69EFB0E /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/ICompilerLogger.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "ICompilerLogger.h"; path = "RuntimeCompiler/ICompilerLogger.h"; sourceTree = SOURCE_ROOT; };
+38A674176AF34995854322DD /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/IFileChangeNotifier.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "IFileChangeNotifier.h"; path = "RuntimeCompiler/IFileChangeNotifier.h"; sourceTree = SOURCE_ROOT; };
+A71BE1A3A01F44629D1C4699 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/IFileMonitor.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "IFileMonitor.h"; path = "RuntimeCompiler/IFileMonitor.h"; sourceTree = SOURCE_ROOT; };
+B11D47D935414043B19E7B18 /* RuntimeCompiler */ = {isa = PBXFileReference; explicitFileType = "archive.ar"; path = "libRuntimeCompiler.a"; refType = 0; sourceTree = BUILT_PRODUCTS_DIR; };
+0AB393437D6A446CBA75702D /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = "sourcecode.text"; fileEncoding = 4; name = "CMakeLists.txt"; path = "RuntimeObjectSystem/CMakeLists.txt"; sourceTree = SOURCE_ROOT; };
+A6A34705AEB743C0AF043F56 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/IObject.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "IObject.h"; path = "RuntimeObjectSystem/IObject.h"; sourceTree = SOURCE_ROOT; };
+D2BF1B40169E4543A042A143 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/IObjectFactorySystem.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "IObjectFactorySystem.h"; path = "RuntimeObjectSystem/IObjectFactorySystem.h"; sourceTree = SOURCE_ROOT; };
+C0F92B1C70974A6481C941A8 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/IRuntimeObjectSystem.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "IRuntimeObjectSystem.h"; path = "RuntimeObjectSystem/IRuntimeObjectSystem.h"; sourceTree = SOURCE_ROOT; };
+5C57F7C78A0A4A8DA066DB53 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/ISimpleSerializer.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "ISimpleSerializer.h"; path = "RuntimeObjectSystem/ISimpleSerializer.h"; sourceTree = SOURCE_ROOT; };
+6FB32680D79C4E1291F3C361 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/ObjectInterface.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "ObjectInterface.h"; path = "RuntimeObjectSystem/ObjectInterface.h"; sourceTree = SOURCE_ROOT; };
+FB1D5D9F7D86478D83746881 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/ObjectInterfacePerModule.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "ObjectInterfacePerModule.h"; path = "RuntimeObjectSystem/ObjectInterfacePerModule.h"; sourceTree = SOURCE_ROOT; };
+532AE88A20B9443AAD9A01EE /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/ObjectInterfacePerModuleSource.cpp */ = {isa = PBXFileReference; explicitFileType = "sourcecode.cpp.cpp"; fileEncoding = 4; name = "ObjectInterfacePerModuleSource.cpp"; path = "RuntimeObjectSystem/ObjectInterfacePerModuleSource.cpp"; sourceTree = SOURCE_ROOT; };
+1C6F6070D75D40AE99BF1A69 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeInclude.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "RuntimeInclude.h"; path = "RuntimeObjectSystem/RuntimeInclude.h"; sourceTree = SOURCE_ROOT; };
+4DA3E74A0AD94B23988E65F2 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeLinkLibrary.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "RuntimeLinkLibrary.h"; path = "RuntimeObjectSystem/RuntimeLinkLibrary.h"; sourceTree = SOURCE_ROOT; };
+47C7CD446FEA4D00A02EE318 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeObjectSystem.cpp */ = {isa = PBXFileReference; explicitFileType = "sourcecode.cpp.cpp"; fileEncoding = 4; name = "RuntimeObjectSystem.cpp"; path = "RuntimeObjectSystem/RuntimeObjectSystem.cpp"; sourceTree = SOURCE_ROOT; };
+E111AD23939747BEBB613913 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeObjectSystem.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "RuntimeObjectSystem.h"; path = "RuntimeObjectSystem/RuntimeObjectSystem.h"; sourceTree = SOURCE_ROOT; };
+F10EA0D49E5E481F843BA321 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeObjectSystem_PlatformPosix.cpp */ = {isa = PBXFileReference; explicitFileType = "sourcecode.cpp.cpp"; fileEncoding = 4; name = "RuntimeObjectSystem_PlatformPosix.cpp"; path = "RuntimeObjectSystem/RuntimeObjectSystem_PlatformPosix.cpp"; sourceTree = SOURCE_ROOT; };
+8F3153F1FF6E474CBE421C77 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeProtector.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "RuntimeProtector.h"; path = "RuntimeObjectSystem/RuntimeProtector.h"; sourceTree = SOURCE_ROOT; };
+E3F7D2B5A764486781FCEFC7 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeSourceDependency.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "RuntimeSourceDependency.h"; path = "RuntimeObjectSystem/RuntimeSourceDependency.h"; sourceTree = SOURCE_ROOT; };
+F9F7ADA702C44731890E9D64 /* RuntimeObjectSystem */ = {isa = PBXFileReference; explicitFileType = "archive.ar"; path = "libRuntimeObjectSystem.a"; refType = 0; sourceTree = BUILT_PRODUCTS_DIR; };
+0226D62A57174A8C96422E0C /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = "sourcecode.text"; fileEncoding = 4; name = "CMakeLists.txt"; path = "Examples/ConsoleExample/CMakeLists.txt"; sourceTree = SOURCE_ROOT; };
+705A863E184146E9B36DC3D7 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/ConsoleExample.cpp */ = {isa = PBXFileReference; explicitFileType = "sourcecode.cpp.cpp"; fileEncoding = 4; name = "ConsoleExample.cpp"; path = "Examples/ConsoleExample/ConsoleExample.cpp"; sourceTree = SOURCE_ROOT; };
+95EAAC88D09341AA9C74A6D7 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/ConsoleGame.cpp */ = {isa = PBXFileReference; explicitFileType = "sourcecode.cpp.cpp"; fileEncoding = 4; name = "ConsoleGame.cpp"; path = "Examples/ConsoleExample/ConsoleGame.cpp"; sourceTree = SOURCE_ROOT; };
+87E7B372026D4C9891A2CB04 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/ConsoleGame.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "ConsoleGame.h"; path = "Examples/ConsoleExample/ConsoleGame.h"; sourceTree = SOURCE_ROOT; };
+63B919108DA7445D8F7BF47E /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/IUpdateable.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "IUpdateable.h"; path = "Examples/ConsoleExample/IUpdateable.h"; sourceTree = SOURCE_ROOT; };
+61FDD0BE5CE94B41B4B6A126 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/InterfaceIds.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "InterfaceIds.h"; path = "Examples/ConsoleExample/InterfaceIds.h"; sourceTree = SOURCE_ROOT; };
+7B175820BF1A4226842F05B8 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/RuntimeObject01.cpp */ = {isa = PBXFileReference; explicitFileType = "sourcecode.cpp.cpp"; fileEncoding = 4; name = "RuntimeObject01.cpp"; path = "Examples/ConsoleExample/RuntimeObject01.cpp"; sourceTree = SOURCE_ROOT; };
+9599C9C9A2864250BB19D76F /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/StdioLogSystem.cpp */ = {isa = PBXFileReference; explicitFileType = "sourcecode.cpp.cpp"; fileEncoding = 4; name = "StdioLogSystem.cpp"; path = "Examples/ConsoleExample/StdioLogSystem.cpp"; sourceTree = SOURCE_ROOT; };
+B95F203FF2704AC28F55E72D /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/StdioLogSystem.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "StdioLogSystem.h"; path = "Examples/ConsoleExample/StdioLogSystem.h"; sourceTree = SOURCE_ROOT; };
+C7D40A71FBA34F2C83440F3C /* ConsoleExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = ConsoleExample; refType = 0; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+              CFAB353A045847C687EB6521  = {
+                     isa = PBXGroup;
+                     children = (
+                            C655AE1D756D44FF8F735203 /* Sources */,
+                            39DFA7FB8BBA49DDA1E1EF45 /* Resources */,
+                            A1D83DCE1EF243B8A54806C5 /* Products */,
+                     );
+                     sourceTree = "<group>";
+              };
+              C655AE1D756D44FF8F735203 /* Sources */ = {
+                     isa = PBXGroup;
+                     children = (
+                            E98F02507C1848C99C6321CD /* ALL_BUILD */,
+                            01529BB7471A4E4582D4B531 /* ZERO_CHECK */,
+                            E89CA7190F8D469799E42B7F /* RuntimeCompiler */,
+                            C836DE7531444856858A8B2C /* RuntimeObjectSystem */,
+                            068A35855F1B476AB78C6BCA /* ConsoleExample */,
+                     );
+                     name = Sources;
+                     sourceTree = "<group>";
+              };
+              39DFA7FB8BBA49DDA1E1EF45 /* Resources */ = {
+                     isa = PBXGroup;
+                     children = (
+                     );
+                     name = Resources;
+                     sourceTree = "<group>";
+              };
+              E98F02507C1848C99C6321CD /* ALL_BUILD */ = {
+                     isa = PBXGroup;
+                     children = (
+                            DB57B74AC763482B8A078051 /* CMake Rules */,
+                            622C4794F96C42A299678817 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/CMakeLists.txt */,
+                     );
+                     name = ALL_BUILD;
+                     sourceTree = "<group>";
+              };
+              DB57B74AC763482B8A078051 /* CMake Rules */ = {
+                     isa = PBXGroup;
+                     children = (
+                     );
+                     name = "CMake Rules";
+                     sourceTree = "<group>";
+              };
+              01529BB7471A4E4582D4B531 /* ZERO_CHECK */ = {
+                     isa = PBXGroup;
+                     children = (
+                            BABBA22EB2F44FC5801F7A72 /* CMake Rules */,
+                            39A3236634AA467F9EE34A25 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/CMakeLists.txt */,
+                     );
+                     name = ZERO_CHECK;
+                     sourceTree = "<group>";
+              };
+              BABBA22EB2F44FC5801F7A72 /* CMake Rules */ = {
+                     isa = PBXGroup;
+                     children = (
+                     );
+                     name = "CMake Rules";
+                     sourceTree = "<group>";
+              };
+              E89CA7190F8D469799E42B7F /* RuntimeCompiler */ = {
+                     isa = PBXGroup;
+                     children = (
+                            45C5966894904FFEA951F58F /* Source Files */,
+                            A3F51B7270FA4C9EB4905791 /* Header Files */,
+                            AF5FA7349E27439A86B80E70 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/CMakeLists.txt */,
+                     );
+                     name = RuntimeCompiler;
+                     sourceTree = "<group>";
+              };
+              45C5966894904FFEA951F58F /* Source Files */ = {
+                     isa = PBXGroup;
+                     children = (
+                            B9B43A5B8D8047ACBF5A2498 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/BuildTool.cpp */,
+                            BAD9D8A1E7AC4000AB2BD030 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/Compiler_PlatformPosix.cpp */,
+                            246ADA0576F044B4B5CCB1F0 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileChangeNotifier.cpp */,
+                            CFC9FF559A6A4601BF50D161 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileMonitor.cpp */,
+                     );
+                     name = "Source Files";
+                     sourceTree = "<group>";
+              };
+              A3F51B7270FA4C9EB4905791 /* Header Files */ = {
+                     isa = PBXGroup;
+                     children = (
+                            9528D0A799DC4643A6B2205C /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/BuildTool.h */,
+                            F63B6A4808D749B5915A93D8 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/CompileOptions.h */,
+                            5FF0652B5536433889426FF2 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/Compiler.h */,
+                            AC0405BB6A44442CB43179E3 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileChangeNotifier.h */,
+                            B09A3A1C842D4BCF9346CC5A /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileMonitor.h */,
+                            60C3F180DB6F4EDA85DE7F30 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileSystemUtils.h */,
+                            033D18989ADB4E32A69EFB0E /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/ICompilerLogger.h */,
+                            38A674176AF34995854322DD /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/IFileChangeNotifier.h */,
+                            A71BE1A3A01F44629D1C4699 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/IFileMonitor.h */,
+                     );
+                     name = "Header Files";
+                     sourceTree = "<group>";
+              };
+              C836DE7531444856858A8B2C /* RuntimeObjectSystem */ = {
+                     isa = PBXGroup;
+                     children = (
+                            9A17FC4D85B345BCB38130DE /* Header Files */,
+                            58EF5453E04848968D9F31FD /* Source Files */,
+                            0AB393437D6A446CBA75702D /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/CMakeLists.txt */,
+                     );
+                     name = RuntimeObjectSystem;
+                     sourceTree = "<group>";
+              };
+              9A17FC4D85B345BCB38130DE /* Header Files */ = {
+                     isa = PBXGroup;
+                     children = (
+                            A6A34705AEB743C0AF043F56 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/IObject.h */,
+                            D2BF1B40169E4543A042A143 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/IObjectFactorySystem.h */,
+                            C0F92B1C70974A6481C941A8 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/IRuntimeObjectSystem.h */,
+                            5C57F7C78A0A4A8DA066DB53 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/ISimpleSerializer.h */,
+                            6FB32680D79C4E1291F3C361 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/ObjectInterface.h */,
+                            FB1D5D9F7D86478D83746881 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/ObjectInterfacePerModule.h */,
+                            1C6F6070D75D40AE99BF1A69 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeInclude.h */,
+                            4DA3E74A0AD94B23988E65F2 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeLinkLibrary.h */,
+                            E111AD23939747BEBB613913 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeObjectSystem.h */,
+                            8F3153F1FF6E474CBE421C77 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeProtector.h */,
+                            E3F7D2B5A764486781FCEFC7 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeSourceDependency.h */,
+                     );
+                     name = "Header Files";
+                     sourceTree = "<group>";
+              };
+              58EF5453E04848968D9F31FD /* Source Files */ = {
+                     isa = PBXGroup;
+                     children = (
+                            532AE88A20B9443AAD9A01EE /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/ObjectInterfacePerModuleSource.cpp */,
+                            47C7CD446FEA4D00A02EE318 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeObjectSystem.cpp */,
+                            F10EA0D49E5E481F843BA321 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeObjectSystem_PlatformPosix.cpp */,
+                     );
+                     name = "Source Files";
+                     sourceTree = "<group>";
+              };
+              068A35855F1B476AB78C6BCA /* ConsoleExample */ = {
+                     isa = PBXGroup;
+                     children = (
+                            814CA10F40F5415896807B3F /* Source Files */,
+                            C5DFE10EB274410E8A54448C /* Header Files */,
+                            0226D62A57174A8C96422E0C /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/CMakeLists.txt */,
+                     );
+                     name = ConsoleExample;
+                     sourceTree = "<group>";
+              };
+              814CA10F40F5415896807B3F /* Source Files */ = {
+                     isa = PBXGroup;
+                     children = (
+                            705A863E184146E9B36DC3D7 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/ConsoleExample.cpp */,
+                            95EAAC88D09341AA9C74A6D7 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/ConsoleGame.cpp */,
+                            7B175820BF1A4226842F05B8 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/RuntimeObject01.cpp */,
+                            9599C9C9A2864250BB19D76F /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/StdioLogSystem.cpp */,
+                     );
+                     name = "Source Files";
+                     sourceTree = "<group>";
+              };
+              C5DFE10EB274410E8A54448C /* Header Files */ = {
+                     isa = PBXGroup;
+                     children = (
+                            87E7B372026D4C9891A2CB04 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/ConsoleGame.h */,
+                            63B919108DA7445D8F7BF47E /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/IUpdateable.h */,
+                            61FDD0BE5CE94B41B4B6A126 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/InterfaceIds.h */,
+                            B95F203FF2704AC28F55E72D /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/StdioLogSystem.h */,
+                     );
+                     name = "Header Files";
+                     sourceTree = "<group>";
+              };
+              A1D83DCE1EF243B8A54806C5 /* Products */ = {
+                     isa = PBXGroup;
+                     children = (
+                            B11D47D935414043B19E7B18 /* RuntimeCompiler */,
+                            F9F7ADA702C44731890E9D64 /* RuntimeObjectSystem */,
+                            C7D40A71FBA34F2C83440F3C /* ConsoleExample */,
+                     );
+                     name = Products;
+                     sourceTree = "<group>";
+              };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+              86A7E0FD405F4886A9A2719E /* RuntimeCompiler */ = {
+                     isa = PBXNativeTarget;
+                     buildConfigurationList = F7FB8C930B6A485F88864C6B /* Build configuration list for PBXNativeTarget "RuntimeCompiler" */;
+                     buildPhases = (
+                            F199C8A48FA0408A922A48EE /* Sources */,
+                     );
+                     buildRules = (
+                     );
+                     dependencies = (
+                            938D589B96FD4AB38CB69A53 /* PBXTargetDependency */,
+                     );
+                     name = RuntimeCompiler;
+                     productName = RuntimeCompiler;
+                     productReference = B11D47D935414043B19E7B18 /* RuntimeCompiler */;
+                     productType = "com.apple.product-type.library.static";
+              };
+              2401A0AD8E384EECB38FB3CB /* RuntimeObjectSystem */ = {
+                     isa = PBXNativeTarget;
+                     buildConfigurationList = 5CAF6CBA0FF6454BA454D906 /* Build configuration list for PBXNativeTarget "RuntimeObjectSystem" */;
+                     buildPhases = (
+                            59DF1D4B06DA410C8A7E4F19 /* Sources */,
+                     );
+                     buildRules = (
+                     );
+                     dependencies = (
+                            B6F3C06FA9E44507BB0B69CD /* PBXTargetDependency */,
+                     );
+                     name = RuntimeObjectSystem;
+                     productName = RuntimeObjectSystem;
+                     productReference = F9F7ADA702C44731890E9D64 /* RuntimeObjectSystem */;
+                     productType = "com.apple.product-type.library.static";
+              };
+              352E2250B3F44864B8470E8E /* ConsoleExample */ = {
+                     isa = PBXNativeTarget;
+                     buildConfigurationList = 555693724EBB4C8D98D7E5BB /* Build configuration list for PBXNativeTarget "ConsoleExample" */;
+                     buildPhases = (
+                            D3C56C79B4E84499B9A298E6 /* Sources */,
+                     );
+                     buildRules = (
+                     );
+                     dependencies = (
+                            11AAA2D356D848FFB40E3276 /* PBXTargetDependency */,
+                            0CD7F42172C04ECFBA038F0F /* PBXTargetDependency */,
+                            C7294271E80E4247BA6C76C9 /* PBXTargetDependency */,
+                     );
+                     name = ConsoleExample;
+                     productName = ConsoleExample;
+                     productReference = C7D40A71FBA34F2C83440F3C /* ConsoleExample */;
+                     productType = "com.apple.product-type.tool";
+              };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+              189423D16140421A86E1942F /* Project object */ = {
+                     isa = PBXProject;
+                     attributes = {
+                            BuildIndependentTargetsInParallel = YES;
+                     };
+                     buildConfigurationList = 02E4610F31DB4B77936C749B /* Build configuration list for PBXProject  "RuntimeCompiledCPlusPlus" */;
+                     buildSettings = {
+                     };
+                     buildStyles = (
+                            DEF373892DAE402095EBDFDB /* Debug */,
+                            0E8A1CA4E3EF48788B43949D /* Release */,
+                            AA73526FBF8244C7926E8F8A /* MinSizeRel */,
+                            BB774FBFBA6E4CDFB2C07491 /* RelWithDebInfo */,
+                     );
+                     compatibilityVersion = "Xcode 3.2";
+                     hasScannedForEncodings = 0;
+                     mainGroup = CFAB353A045847C687EB6521;
+                     projectDirPath = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora;
+                     projectRoot = "";
+                     targets = (
+                            4ED021F11A714CEA98D000BC /* ALL_BUILD */,
+                            C7F4D617AF96485D91F53E15 /* ZERO_CHECK */,
+                            86A7E0FD405F4886A9A2719E /* RuntimeCompiler */,
+                            2401A0AD8E384EECB38FB3CB /* RuntimeObjectSystem */,
+                            352E2250B3F44864B8470E8E /* ConsoleExample */,
+                     );
+              };
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+              B9631D438B1E46FB85EB4828 /*  */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     inputPaths = (
+                     );
+                     outputPaths = (
+                     );
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "# shell script goes here
+exit 0";
+                     showEnvVarsInLog = 0;
+              };
+              7731610D09E740CB9CE06D8A /* CMake Rules */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     name = "CMake Rules";
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "make -C /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild -f /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+                     showEnvVarsInLog = 0;
+              };
+              C53EAEADC4E644A69748F5C0 /*  */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     inputPaths = (
+                     );
+                     outputPaths = (
+                     );
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "# shell script goes here
+exit 0";
+                     showEnvVarsInLog = 0;
+              };
+              CF71694E84F748BF8B162AC7 /* CMake Rules */ = {
+                     isa = PBXShellScriptBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                     );
+                     name = "CMake Rules";
+                     runOnlyForDeploymentPostprocessing = 0;
+                     shellPath = /bin/sh;
+                     shellScript = "make -C /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild -f /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+                     showEnvVarsInLog = 0;
+              };
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+              F199C8A48FA0408A922A48EE /* Sources */ = {
+                     isa = PBXSourcesBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                            30859BDB56454E73804F64BC /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/BuildTool.cpp */,
+                            1D3E9D41384948FD966F63DA /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/Compiler_PlatformPosix.cpp */,
+                            9E362A4E93A1488493E035ED /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileChangeNotifier.cpp */,
+                            40AA7B6D15FF4C87B24944DD /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeCompiler/FileMonitor.cpp */,
+                     );
+                     runOnlyForDeploymentPostprocessing = 0;
+              };
+              59DF1D4B06DA410C8A7E4F19 /* Sources */ = {
+                     isa = PBXSourcesBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                            3C941EDE44344BD5B1DF820D /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/ObjectInterfacePerModuleSource.cpp */,
+                            AC4F02F33FD54D36B1C0FF37 /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeObjectSystem.cpp */,
+                            05C998992D744A4AB0D5FF7B /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/RuntimeObjectSystem/RuntimeObjectSystem_PlatformPosix.cpp */,
+                     );
+                     runOnlyForDeploymentPostprocessing = 0;
+              };
+              D3C56C79B4E84499B9A298E6 /* Sources */ = {
+                     isa = PBXSourcesBuildPhase;
+                     buildActionMask = 2147483647;
+                     files = (
+                            D9F399DFB68C460E88D5FB1B /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/ConsoleExample.cpp */,
+                            E4EFC949F16B4682A78E32DE /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/ConsoleGame.cpp */,
+                            69C77DA63A334295A9CC435F /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/RuntimeObject01.cpp */,
+                            01B9BF72ABFA4BE0851189AF /* /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/Aurora/Examples/ConsoleExample/StdioLogSystem.cpp */,
+                     );
+                     runOnlyForDeploymentPostprocessing = 0;
+              };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+              F329F93E1B37499D8FEAAC5A /* PBXTargetDependency */ = {
+                     isa = PBXTargetDependency;
+                     target = 86A7E0FD405F4886A9A2719E /* RuntimeCompiler */;
+                     targetProxy = FB2CEB2C3D26499888072D46 /* PBXContainerItemProxy */;
+              };
+              C44BA0063BD54D129EA726EC /* PBXTargetDependency */ = {
+                     isa = PBXTargetDependency;
+                     target = 352E2250B3F44864B8470E8E /* ConsoleExample */;
+                     targetProxy = 74F278D19C174575BE22D6EE /* PBXContainerItemProxy */;
+              };
+              661A44697BB84B91A4FAA825 /* PBXTargetDependency */ = {
+                     isa = PBXTargetDependency;
+                     target = C7F4D617AF96485D91F53E15 /* ZERO_CHECK */;
+                     targetProxy = 02ADB27D59B648309CF5AE90 /* PBXContainerItemProxy */;
+              };
+              F90FC5C0291E43D78DF2AABD /* PBXTargetDependency */ = {
+                     isa = PBXTargetDependency;
+                     target = 2401A0AD8E384EECB38FB3CB /* RuntimeObjectSystem */;
+                     targetProxy = B5E8806A3A7A4F94AA61FE04 /* PBXContainerItemProxy */;
+              };
+              938D589B96FD4AB38CB69A53 /* PBXTargetDependency */ = {
+                     isa = PBXTargetDependency;
+                     target = C7F4D617AF96485D91F53E15 /* ZERO_CHECK */;
+                     targetProxy = 399A680AF82146B3ABB3B550 /* PBXContainerItemProxy */;
+              };
+              B6F3C06FA9E44507BB0B69CD /* PBXTargetDependency */ = {
+                     isa = PBXTargetDependency;
+                     target = C7F4D617AF96485D91F53E15 /* ZERO_CHECK */;
+                     targetProxy = C4608B725CFB44469DBBB15A /* PBXContainerItemProxy */;
+              };
+              11AAA2D356D848FFB40E3276 /* PBXTargetDependency */ = {
+                     isa = PBXTargetDependency;
+                     target = 86A7E0FD405F4886A9A2719E /* RuntimeCompiler */;
+                     targetProxy = 6CCD309179344A79A69DD502 /* PBXContainerItemProxy */;
+              };
+              0CD7F42172C04ECFBA038F0F /* PBXTargetDependency */ = {
+                     isa = PBXTargetDependency;
+                     target = C7F4D617AF96485D91F53E15 /* ZERO_CHECK */;
+                     targetProxy = 01883895F5E740C2BA177C25 /* PBXContainerItemProxy */;
+              };
+              C7294271E80E4247BA6C76C9 /* PBXTargetDependency */ = {
+                     isa = PBXTargetDependency;
+                     target = 2401A0AD8E384EECB38FB3CB /* RuntimeObjectSystem */;
+                     targetProxy = 42DAA326AB7D4DA68B8A1C9E /* PBXContainerItemProxy */;
+              };
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+              5CAD4CD2F0544A0E8FB35505 /* Debug */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+                            ONLY_ACTIVE_ARCH = YES;
+                            SDKROOT = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk";
+                            SYMROOT = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/build;
+                     };
+                     name = Debug;
+              };
+              FCFA805B4425432CBAF9C365 /* Release */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+                            ONLY_ACTIVE_ARCH = YES;
+                            SDKROOT = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk";
+                            SYMROOT = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/build;
+                     };
+                     name = Release;
+              };
+              F00597AEB39749F89022A94E /* MinSizeRel */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+                            ONLY_ACTIVE_ARCH = YES;
+                            SDKROOT = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk";
+                            SYMROOT = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/build;
+                     };
+                     name = MinSizeRel;
+              };
+              84B2FD5826944578BDB4636A /* RelWithDebInfo */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+                            ONLY_ACTIVE_ARCH = YES;
+                            SDKROOT = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk";
+                            SYMROOT = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/build;
+                     };
+                     name = RelWithDebInfo;
+              };
+              AAEC62E08DDA4589A806AFA8 /* Debug */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            COMBINE_HIDPI_IMAGES = YES;
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = ALL_BUILD;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Debug;
+              };
+              98D42F506ED044CB9801D321 /* Release */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            COMBINE_HIDPI_IMAGES = YES;
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = ALL_BUILD;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Release;
+              };
+              2BAF5D54F109493E83D46618 /* MinSizeRel */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            COMBINE_HIDPI_IMAGES = YES;
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = ALL_BUILD;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = MinSizeRel;
+              };
+              34C035210DFE411DACAFEECA /* RelWithDebInfo */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            COMBINE_HIDPI_IMAGES = YES;
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = ALL_BUILD;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = RelWithDebInfo;
+              };
+              84AC00ACCF6C450DABAB469B /* Debug */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            COMBINE_HIDPI_IMAGES = YES;
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = ZERO_CHECK;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Debug;
+              };
+              BBFFF57FCA784828BD8A0002 /* Release */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            COMBINE_HIDPI_IMAGES = YES;
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = ZERO_CHECK;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Release;
+              };
+              F8E3E9BC45DF44B389DAB47E /* MinSizeRel */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            COMBINE_HIDPI_IMAGES = YES;
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = ZERO_CHECK;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = MinSizeRel;
+              };
+              94AF1FC02A854640AB4F323F /* RelWithDebInfo */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            COMBINE_HIDPI_IMAGES = YES;
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            OTHER_CFLAGS = "  ";
+                            OTHER_LDFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = ZERO_CHECK;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = RelWithDebInfo;
+              };
+              33CC9201493B4903A9AFF904 /* Debug */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            COMBINE_HIDPI_IMAGES = YES;
+                            EXECUTABLE_PREFIX = lib;
+                            EXECUTABLE_SUFFIX = ".a";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            LIBRARY_STYLE = STATIC;
+                            OTHER_CFLAGS = "    ";
+                            OTHER_CPLUSPLUSFLAGS = "    ";
+                            OTHER_LIBTOOLFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = RuntimeCompiler;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/RuntimeCompiler;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Debug;
+              };
+              BE7DF265E710411093E34588 /* Release */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            COMBINE_HIDPI_IMAGES = YES;
+                            EXECUTABLE_PREFIX = lib;
+                            EXECUTABLE_SUFFIX = ".a";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 3;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            LIBRARY_STYLE = STATIC;
+                            OTHER_CFLAGS = "    -DNDEBUG  ";
+                            OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG  ";
+                            OTHER_LIBTOOLFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = RuntimeCompiler;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/RuntimeCompiler;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Release;
+              };
+              247C19730D8942DBA9B12C28 /* MinSizeRel */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            COMBINE_HIDPI_IMAGES = YES;
+                            EXECUTABLE_PREFIX = lib;
+                            EXECUTABLE_SUFFIX = ".a";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = s;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            LIBRARY_STYLE = STATIC;
+                            OTHER_CFLAGS = "    -DNDEBUG  ";
+                            OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG  ";
+                            OTHER_LIBTOOLFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = RuntimeCompiler;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/RuntimeCompiler;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = MinSizeRel;
+              };
+              CE59E7A2DD9B420386C4855D /* RelWithDebInfo */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            COMBINE_HIDPI_IMAGES = YES;
+                            EXECUTABLE_PREFIX = lib;
+                            EXECUTABLE_SUFFIX = ".a";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 2;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            LIBRARY_STYLE = STATIC;
+                            OTHER_CFLAGS = "       -DNDEBUG  ";
+                            OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG  ";
+                            OTHER_LIBTOOLFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = RuntimeCompiler;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/RuntimeCompiler;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = RelWithDebInfo;
+              };
+              5E13F8876A7F43EABA60BB53 /* Debug */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            COMBINE_HIDPI_IMAGES = YES;
+                            EXECUTABLE_PREFIX = lib;
+                            EXECUTABLE_SUFFIX = ".a";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            LIBRARY_STYLE = STATIC;
+                            OTHER_CFLAGS = "    ";
+                            OTHER_CPLUSPLUSFLAGS = "    ";
+                            OTHER_LIBTOOLFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = RuntimeObjectSystem;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/RuntimeObjectSystem;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Debug;
+              };
+              FBC91D969D9F4E178786EC33 /* Release */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            COMBINE_HIDPI_IMAGES = YES;
+                            EXECUTABLE_PREFIX = lib;
+                            EXECUTABLE_SUFFIX = ".a";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 3;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            LIBRARY_STYLE = STATIC;
+                            OTHER_CFLAGS = "    -DNDEBUG  ";
+                            OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG  ";
+                            OTHER_LIBTOOLFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = RuntimeObjectSystem;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/RuntimeObjectSystem;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Release;
+              };
+              31DFCBE75C9F4299AEFD1D18 /* MinSizeRel */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            COMBINE_HIDPI_IMAGES = YES;
+                            EXECUTABLE_PREFIX = lib;
+                            EXECUTABLE_SUFFIX = ".a";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = s;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            LIBRARY_STYLE = STATIC;
+                            OTHER_CFLAGS = "    -DNDEBUG  ";
+                            OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG  ";
+                            OTHER_LIBTOOLFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = RuntimeObjectSystem;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/RuntimeObjectSystem;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = MinSizeRel;
+              };
+              DA074FDAAC3D4BD8AFEFD26E /* RelWithDebInfo */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            COMBINE_HIDPI_IMAGES = YES;
+                            EXECUTABLE_PREFIX = lib;
+                            EXECUTABLE_SUFFIX = ".a";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 2;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            LIBRARY_STYLE = STATIC;
+                            OTHER_CFLAGS = "       -DNDEBUG  ";
+                            OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG  ";
+                            OTHER_LIBTOOLFLAGS = " ";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = RuntimeObjectSystem;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/RuntimeObjectSystem;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = RelWithDebInfo;
+              };
+              C24400FF20C8413CBE8B07B6 /* Debug */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            COMBINE_HIDPI_IMAGES = YES;
+                            EXECUTABLE_PREFIX = "";
+                            EXECUTABLE_SUFFIX = "";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 0;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            LIBRARY_SEARCH_PATHS = "";
+                            OTHER_CFLAGS = "    ";
+                            OTHER_CPLUSPLUSFLAGS = "    ";
+                            OTHER_LDFLAGS = "  -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/RuntimeCompiler/Debug/libRuntimeCompiler.a /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/RuntimeObjectSystem/Debug/libRuntimeObjectSystem.a";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = ConsoleExample;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/Examples/ConsoleExample;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Debug;
+              };
+              2B4D9898988D4679B6AA6C4B /* Release */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            COMBINE_HIDPI_IMAGES = YES;
+                            EXECUTABLE_PREFIX = "";
+                            EXECUTABLE_SUFFIX = "";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 3;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            LIBRARY_SEARCH_PATHS = "";
+                            OTHER_CFLAGS = "    -DNDEBUG  ";
+                            OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG  ";
+                            OTHER_LDFLAGS = "  -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/RuntimeCompiler/Release/libRuntimeCompiler.a /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/RuntimeObjectSystem/Release/libRuntimeObjectSystem.a";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = ConsoleExample;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/Examples/ConsoleExample;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = Release;
+              };
+              7624ECE9483F4FC2BEFC3DBB /* MinSizeRel */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            COMBINE_HIDPI_IMAGES = YES;
+                            EXECUTABLE_PREFIX = "";
+                            EXECUTABLE_SUFFIX = "";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = s;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            LIBRARY_SEARCH_PATHS = "";
+                            OTHER_CFLAGS = "    -DNDEBUG  ";
+                            OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG  ";
+                            OTHER_LDFLAGS = "  -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/RuntimeCompiler/MinSizeRel/libRuntimeCompiler.a /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/RuntimeObjectSystem/MinSizeRel/libRuntimeObjectSystem.a";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = ConsoleExample;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/Examples/ConsoleExample;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = MinSizeRel;
+              };
+              6E50B81AEA7B40BAA4A6A264 /* RelWithDebInfo */ = {
+                     isa = XCBuildConfiguration;
+                     buildSettings = {
+                            COMBINE_HIDPI_IMAGES = YES;
+                            EXECUTABLE_PREFIX = "";
+                            EXECUTABLE_SUFFIX = "";
+                            GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+                            GCC_OPTIMIZATION_LEVEL = 2;
+                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
+                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+                            INSTALL_PATH = "";
+                            LIBRARY_SEARCH_PATHS = "";
+                            OTHER_CFLAGS = "       -DNDEBUG  ";
+                            OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG  ";
+                            OTHER_LDFLAGS = "  -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/RuntimeCompiler/RelWithDebInfo/libRuntimeCompiler.a /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/RuntimeObjectSystem/RelWithDebInfo/libRuntimeObjectSystem.a";
+                            OTHER_REZFLAGS = "";
+                            PRODUCT_NAME = ConsoleExample;
+                            SECTORDER_FLAGS = "";
+                            SYMROOT = /Users/Isaac/Documents/EntrenextMobile/RuntimeCompiledCPlusPlus/AuroraBuild/Examples/ConsoleExample;
+                            USE_HEADERMAP = NO;
+                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
+                     };
+                     name = RelWithDebInfo;
+              };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+              02E4610F31DB4B77936C749B /* Build configuration list for PBXProject  "RuntimeCompiledCPlusPlus" */ = {
+                     isa = XCConfigurationList;
+                     buildConfigurations = (
+                            5CAD4CD2F0544A0E8FB35505 /* Debug */,
+                            FCFA805B4425432CBAF9C365 /* Release */,
+                            F00597AEB39749F89022A94E /* MinSizeRel */,
+                            84B2FD5826944578BDB4636A /* RelWithDebInfo */,
+                     );
+                     defaultConfigurationIsVisible = 0;
+                     defaultConfigurationName = Debug;
+              };
+              D0C31C6DCD694DB49BDF9DD7 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+                     isa = XCConfigurationList;
+                     buildConfigurations = (
+                            AAEC62E08DDA4589A806AFA8 /* Debug */,
+                            98D42F506ED044CB9801D321 /* Release */,
+                            2BAF5D54F109493E83D46618 /* MinSizeRel */,
+                            34C035210DFE411DACAFEECA /* RelWithDebInfo */,
+                     );
+                     defaultConfigurationIsVisible = 0;
+                     defaultConfigurationName = Debug;
+              };
+              0756B34F892B4A668BC59B6F /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+                     isa = XCConfigurationList;
+                     buildConfigurations = (
+                            84AC00ACCF6C450DABAB469B /* Debug */,
+                            BBFFF57FCA784828BD8A0002 /* Release */,
+                            F8E3E9BC45DF44B389DAB47E /* MinSizeRel */,
+                            94AF1FC02A854640AB4F323F /* RelWithDebInfo */,
+                     );
+                     defaultConfigurationIsVisible = 0;
+                     defaultConfigurationName = Debug;
+              };
+              F7FB8C930B6A485F88864C6B /* Build configuration list for PBXNativeTarget "RuntimeCompiler" */ = {
+                     isa = XCConfigurationList;
+                     buildConfigurations = (
+                            33CC9201493B4903A9AFF904 /* Debug */,
+                            BE7DF265E710411093E34588 /* Release */,
+                            247C19730D8942DBA9B12C28 /* MinSizeRel */,
+                            CE59E7A2DD9B420386C4855D /* RelWithDebInfo */,
+                     );
+                     defaultConfigurationIsVisible = 0;
+                     defaultConfigurationName = Debug;
+              };
+              5CAF6CBA0FF6454BA454D906 /* Build configuration list for PBXNativeTarget "RuntimeObjectSystem" */ = {
+                     isa = XCConfigurationList;
+                     buildConfigurations = (
+                            5E13F8876A7F43EABA60BB53 /* Debug */,
+                            FBC91D969D9F4E178786EC33 /* Release */,
+                            31DFCBE75C9F4299AEFD1D18 /* MinSizeRel */,
+                            DA074FDAAC3D4BD8AFEFD26E /* RelWithDebInfo */,
+                     );
+                     defaultConfigurationIsVisible = 0;
+                     defaultConfigurationName = Debug;
+              };
+              555693724EBB4C8D98D7E5BB /* Build configuration list for PBXNativeTarget "ConsoleExample" */ = {
+                     isa = XCConfigurationList;
+                     buildConfigurations = (
+                            C24400FF20C8413CBE8B07B6 /* Debug */,
+                            2B4D9898988D4679B6AA6C4B /* Release */,
+                            7624ECE9483F4FC2BEFC3DBB /* MinSizeRel */,
+                            6E50B81AEA7B40BAA4A6A264 /* RelWithDebInfo */,
+                     );
+                     defaultConfigurationIsVisible = 0;
+                     defaultConfigurationName = Debug;
+              };
+/* End XCConfigurationList section */
+       };
+       rootObject = 189423D16140421A86E1942F;
+}

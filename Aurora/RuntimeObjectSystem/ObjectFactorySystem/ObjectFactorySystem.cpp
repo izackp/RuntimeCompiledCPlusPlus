@@ -223,8 +223,8 @@ bool ObjectFactorySystem::HandleRedoUndo(const TConstructors& constructors) {
 	return !swapper.HasHadException() || (PHASE_DELETEOLD == swapper.m_ProtectedPhase);
 }
 
-void ObjectFactorySystem::AddConstructors(IAUDynArray<IObjectConstructor*> &constructors) {
-	if (constructors.Size() == 0) {
+void ObjectFactorySystem::AddConstructors(std::vector<IObjectConstructor*> &constructors) {
+	if (constructors.size() == 0) {
 		m_pLogger->LogInfo("ObjectFactorySystem::AddConstructors() called with no constructors.\n");
 		return;
 	}
@@ -235,7 +235,7 @@ void ObjectFactorySystem::AddConstructors(IAUDynArray<IObjectConstructor*> &cons
 	}
 
 	ProtectedObjectSwapper swapper;
-	swapper.m_ConstructorsToAdd.assign(&constructors[0], &constructors[constructors.Size() - 1] + 1);
+	swapper.m_ConstructorsToAdd.assign(&constructors[0], &constructors[constructors.size() - 1] + 1);
 	swapper.m_ConstructorsOld = m_Constructors;
 	swapper.m_pLogger = m_pLogger;
 	swapper.m_pObjectFactorySystem = this;
@@ -346,8 +346,8 @@ void ObjectFactorySystem::CompleteConstructorSwap(ProtectedObjectSwapper& swappe
 	}
 }
 
-void ObjectFactorySystem::GetAll(IAUDynArray<IObjectConstructor*> &constructors) const {
-	constructors.Resize(m_Constructors.size());
+void ObjectFactorySystem::GetAll(std::vector<IObjectConstructor*> &constructors) const {
+	constructors.resize(m_Constructors.size());
 	std::vector<IObjectConstructor*>::const_iterator it = m_Constructors.begin();
 	std::vector<IObjectConstructor*>::const_iterator itEnd = m_Constructors.end();
 	for(int i = 0; it != itEnd; ++it, ++i) {

@@ -22,7 +22,7 @@
 
 #include "../../RuntimeObjectSystem/IObjectFactorySystem.h"
 #include "../../RuntimeObjectSystem/ObjectInterface.h"
-#include "../../Common/AUArray.inl"
+#include <vector>
 
 #ifndef _WIN32
 int _getche();
